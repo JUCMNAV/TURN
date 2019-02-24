@@ -375,7 +375,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectingAndBody" eType="#//PathBody"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Stub" eSuperTypes="#//URNmodelElement #//RegularEnd">
+  <eClassifiers xsi:type="ecore:EClass" name="Stub" eSuperTypes="#//URNmodelElement #//RegularEnd #//ReferencedEnd">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stubType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -417,7 +417,6 @@
         eType="#//Binding" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentRef" eSuperTypes="#//URNmodelElement #//ReferencedBoundElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="protected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//COMPONENTKIND"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="longName" eType="#//LongName"
