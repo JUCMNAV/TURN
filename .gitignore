@@ -1,0 +1,21 @@
+#Eclipse Core
+.project
+
+#JDT-specific (Eclipse Java Dev Tools)
+**/.classpath
+
+#Output directories ignore
+**/bin/
+**/build/
+
+#Xtendbin ignore
+*.xtendbin
+
+#Xtextbin ignore
+*.xtextbin
+
+#Java trace ignore
+*._trace
+
+#Gradle ignore
+**/.gradle/
