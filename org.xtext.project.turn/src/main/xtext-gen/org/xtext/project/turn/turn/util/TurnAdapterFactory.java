@@ -396,6 +396,36 @@ public class TurnAdapterFactory extends AdapterFactoryImpl
         return createFailureLabelAdapter();
       }
       @Override
+      public Adapter caseScenarioGroup(ScenarioGroup object)
+      {
+        return createScenarioGroupAdapter();
+      }
+      @Override
+      public Adapter caseScenarioDef(ScenarioDef object)
+      {
+        return createScenarioDefAdapter();
+      }
+      @Override
+      public Adapter caseInitialization(Initialization object)
+      {
+        return createInitializationAdapter();
+      }
+      @Override
+      public Adapter caseVariable(Variable object)
+      {
+        return createVariableAdapter();
+      }
+      @Override
+      public Adapter caseEnumerationType(EnumerationType object)
+      {
+        return createEnumerationTypeAdapter();
+      }
+      @Override
+      public Adapter caseReferenceToScenarioDef(ReferenceToScenarioDef object)
+      {
+        return createReferenceToScenarioDefAdapter();
+      }
+      @Override
       public Adapter caseText(Text object)
       {
         return createTextAdapter();
@@ -1383,6 +1413,96 @@ public class TurnAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFailureLabelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.project.turn.turn.ScenarioGroup <em>Scenario Group</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.project.turn.turn.ScenarioGroup
+   * @generated
+   */
+  public Adapter createScenarioGroupAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.project.turn.turn.ScenarioDef <em>Scenario Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.project.turn.turn.ScenarioDef
+   * @generated
+   */
+  public Adapter createScenarioDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.project.turn.turn.Initialization <em>Initialization</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.project.turn.turn.Initialization
+   * @generated
+   */
+  public Adapter createInitializationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.project.turn.turn.Variable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.project.turn.turn.Variable
+   * @generated
+   */
+  public Adapter createVariableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.project.turn.turn.EnumerationType <em>Enumeration Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.project.turn.turn.EnumerationType
+   * @generated
+   */
+  public Adapter createEnumerationTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.project.turn.turn.ReferenceToScenarioDef <em>Reference To Scenario Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.project.turn.turn.ReferenceToScenarioDef
+   * @generated
+   */
+  public Adapter createReferenceToScenarioDefAdapter()
   {
     return null;
   }

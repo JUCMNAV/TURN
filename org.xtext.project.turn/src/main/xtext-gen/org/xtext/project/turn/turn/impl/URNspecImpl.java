@@ -24,14 +24,18 @@ import org.xtext.project.turn.turn.Concern;
 import org.xtext.project.turn.turn.ConcreteURNspec;
 import org.xtext.project.turn.turn.ContributionContext;
 import org.xtext.project.turn.turn.ContributionContextGroup;
+import org.xtext.project.turn.turn.EnumerationType;
 import org.xtext.project.turn.turn.EvaluationStrategy;
 import org.xtext.project.turn.turn.IndicatorConversion;
 import org.xtext.project.turn.turn.Metadata;
+import org.xtext.project.turn.turn.ScenarioDef;
+import org.xtext.project.turn.turn.ScenarioGroup;
 import org.xtext.project.turn.turn.StrategiesGroup;
 import org.xtext.project.turn.turn.TurnPackage;
 import org.xtext.project.turn.turn.UCMmap;
 import org.xtext.project.turn.turn.URNlink;
 import org.xtext.project.turn.turn.URNspec;
+import org.xtext.project.turn.turn.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,6 +55,10 @@ import org.xtext.project.turn.turn.URNspec;
  *   <li>{@link org.xtext.project.turn.turn.impl.URNspecImpl#getContribContextGroups <em>Contrib Context Groups</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.URNspecImpl#getContribContexts <em>Contrib Contexts</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.URNspecImpl#getUcmMaps <em>Ucm Maps</em>}</li>
+ *   <li>{@link org.xtext.project.turn.turn.impl.URNspecImpl#getScenGroups <em>Scen Groups</em>}</li>
+ *   <li>{@link org.xtext.project.turn.turn.impl.URNspecImpl#getScenDefs <em>Scen Defs</em>}</li>
+ *   <li>{@link org.xtext.project.turn.turn.impl.URNspecImpl#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.xtext.project.turn.turn.impl.URNspecImpl#getEnumTypes <em>Enum Types</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.URNspecImpl#getConcerns <em>Concerns</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.URNspecImpl#getUrnlinks <em>Urnlinks</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.URNspecImpl#getMetadata <em>Metadata</em>}</li>
@@ -179,6 +187,46 @@ public class URNspecImpl extends MinimalEObjectImpl.Container implements URNspec
    * @ordered
    */
   protected EList<UCMmap> ucmMaps;
+
+  /**
+   * The cached value of the '{@link #getScenGroups() <em>Scen Groups</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getScenGroups()
+   * @generated
+   * @ordered
+   */
+  protected EList<ScenarioGroup> scenGroups;
+
+  /**
+   * The cached value of the '{@link #getScenDefs() <em>Scen Defs</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getScenDefs()
+   * @generated
+   * @ordered
+   */
+  protected EList<ScenarioDef> scenDefs;
+
+  /**
+   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVariables()
+   * @generated
+   * @ordered
+   */
+  protected EList<Variable> variables;
+
+  /**
+   * The cached value of the '{@link #getEnumTypes() <em>Enum Types</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEnumTypes()
+   * @generated
+   * @ordered
+   */
+  protected EList<EnumerationType> enumTypes;
 
   /**
    * The cached value of the '{@link #getConcerns() <em>Concerns</em>}' containment reference list.
@@ -428,6 +476,62 @@ public class URNspecImpl extends MinimalEObjectImpl.Container implements URNspec
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<ScenarioGroup> getScenGroups()
+  {
+    if (scenGroups == null)
+    {
+      scenGroups = new EObjectContainmentEList<ScenarioGroup>(ScenarioGroup.class, this, TurnPackage.UR_NSPEC__SCEN_GROUPS);
+    }
+    return scenGroups;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ScenarioDef> getScenDefs()
+  {
+    if (scenDefs == null)
+    {
+      scenDefs = new EObjectContainmentEList<ScenarioDef>(ScenarioDef.class, this, TurnPackage.UR_NSPEC__SCEN_DEFS);
+    }
+    return scenDefs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Variable> getVariables()
+  {
+    if (variables == null)
+    {
+      variables = new EObjectContainmentEList<Variable>(Variable.class, this, TurnPackage.UR_NSPEC__VARIABLES);
+    }
+    return variables;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<EnumerationType> getEnumTypes()
+  {
+    if (enumTypes == null)
+    {
+      enumTypes = new EObjectContainmentEList<EnumerationType>(EnumerationType.class, this, TurnPackage.UR_NSPEC__ENUM_TYPES);
+    }
+    return enumTypes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Concern> getConcerns()
   {
     if (concerns == null)
@@ -491,6 +595,14 @@ public class URNspecImpl extends MinimalEObjectImpl.Container implements URNspec
         return ((InternalEList<?>)getContribContexts()).basicRemove(otherEnd, msgs);
       case TurnPackage.UR_NSPEC__UCM_MAPS:
         return ((InternalEList<?>)getUcmMaps()).basicRemove(otherEnd, msgs);
+      case TurnPackage.UR_NSPEC__SCEN_GROUPS:
+        return ((InternalEList<?>)getScenGroups()).basicRemove(otherEnd, msgs);
+      case TurnPackage.UR_NSPEC__SCEN_DEFS:
+        return ((InternalEList<?>)getScenDefs()).basicRemove(otherEnd, msgs);
+      case TurnPackage.UR_NSPEC__VARIABLES:
+        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
+      case TurnPackage.UR_NSPEC__ENUM_TYPES:
+        return ((InternalEList<?>)getEnumTypes()).basicRemove(otherEnd, msgs);
       case TurnPackage.UR_NSPEC__CONCERNS:
         return ((InternalEList<?>)getConcerns()).basicRemove(otherEnd, msgs);
       case TurnPackage.UR_NSPEC__URNLINKS:
@@ -531,6 +643,14 @@ public class URNspecImpl extends MinimalEObjectImpl.Container implements URNspec
         return getContribContexts();
       case TurnPackage.UR_NSPEC__UCM_MAPS:
         return getUcmMaps();
+      case TurnPackage.UR_NSPEC__SCEN_GROUPS:
+        return getScenGroups();
+      case TurnPackage.UR_NSPEC__SCEN_DEFS:
+        return getScenDefs();
+      case TurnPackage.UR_NSPEC__VARIABLES:
+        return getVariables();
+      case TurnPackage.UR_NSPEC__ENUM_TYPES:
+        return getEnumTypes();
       case TurnPackage.UR_NSPEC__CONCERNS:
         return getConcerns();
       case TurnPackage.UR_NSPEC__URNLINKS:
@@ -589,6 +709,22 @@ public class URNspecImpl extends MinimalEObjectImpl.Container implements URNspec
         getUcmMaps().clear();
         getUcmMaps().addAll((Collection<? extends UCMmap>)newValue);
         return;
+      case TurnPackage.UR_NSPEC__SCEN_GROUPS:
+        getScenGroups().clear();
+        getScenGroups().addAll((Collection<? extends ScenarioGroup>)newValue);
+        return;
+      case TurnPackage.UR_NSPEC__SCEN_DEFS:
+        getScenDefs().clear();
+        getScenDefs().addAll((Collection<? extends ScenarioDef>)newValue);
+        return;
+      case TurnPackage.UR_NSPEC__VARIABLES:
+        getVariables().clear();
+        getVariables().addAll((Collection<? extends Variable>)newValue);
+        return;
+      case TurnPackage.UR_NSPEC__ENUM_TYPES:
+        getEnumTypes().clear();
+        getEnumTypes().addAll((Collection<? extends EnumerationType>)newValue);
+        return;
       case TurnPackage.UR_NSPEC__CONCERNS:
         getConcerns().clear();
         getConcerns().addAll((Collection<? extends Concern>)newValue);
@@ -645,6 +781,18 @@ public class URNspecImpl extends MinimalEObjectImpl.Container implements URNspec
       case TurnPackage.UR_NSPEC__UCM_MAPS:
         getUcmMaps().clear();
         return;
+      case TurnPackage.UR_NSPEC__SCEN_GROUPS:
+        getScenGroups().clear();
+        return;
+      case TurnPackage.UR_NSPEC__SCEN_DEFS:
+        getScenDefs().clear();
+        return;
+      case TurnPackage.UR_NSPEC__VARIABLES:
+        getVariables().clear();
+        return;
+      case TurnPackage.UR_NSPEC__ENUM_TYPES:
+        getEnumTypes().clear();
+        return;
       case TurnPackage.UR_NSPEC__CONCERNS:
         getConcerns().clear();
         return;
@@ -688,6 +836,14 @@ public class URNspecImpl extends MinimalEObjectImpl.Container implements URNspec
         return contribContexts != null && !contribContexts.isEmpty();
       case TurnPackage.UR_NSPEC__UCM_MAPS:
         return ucmMaps != null && !ucmMaps.isEmpty();
+      case TurnPackage.UR_NSPEC__SCEN_GROUPS:
+        return scenGroups != null && !scenGroups.isEmpty();
+      case TurnPackage.UR_NSPEC__SCEN_DEFS:
+        return scenDefs != null && !scenDefs.isEmpty();
+      case TurnPackage.UR_NSPEC__VARIABLES:
+        return variables != null && !variables.isEmpty();
+      case TurnPackage.UR_NSPEC__ENUM_TYPES:
+        return enumTypes != null && !enumTypes.isEmpty();
       case TurnPackage.UR_NSPEC__CONCERNS:
         return concerns != null && !concerns.isEmpty();
       case TurnPackage.UR_NSPEC__URNLINKS:

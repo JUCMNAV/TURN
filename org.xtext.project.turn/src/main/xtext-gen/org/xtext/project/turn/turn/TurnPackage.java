@@ -159,13 +159,49 @@ public interface TurnPackage extends EPackage
   int UR_NSPEC__UCM_MAPS = 9;
 
   /**
+   * The feature id for the '<em><b>Scen Groups</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UR_NSPEC__SCEN_GROUPS = 10;
+
+  /**
+   * The feature id for the '<em><b>Scen Defs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UR_NSPEC__SCEN_DEFS = 11;
+
+  /**
+   * The feature id for the '<em><b>Variables</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UR_NSPEC__VARIABLES = 12;
+
+  /**
+   * The feature id for the '<em><b>Enum Types</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UR_NSPEC__ENUM_TYPES = 13;
+
+  /**
    * The feature id for the '<em><b>Concerns</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UR_NSPEC__CONCERNS = 10;
+  int UR_NSPEC__CONCERNS = 14;
 
   /**
    * The feature id for the '<em><b>Urnlinks</b></em>' containment reference list.
@@ -174,7 +210,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UR_NSPEC__URNLINKS = 11;
+  int UR_NSPEC__URNLINKS = 15;
 
   /**
    * The feature id for the '<em><b>Metadata</b></em>' containment reference list.
@@ -183,7 +219,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UR_NSPEC__METADATA = 12;
+  int UR_NSPEC__METADATA = 16;
 
   /**
    * The number of structural features of the '<em>UR Nspec</em>' class.
@@ -192,7 +228,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UR_NSPEC_FEATURE_COUNT = 13;
+  int UR_NSPEC_FEATURE_COUNT = 17;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.impl.ConcreteURNspecImpl <em>Concrete UR Nspec</em>}' class.
@@ -3066,6 +3102,336 @@ public interface TurnPackage extends EPackage
   int FAILURE_LABEL_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.project.turn.turn.impl.ScenarioGroupImpl <em>Scenario Group</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.project.turn.turn.impl.ScenarioGroupImpl
+   * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getScenarioGroup()
+   * @generated
+   */
+  int SCENARIO_GROUP = 64;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_GROUP__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Long Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_GROUP__LONG_NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Scenario</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_GROUP__SCENARIO = 2;
+
+  /**
+   * The feature id for the '<em><b>Scenarios</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_GROUP__SCENARIOS = 3;
+
+  /**
+   * The number of structural features of the '<em>Scenario Group</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_GROUP_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.project.turn.turn.impl.ScenarioDefImpl <em>Scenario Def</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.project.turn.turn.impl.ScenarioDefImpl
+   * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getScenarioDef()
+   * @generated
+   */
+  int SCENARIO_DEF = 65;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_DEF__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Long Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_DEF__LONG_NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Preconditions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_DEF__PRECONDITIONS = 2;
+
+  /**
+   * The feature id for the '<em><b>Postconditions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_DEF__POSTCONDITIONS = 3;
+
+  /**
+   * The feature id for the '<em><b>Initializations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_DEF__INITIALIZATIONS = 4;
+
+  /**
+   * The feature id for the '<em><b>Start Point</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_DEF__START_POINT = 5;
+
+  /**
+   * The feature id for the '<em><b>Start Points</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_DEF__START_POINTS = 6;
+
+  /**
+   * The feature id for the '<em><b>End Point</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_DEF__END_POINT = 7;
+
+  /**
+   * The feature id for the '<em><b>End Points</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_DEF__END_POINTS = 8;
+
+  /**
+   * The feature id for the '<em><b>Included Scenario</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_DEF__INCLUDED_SCENARIO = 9;
+
+  /**
+   * The feature id for the '<em><b>Included Scenarios</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_DEF__INCLUDED_SCENARIOS = 10;
+
+  /**
+   * The number of structural features of the '<em>Scenario Def</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_DEF_FEATURE_COUNT = 11;
+
+  /**
+   * The meta object id for the '{@link org.xtext.project.turn.turn.impl.InitializationImpl <em>Initialization</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.project.turn.turn.impl.InitializationImpl
+   * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getInitialization()
+   * @generated
+   */
+  int INITIALIZATION = 66;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INITIALIZATION__VARIABLE = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INITIALIZATION__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Initialization</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INITIALIZATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.project.turn.turn.impl.VariableImpl <em>Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.project.turn.turn.impl.VariableImpl
+   * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getVariable()
+   * @generated
+   */
+  int VARIABLE = 67;
+
+  /**
+   * The feature id for the '<em><b>Enumeration Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__ENUMERATION_TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.project.turn.turn.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.project.turn.turn.impl.EnumerationTypeImpl
+   * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getEnumerationType()
+   * @generated
+   */
+  int ENUMERATION_TYPE = 68;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION_TYPE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION_TYPE__VALUE = 1;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION_TYPE__VALUES = 2;
+
+  /**
+   * The number of structural features of the '<em>Enumeration Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION_TYPE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.project.turn.turn.impl.ReferenceToScenarioDefImpl <em>Reference To Scenario Def</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.project.turn.turn.impl.ReferenceToScenarioDefImpl
+   * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getReferenceToScenarioDef()
+   * @generated
+   */
+  int REFERENCE_TO_SCENARIO_DEF = 69;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REFERENCE_TO_SCENARIO_DEF__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Long Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REFERENCE_TO_SCENARIO_DEF__LONG_NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>Reference To Scenario Def</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REFERENCE_TO_SCENARIO_DEF_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.impl.TextImpl <em>Text</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3073,7 +3439,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getText()
    * @generated
    */
-  int TEXT = 64;
+  int TEXT = 70;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' attribute list.
@@ -3101,7 +3467,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getPathBodyNodes()
    * @generated
    */
-  int PATH_BODY_NODES = 65;
+  int PATH_BODY_NODES = 71;
 
   /**
    * The feature id for the '<em><b>Path End</b></em>' containment reference.
@@ -3165,7 +3531,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getQualitativeLabel()
    * @generated
    */
-  int QUALITATIVE_LABEL = 66;
+  int QUALITATIVE_LABEL = 72;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.IntentionalElementType <em>Intentional Element Type</em>}' enum.
@@ -3175,7 +3541,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getIntentionalElementType()
    * @generated
    */
-  int INTENTIONAL_ELEMENT_TYPE = 67;
+  int INTENTIONAL_ELEMENT_TYPE = 73;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.ContributionType <em>Contribution Type</em>}' enum.
@@ -3185,7 +3551,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getContributionType()
    * @generated
    */
-  int CONTRIBUTION_TYPE = 68;
+  int CONTRIBUTION_TYPE = 74;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.ImportanceType <em>Importance Type</em>}' enum.
@@ -3195,7 +3561,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getImportanceType()
    * @generated
    */
-  int IMPORTANCE_TYPE = 69;
+  int IMPORTANCE_TYPE = 75;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.DecompositionType <em>Decomposition Type</em>}' enum.
@@ -3205,7 +3571,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getDecompositionType()
    * @generated
    */
-  int DECOMPOSITION_TYPE = 70;
+  int DECOMPOSITION_TYPE = 76;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.WAITKIND <em>WAITKIND</em>}' enum.
@@ -3215,7 +3581,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getWAITKIND()
    * @generated
    */
-  int WAITKIND = 71;
+  int WAITKIND = 77;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.COMPONENTKIND <em>COMPONENTKIND</em>}' enum.
@@ -3225,7 +3591,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getCOMPONENTKIND()
    * @generated
    */
-  int COMPONENTKIND = 72;
+  int COMPONENTKIND = 78;
 
 
   /**
@@ -3347,6 +3713,50 @@ public interface TurnPackage extends EPackage
    * @generated
    */
   EReference getURNspec_UcmMaps();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.project.turn.turn.URNspec#getScenGroups <em>Scen Groups</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Scen Groups</em>'.
+   * @see org.xtext.project.turn.turn.URNspec#getScenGroups()
+   * @see #getURNspec()
+   * @generated
+   */
+  EReference getURNspec_ScenGroups();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.project.turn.turn.URNspec#getScenDefs <em>Scen Defs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Scen Defs</em>'.
+   * @see org.xtext.project.turn.turn.URNspec#getScenDefs()
+   * @see #getURNspec()
+   * @generated
+   */
+  EReference getURNspec_ScenDefs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.project.turn.turn.URNspec#getVariables <em>Variables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Variables</em>'.
+   * @see org.xtext.project.turn.turn.URNspec#getVariables()
+   * @see #getURNspec()
+   * @generated
+   */
+  EReference getURNspec_Variables();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.project.turn.turn.URNspec#getEnumTypes <em>Enum Types</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Enum Types</em>'.
+   * @see org.xtext.project.turn.turn.URNspec#getEnumTypes()
+   * @see #getURNspec()
+   * @generated
+   */
+  EReference getURNspec_EnumTypes();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.project.turn.turn.URNspec#getConcerns <em>Concerns</em>}'.
@@ -6058,6 +6468,330 @@ public interface TurnPackage extends EPackage
   EAttribute getFailureLabel_Failure();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.project.turn.turn.ScenarioGroup <em>Scenario Group</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Scenario Group</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioGroup
+   * @generated
+   */
+  EClass getScenarioGroup();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.ScenarioGroup#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioGroup#getName()
+   * @see #getScenarioGroup()
+   * @generated
+   */
+  EAttribute getScenarioGroup_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.project.turn.turn.ScenarioGroup#getLongName <em>Long Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Long Name</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioGroup#getLongName()
+   * @see #getScenarioGroup()
+   * @generated
+   */
+  EReference getScenarioGroup_LongName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.project.turn.turn.ScenarioGroup#getScenario <em>Scenario</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Scenario</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioGroup#getScenario()
+   * @see #getScenarioGroup()
+   * @generated
+   */
+  EReference getScenarioGroup_Scenario();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.project.turn.turn.ScenarioGroup#getScenarios <em>Scenarios</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Scenarios</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioGroup#getScenarios()
+   * @see #getScenarioGroup()
+   * @generated
+   */
+  EReference getScenarioGroup_Scenarios();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.project.turn.turn.ScenarioDef <em>Scenario Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Scenario Def</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioDef
+   * @generated
+   */
+  EClass getScenarioDef();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.ScenarioDef#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioDef#getName()
+   * @see #getScenarioDef()
+   * @generated
+   */
+  EAttribute getScenarioDef_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.project.turn.turn.ScenarioDef#getLongName <em>Long Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Long Name</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioDef#getLongName()
+   * @see #getScenarioDef()
+   * @generated
+   */
+  EReference getScenarioDef_LongName();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.project.turn.turn.ScenarioDef#getPreconditions <em>Preconditions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Preconditions</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioDef#getPreconditions()
+   * @see #getScenarioDef()
+   * @generated
+   */
+  EReference getScenarioDef_Preconditions();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.project.turn.turn.ScenarioDef#getPostconditions <em>Postconditions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Postconditions</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioDef#getPostconditions()
+   * @see #getScenarioDef()
+   * @generated
+   */
+  EReference getScenarioDef_Postconditions();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.project.turn.turn.ScenarioDef#getInitializations <em>Initializations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Initializations</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioDef#getInitializations()
+   * @see #getScenarioDef()
+   * @generated
+   */
+  EReference getScenarioDef_Initializations();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.ScenarioDef#getStartPoint <em>Start Point</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Start Point</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioDef#getStartPoint()
+   * @see #getScenarioDef()
+   * @generated
+   */
+  EAttribute getScenarioDef_StartPoint();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.project.turn.turn.ScenarioDef#getStartPoints <em>Start Points</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Start Points</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioDef#getStartPoints()
+   * @see #getScenarioDef()
+   * @generated
+   */
+  EAttribute getScenarioDef_StartPoints();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.ScenarioDef#getEndPoint <em>End Point</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>End Point</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioDef#getEndPoint()
+   * @see #getScenarioDef()
+   * @generated
+   */
+  EAttribute getScenarioDef_EndPoint();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.project.turn.turn.ScenarioDef#getEndPoints <em>End Points</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>End Points</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioDef#getEndPoints()
+   * @see #getScenarioDef()
+   * @generated
+   */
+  EAttribute getScenarioDef_EndPoints();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.project.turn.turn.ScenarioDef#getIncludedScenario <em>Included Scenario</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Included Scenario</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioDef#getIncludedScenario()
+   * @see #getScenarioDef()
+   * @generated
+   */
+  EReference getScenarioDef_IncludedScenario();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.project.turn.turn.ScenarioDef#getIncludedScenarios <em>Included Scenarios</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Included Scenarios</em>'.
+   * @see org.xtext.project.turn.turn.ScenarioDef#getIncludedScenarios()
+   * @see #getScenarioDef()
+   * @generated
+   */
+  EReference getScenarioDef_IncludedScenarios();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.project.turn.turn.Initialization <em>Initialization</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Initialization</em>'.
+   * @see org.xtext.project.turn.turn.Initialization
+   * @generated
+   */
+  EClass getInitialization();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.Initialization#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Variable</em>'.
+   * @see org.xtext.project.turn.turn.Initialization#getVariable()
+   * @see #getInitialization()
+   * @generated
+   */
+  EAttribute getInitialization_Variable();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.Initialization#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.project.turn.turn.Initialization#getValue()
+   * @see #getInitialization()
+   * @generated
+   */
+  EAttribute getInitialization_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.project.turn.turn.Variable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable</em>'.
+   * @see org.xtext.project.turn.turn.Variable
+   * @generated
+   */
+  EClass getVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.Variable#getEnumerationType <em>Enumeration Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Enumeration Type</em>'.
+   * @see org.xtext.project.turn.turn.Variable#getEnumerationType()
+   * @see #getVariable()
+   * @generated
+   */
+  EAttribute getVariable_EnumerationType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.Variable#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.project.turn.turn.Variable#getName()
+   * @see #getVariable()
+   * @generated
+   */
+  EAttribute getVariable_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.project.turn.turn.EnumerationType <em>Enumeration Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Enumeration Type</em>'.
+   * @see org.xtext.project.turn.turn.EnumerationType
+   * @generated
+   */
+  EClass getEnumerationType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.EnumerationType#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.project.turn.turn.EnumerationType#getName()
+   * @see #getEnumerationType()
+   * @generated
+   */
+  EAttribute getEnumerationType_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.EnumerationType#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.project.turn.turn.EnumerationType#getValue()
+   * @see #getEnumerationType()
+   * @generated
+   */
+  EAttribute getEnumerationType_Value();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.project.turn.turn.EnumerationType#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see org.xtext.project.turn.turn.EnumerationType#getValues()
+   * @see #getEnumerationType()
+   * @generated
+   */
+  EAttribute getEnumerationType_Values();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.project.turn.turn.ReferenceToScenarioDef <em>Reference To Scenario Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Reference To Scenario Def</em>'.
+   * @see org.xtext.project.turn.turn.ReferenceToScenarioDef
+   * @generated
+   */
+  EClass getReferenceToScenarioDef();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.ReferenceToScenarioDef#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.project.turn.turn.ReferenceToScenarioDef#getName()
+   * @see #getReferenceToScenarioDef()
+   * @generated
+   */
+  EAttribute getReferenceToScenarioDef_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.project.turn.turn.ReferenceToScenarioDef#getLongName <em>Long Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Long Name</em>'.
+   * @see org.xtext.project.turn.turn.ReferenceToScenarioDef#getLongName()
+   * @see #getReferenceToScenarioDef()
+   * @generated
+   */
+  EReference getReferenceToScenarioDef_LongName();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.project.turn.turn.Text <em>Text</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -6281,6 +7015,38 @@ public interface TurnPackage extends EPackage
      * @generated
      */
     EReference UR_NSPEC__UCM_MAPS = eINSTANCE.getURNspec_UcmMaps();
+
+    /**
+     * The meta object literal for the '<em><b>Scen Groups</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UR_NSPEC__SCEN_GROUPS = eINSTANCE.getURNspec_ScenGroups();
+
+    /**
+     * The meta object literal for the '<em><b>Scen Defs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UR_NSPEC__SCEN_DEFS = eINSTANCE.getURNspec_ScenDefs();
+
+    /**
+     * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UR_NSPEC__VARIABLES = eINSTANCE.getURNspec_Variables();
+
+    /**
+     * The meta object literal for the '<em><b>Enum Types</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UR_NSPEC__ENUM_TYPES = eINSTANCE.getURNspec_EnumTypes();
 
     /**
      * The meta object literal for the '<em><b>Concerns</b></em>' containment reference list feature.
@@ -8423,6 +9189,258 @@ public interface TurnPackage extends EPackage
      * @generated
      */
     EAttribute FAILURE_LABEL__FAILURE = eINSTANCE.getFailureLabel_Failure();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.ScenarioGroupImpl <em>Scenario Group</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.project.turn.turn.impl.ScenarioGroupImpl
+     * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getScenarioGroup()
+     * @generated
+     */
+    EClass SCENARIO_GROUP = eINSTANCE.getScenarioGroup();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENARIO_GROUP__NAME = eINSTANCE.getScenarioGroup_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Long Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIO_GROUP__LONG_NAME = eINSTANCE.getScenarioGroup_LongName();
+
+    /**
+     * The meta object literal for the '<em><b>Scenario</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIO_GROUP__SCENARIO = eINSTANCE.getScenarioGroup_Scenario();
+
+    /**
+     * The meta object literal for the '<em><b>Scenarios</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIO_GROUP__SCENARIOS = eINSTANCE.getScenarioGroup_Scenarios();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.ScenarioDefImpl <em>Scenario Def</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.project.turn.turn.impl.ScenarioDefImpl
+     * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getScenarioDef()
+     * @generated
+     */
+    EClass SCENARIO_DEF = eINSTANCE.getScenarioDef();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENARIO_DEF__NAME = eINSTANCE.getScenarioDef_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Long Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIO_DEF__LONG_NAME = eINSTANCE.getScenarioDef_LongName();
+
+    /**
+     * The meta object literal for the '<em><b>Preconditions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIO_DEF__PRECONDITIONS = eINSTANCE.getScenarioDef_Preconditions();
+
+    /**
+     * The meta object literal for the '<em><b>Postconditions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIO_DEF__POSTCONDITIONS = eINSTANCE.getScenarioDef_Postconditions();
+
+    /**
+     * The meta object literal for the '<em><b>Initializations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIO_DEF__INITIALIZATIONS = eINSTANCE.getScenarioDef_Initializations();
+
+    /**
+     * The meta object literal for the '<em><b>Start Point</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENARIO_DEF__START_POINT = eINSTANCE.getScenarioDef_StartPoint();
+
+    /**
+     * The meta object literal for the '<em><b>Start Points</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENARIO_DEF__START_POINTS = eINSTANCE.getScenarioDef_StartPoints();
+
+    /**
+     * The meta object literal for the '<em><b>End Point</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENARIO_DEF__END_POINT = eINSTANCE.getScenarioDef_EndPoint();
+
+    /**
+     * The meta object literal for the '<em><b>End Points</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENARIO_DEF__END_POINTS = eINSTANCE.getScenarioDef_EndPoints();
+
+    /**
+     * The meta object literal for the '<em><b>Included Scenario</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIO_DEF__INCLUDED_SCENARIO = eINSTANCE.getScenarioDef_IncludedScenario();
+
+    /**
+     * The meta object literal for the '<em><b>Included Scenarios</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIO_DEF__INCLUDED_SCENARIOS = eINSTANCE.getScenarioDef_IncludedScenarios();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.InitializationImpl <em>Initialization</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.project.turn.turn.impl.InitializationImpl
+     * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getInitialization()
+     * @generated
+     */
+    EClass INITIALIZATION = eINSTANCE.getInitialization();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INITIALIZATION__VARIABLE = eINSTANCE.getInitialization_Variable();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INITIALIZATION__VALUE = eINSTANCE.getInitialization_Value();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.VariableImpl <em>Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.project.turn.turn.impl.VariableImpl
+     * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getVariable()
+     * @generated
+     */
+    EClass VARIABLE = eINSTANCE.getVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Enumeration Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE__ENUMERATION_TYPE = eINSTANCE.getVariable_EnumerationType();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.project.turn.turn.impl.EnumerationTypeImpl
+     * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getEnumerationType()
+     * @generated
+     */
+    EClass ENUMERATION_TYPE = eINSTANCE.getEnumerationType();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENUMERATION_TYPE__NAME = eINSTANCE.getEnumerationType_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENUMERATION_TYPE__VALUE = eINSTANCE.getEnumerationType_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENUMERATION_TYPE__VALUES = eINSTANCE.getEnumerationType_Values();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.ReferenceToScenarioDefImpl <em>Reference To Scenario Def</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.project.turn.turn.impl.ReferenceToScenarioDefImpl
+     * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getReferenceToScenarioDef()
+     * @generated
+     */
+    EClass REFERENCE_TO_SCENARIO_DEF = eINSTANCE.getReferenceToScenarioDef();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REFERENCE_TO_SCENARIO_DEF__NAME = eINSTANCE.getReferenceToScenarioDef_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Long Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REFERENCE_TO_SCENARIO_DEF__LONG_NAME = eINSTANCE.getReferenceToScenarioDef_LongName();
 
     /**
      * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.TextImpl <em>Text</em>}' class.

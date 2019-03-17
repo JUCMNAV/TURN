@@ -592,6 +592,48 @@ public class TurnSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case TurnPackage.SCENARIO_GROUP:
+      {
+        ScenarioGroup scenarioGroup = (ScenarioGroup)theEObject;
+        T result = caseScenarioGroup(scenarioGroup);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TurnPackage.SCENARIO_DEF:
+      {
+        ScenarioDef scenarioDef = (ScenarioDef)theEObject;
+        T result = caseScenarioDef(scenarioDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TurnPackage.INITIALIZATION:
+      {
+        Initialization initialization = (Initialization)theEObject;
+        T result = caseInitialization(initialization);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TurnPackage.VARIABLE:
+      {
+        Variable variable = (Variable)theEObject;
+        T result = caseVariable(variable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TurnPackage.ENUMERATION_TYPE:
+      {
+        EnumerationType enumerationType = (EnumerationType)theEObject;
+        T result = caseEnumerationType(enumerationType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TurnPackage.REFERENCE_TO_SCENARIO_DEF:
+      {
+        ReferenceToScenarioDef referenceToScenarioDef = (ReferenceToScenarioDef)theEObject;
+        T result = caseReferenceToScenarioDef(referenceToScenarioDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case TurnPackage.TEXT:
       {
         Text text = (Text)theEObject;
@@ -1631,6 +1673,102 @@ public class TurnSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseFailureLabel(FailureLabel object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Scenario Group</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Scenario Group</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseScenarioGroup(ScenarioGroup object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Scenario Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Scenario Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseScenarioDef(ScenarioDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Initialization</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Initialization</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInitialization(Initialization object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariable(Variable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enumeration Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enumeration Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnumerationType(EnumerationType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Reference To Scenario Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Reference To Scenario Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReferenceToScenarioDef(ReferenceToScenarioDef object)
   {
     return null;
   }

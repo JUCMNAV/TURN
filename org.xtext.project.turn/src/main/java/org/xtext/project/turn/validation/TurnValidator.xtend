@@ -22,7 +22,6 @@ import org.xtext.project.turn.turn.ContributionContext
 import org.xtext.project.turn.turn.LinearConversion
 import org.xtext.project.turn.turn.QualToQMappings
 import org.xtext.project.turn.turn.PathBodyNodes
-import org.xtext.project.turn.turn.Path
 import org.xtext.project.turn.turn.OrFork
 import org.xtext.project.turn.turn.Stub
 
@@ -33,22 +32,10 @@ import org.xtext.project.turn.turn.Stub
  */
 class TurnValidator extends AbstractTurnValidator {
 	
-	 @Check
+	@Check
 	def checkAndForkHasAtleastTwoPaths(AndFork andFork) {
 		if(andFork.pathbody.size < 2) {
 			error("And Fork must have at least two path bodies",TurnPackage.Literals.AND_FORK__PATHBODY)
-		}
-	}
-	
-	@Check
-	def checkMapHasUniqueName(UCMmap obj) {
-		val spec=EcoreUtil2.getContainerOfType(obj,URNspec)
-		for (UCMmap map : EcoreUtil2.getAllContentsOfType(spec, obj.getClass())) {
-			//for now checking only for name 
-				if(!map.name.empty && map.name == obj.name && map != obj )	
-					error("Map name must be unique",TurnPackage.Literals.UC_MMAP__NAME)
-				if(!map.longName.longname.empty && map.longName.longname.equals(obj.longName.longname) && map != obj )	
-					error("Map longname must be unique",TurnPackage.Literals.UC_MMAP__LONG_NAME);
 		}
 	}
 	
@@ -187,9 +174,9 @@ class TurnValidator extends AbstractTurnValidator {
 	@Check
 	def testOrder(PathBodyNodes mc) {
 		if(mc.referencedStub !== null && mc.pathEnd !== null)
-			error("wrong order of reference",TurnPackage.Literals.PATH_BODY__REFERENCED_STUB);
+			error("Wrong order of reference",TurnPackage.Literals.PATH_BODY__REFERENCED_STUB);
 		if(mc.referencedEnd !== null && mc.pathEnd !== null)
-			error("wrong order of reference",TurnPackage.Literals.PATH_BODY__REFERENCED_END);
+			error("Wrong order of reference",TurnPackage.Literals.PATH_BODY__REFERENCED_END);
 		
 	}
 	
@@ -200,7 +187,7 @@ class TurnValidator extends AbstractTurnValidator {
 		val stub=EcoreUtil2.getContainerOfType(mc,Stub)
 		if(mc.referencedStub === null && mc.pathEnd === null && mc.pathNodes.size == 0 && mc.referencedEnd === null){
 			if(of === null && af === null && stub === null){
-				error("wrong order of reference",TurnPackage.Literals.PATH_BODY_NODES__PATH_NODES);}
+				error("Wrong order of reference",TurnPackage.Literals.PATH_BODY_NODES__PATH_NODES);}
 		}
 	}
 		

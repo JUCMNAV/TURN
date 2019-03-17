@@ -26,6 +26,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.project.turn.turn.URNspec#getContribContextGroups <em>Contrib Context Groups</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.URNspec#getContribContexts <em>Contrib Contexts</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.URNspec#getUcmMaps <em>Ucm Maps</em>}</li>
+ *   <li>{@link org.xtext.project.turn.turn.URNspec#getScenGroups <em>Scen Groups</em>}</li>
+ *   <li>{@link org.xtext.project.turn.turn.URNspec#getScenDefs <em>Scen Defs</em>}</li>
+ *   <li>{@link org.xtext.project.turn.turn.URNspec#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.xtext.project.turn.turn.URNspec#getEnumTypes <em>Enum Types</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.URNspec#getConcerns <em>Concerns</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.URNspec#getUrnlinks <em>Urnlinks</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.URNspec#getMetadata <em>Metadata</em>}</li>
@@ -226,6 +230,70 @@ public interface URNspec extends EObject
    * @generated
    */
   EList<UCMmap> getUcmMaps();
+
+  /**
+   * Returns the value of the '<em><b>Scen Groups</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.project.turn.turn.ScenarioGroup}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Scen Groups</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Scen Groups</em>' containment reference list.
+   * @see org.xtext.project.turn.turn.TurnPackage#getURNspec_ScenGroups()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ScenarioGroup> getScenGroups();
+
+  /**
+   * Returns the value of the '<em><b>Scen Defs</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.project.turn.turn.ScenarioDef}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Scen Defs</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Scen Defs</em>' containment reference list.
+   * @see org.xtext.project.turn.turn.TurnPackage#getURNspec_ScenDefs()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ScenarioDef> getScenDefs();
+
+  /**
+   * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.project.turn.turn.Variable}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Variables</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Variables</em>' containment reference list.
+   * @see org.xtext.project.turn.turn.TurnPackage#getURNspec_Variables()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Variable> getVariables();
+
+  /**
+   * Returns the value of the '<em><b>Enum Types</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.project.turn.turn.EnumerationType}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Enum Types</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Enum Types</em>' containment reference list.
+   * @see org.xtext.project.turn.turn.TurnPackage#getURNspec_EnumTypes()
+   * @model containment="true"
+   * @generated
+   */
+  EList<EnumerationType> getEnumTypes();
 
   /**
    * Returns the value of the '<em><b>Concerns</b></em>' containment reference list.

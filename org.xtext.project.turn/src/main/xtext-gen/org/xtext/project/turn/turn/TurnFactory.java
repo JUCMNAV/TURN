@@ -600,6 +600,60 @@ public interface TurnFactory extends EFactory
   FailureLabel createFailureLabel();
 
   /**
+   * Returns a new object of class '<em>Scenario Group</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Scenario Group</em>'.
+   * @generated
+   */
+  ScenarioGroup createScenarioGroup();
+
+  /**
+   * Returns a new object of class '<em>Scenario Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Scenario Def</em>'.
+   * @generated
+   */
+  ScenarioDef createScenarioDef();
+
+  /**
+   * Returns a new object of class '<em>Initialization</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Initialization</em>'.
+   * @generated
+   */
+  Initialization createInitialization();
+
+  /**
+   * Returns a new object of class '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable</em>'.
+   * @generated
+   */
+  Variable createVariable();
+
+  /**
+   * Returns a new object of class '<em>Enumeration Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enumeration Type</em>'.
+   * @generated
+   */
+  EnumerationType createEnumerationType();
+
+  /**
+   * Returns a new object of class '<em>Reference To Scenario Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Reference To Scenario Def</em>'.
+   * @generated
+   */
+  ReferenceToScenarioDef createReferenceToScenarioDef();
+
+  /**
    * Returns a new object of class '<em>Text</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

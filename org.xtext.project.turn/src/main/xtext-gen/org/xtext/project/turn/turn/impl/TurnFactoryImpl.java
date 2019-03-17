@@ -130,6 +130,12 @@ public class TurnFactoryImpl extends EFactoryImpl implements TurnFactory
       case TurnPackage.OUT_BINDING: return createOutBinding();
       case TurnPackage.COMPONENT_BINDING: return createComponentBinding();
       case TurnPackage.FAILURE_LABEL: return createFailureLabel();
+      case TurnPackage.SCENARIO_GROUP: return createScenarioGroup();
+      case TurnPackage.SCENARIO_DEF: return createScenarioDef();
+      case TurnPackage.INITIALIZATION: return createInitialization();
+      case TurnPackage.VARIABLE: return createVariable();
+      case TurnPackage.ENUMERATION_TYPE: return createEnumerationType();
+      case TurnPackage.REFERENCE_TO_SCENARIO_DEF: return createReferenceToScenarioDef();
       case TurnPackage.TEXT: return createText();
       case TurnPackage.PATH_BODY_NODES: return createPathBodyNodes();
       default:
@@ -897,6 +903,72 @@ public class TurnFactoryImpl extends EFactoryImpl implements TurnFactory
   {
     FailureLabelImpl failureLabel = new FailureLabelImpl();
     return failureLabel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ScenarioGroup createScenarioGroup()
+  {
+    ScenarioGroupImpl scenarioGroup = new ScenarioGroupImpl();
+    return scenarioGroup;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ScenarioDef createScenarioDef()
+  {
+    ScenarioDefImpl scenarioDef = new ScenarioDefImpl();
+    return scenarioDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Initialization createInitialization()
+  {
+    InitializationImpl initialization = new InitializationImpl();
+    return initialization;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable createVariable()
+  {
+    VariableImpl variable = new VariableImpl();
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EnumerationType createEnumerationType()
+  {
+    EnumerationTypeImpl enumerationType = new EnumerationTypeImpl();
+    return enumerationType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReferenceToScenarioDef createReferenceToScenarioDef()
+  {
+    ReferenceToScenarioDefImpl referenceToScenarioDef = new ReferenceToScenarioDefImpl();
+    return referenceToScenarioDef;
   }
 
   /**

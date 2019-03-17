@@ -24,7 +24,6 @@ import org.xtext.project.turn.turn.QualToQMappings;
 import org.xtext.project.turn.turn.StrategiesGroup;
 import org.xtext.project.turn.turn.Stub;
 import org.xtext.project.turn.turn.TurnPackage;
-import org.xtext.project.turn.turn.UCMmap;
 import org.xtext.project.turn.turn.URNspec;
 import org.xtext.project.turn.validation.AbstractTurnValidator;
 
@@ -41,22 +40,6 @@ public class TurnValidator extends AbstractTurnValidator {
     boolean _lessThan = (_size < 2);
     if (_lessThan) {
       this.error("And Fork must have at least two path bodies", TurnPackage.Literals.AND_FORK__PATHBODY);
-    }
-  }
-  
-  @Check
-  public void checkMapHasUniqueName(final UCMmap obj) {
-    final URNspec spec = EcoreUtil2.<URNspec>getContainerOfType(obj, URNspec.class);
-    List<? extends UCMmap> _allContentsOfType = EcoreUtil2.getAllContentsOfType(spec, obj.getClass());
-    for (final UCMmap map : _allContentsOfType) {
-      {
-        if ((((!map.getName().isEmpty()) && Objects.equal(map.getName(), obj.getName())) && (!Objects.equal(map, obj)))) {
-          this.error("Map name must be unique", TurnPackage.Literals.UC_MMAP__NAME);
-        }
-        if ((((!map.getLongName().getLongname().isEmpty()) && map.getLongName().getLongname().equals(obj.getLongName().getLongname())) && (!Objects.equal(map, obj)))) {
-          this.error("Map longname must be unique", TurnPackage.Literals.UC_MMAP__LONG_NAME);
-        }
-      }
     }
   }
   
@@ -255,10 +238,10 @@ public class TurnValidator extends AbstractTurnValidator {
   @Check
   public void testOrder(final PathBodyNodes mc) {
     if (((mc.getReferencedStub() != null) && (mc.getPathEnd() != null))) {
-      this.error("wrong order of reference", TurnPackage.Literals.PATH_BODY__REFERENCED_STUB);
+      this.error("Wrong order of reference", TurnPackage.Literals.PATH_BODY__REFERENCED_STUB);
     }
     if (((mc.getReferencedEnd() != null) && (mc.getPathEnd() != null))) {
-      this.error("wrong order of reference", TurnPackage.Literals.PATH_BODY__REFERENCED_END);
+      this.error("Wrong order of reference", TurnPackage.Literals.PATH_BODY__REFERENCED_END);
     }
   }
   
@@ -269,7 +252,7 @@ public class TurnValidator extends AbstractTurnValidator {
     final Stub stub = EcoreUtil2.<Stub>getContainerOfType(mc, Stub.class);
     if (((((mc.getReferencedStub() == null) && (mc.getPathEnd() == null)) && (mc.getPathNodes().size() == 0)) && (mc.getReferencedEnd() == null))) {
       if ((((of == null) && (af == null)) && (stub == null))) {
-        this.error("wrong order of reference", TurnPackage.Literals.PATH_BODY_NODES__PATH_NODES);
+        this.error("Wrong order of reference", TurnPackage.Literals.PATH_BODY_NODES__PATH_NODES);
       }
     }
   }

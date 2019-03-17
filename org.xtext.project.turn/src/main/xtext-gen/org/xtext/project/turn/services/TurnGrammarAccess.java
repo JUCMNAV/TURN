@@ -53,23 +53,33 @@ public class TurnGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cContribContextsContributionContextParserRuleCall_7_0 = (RuleCall)cContribContextsAssignment_7.eContents().get(0);
 		private final Assignment cUcmMapsAssignment_8 = (Assignment)cUnorderedGroup.eContents().get(8);
 		private final RuleCall cUcmMapsUCMmapParserRuleCall_8_0 = (RuleCall)cUcmMapsAssignment_8.eContents().get(0);
-		private final Assignment cConcernsAssignment_9 = (Assignment)cUnorderedGroup.eContents().get(9);
-		private final RuleCall cConcernsConcernParserRuleCall_9_0 = (RuleCall)cConcernsAssignment_9.eContents().get(0);
-		private final Assignment cUrnlinksAssignment_10 = (Assignment)cUnorderedGroup.eContents().get(10);
-		private final RuleCall cUrnlinksURNlinkParserRuleCall_10_0 = (RuleCall)cUrnlinksAssignment_10.eContents().get(0);
-		private final Assignment cMetadataAssignment_11 = (Assignment)cUnorderedGroup.eContents().get(11);
-		private final RuleCall cMetadataMetadataParserRuleCall_11_0 = (RuleCall)cMetadataAssignment_11.eContents().get(0);
+		private final Assignment cScenGroupsAssignment_9 = (Assignment)cUnorderedGroup.eContents().get(9);
+		private final RuleCall cScenGroupsScenarioGroupParserRuleCall_9_0 = (RuleCall)cScenGroupsAssignment_9.eContents().get(0);
+		private final Assignment cScenDefsAssignment_10 = (Assignment)cUnorderedGroup.eContents().get(10);
+		private final RuleCall cScenDefsScenarioDefParserRuleCall_10_0 = (RuleCall)cScenDefsAssignment_10.eContents().get(0);
+		private final Assignment cVariablesAssignment_11 = (Assignment)cUnorderedGroup.eContents().get(11);
+		private final RuleCall cVariablesVariableParserRuleCall_11_0 = (RuleCall)cVariablesAssignment_11.eContents().get(0);
+		private final Assignment cEnumTypesAssignment_12 = (Assignment)cUnorderedGroup.eContents().get(12);
+		private final RuleCall cEnumTypesEnumerationTypeParserRuleCall_12_0 = (RuleCall)cEnumTypesAssignment_12.eContents().get(0);
+		private final Assignment cConcernsAssignment_13 = (Assignment)cUnorderedGroup.eContents().get(13);
+		private final RuleCall cConcernsConcernParserRuleCall_13_0 = (RuleCall)cConcernsAssignment_13.eContents().get(0);
+		private final Assignment cUrnlinksAssignment_14 = (Assignment)cUnorderedGroup.eContents().get(14);
+		private final RuleCall cUrnlinksURNlinkParserRuleCall_14_0 = (RuleCall)cUrnlinksAssignment_14.eContents().get(0);
+		private final Assignment cMetadataAssignment_15 = (Assignment)cUnorderedGroup.eContents().get(15);
+		private final RuleCall cMetadataMetadataParserRuleCall_15_0 = (RuleCall)cMetadataAssignment_15.eContents().get(0);
 		
 		//URNspec:
 		//	'urnModel' name=QualifiedName info=ConcreteURNspec? & actors+=Actor* & showAsMeansEnd?='showAsMeansEnd'? &
 		//	stratGroups+=StrategiesGroup* & strategies+=EvaluationStrategy* & indConversions+=IndicatorConversion* &
 		//	contribContextGroups+=ContributionContextGroup* & contribContexts+=ContributionContext* & ucmMaps+=UCMmap* &
+		//	scenGroups+=ScenarioGroup* & scenDefs+=ScenarioDef* & variables+=Variable* & enumTypes+=EnumerationType* &
 		//	concerns+=Concern* & urnlinks+=URNlink* & metadata+=Metadata*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'urnModel' name=QualifiedName info=ConcreteURNspec? & actors+=Actor* & showAsMeansEnd?='showAsMeansEnd'? &
 		//stratGroups+=StrategiesGroup* & strategies+=EvaluationStrategy* & indConversions+=IndicatorConversion* &
 		//contribContextGroups+=ContributionContextGroup* & contribContexts+=ContributionContext* & ucmMaps+=UCMmap* &
+		//scenGroups+=ScenarioGroup* & scenDefs+=ScenarioDef* & variables+=Variable* & enumTypes+=EnumerationType* &
 		//concerns+=Concern* & urnlinks+=URNlink* & metadata+=Metadata*
 		public UnorderedGroup getUnorderedGroup() { return cUnorderedGroup; }
 		
@@ -139,23 +149,47 @@ public class TurnGrammarAccess extends AbstractGrammarElementFinder {
 		//UCMmap
 		public RuleCall getUcmMapsUCMmapParserRuleCall_8_0() { return cUcmMapsUCMmapParserRuleCall_8_0; }
 		
+		//scenGroups+=ScenarioGroup*
+		public Assignment getScenGroupsAssignment_9() { return cScenGroupsAssignment_9; }
+		
+		//ScenarioGroup
+		public RuleCall getScenGroupsScenarioGroupParserRuleCall_9_0() { return cScenGroupsScenarioGroupParserRuleCall_9_0; }
+		
+		//scenDefs+=ScenarioDef*
+		public Assignment getScenDefsAssignment_10() { return cScenDefsAssignment_10; }
+		
+		//ScenarioDef
+		public RuleCall getScenDefsScenarioDefParserRuleCall_10_0() { return cScenDefsScenarioDefParserRuleCall_10_0; }
+		
+		//variables+=Variable*
+		public Assignment getVariablesAssignment_11() { return cVariablesAssignment_11; }
+		
+		//Variable
+		public RuleCall getVariablesVariableParserRuleCall_11_0() { return cVariablesVariableParserRuleCall_11_0; }
+		
+		//enumTypes+=EnumerationType*
+		public Assignment getEnumTypesAssignment_12() { return cEnumTypesAssignment_12; }
+		
+		//EnumerationType
+		public RuleCall getEnumTypesEnumerationTypeParserRuleCall_12_0() { return cEnumTypesEnumerationTypeParserRuleCall_12_0; }
+		
 		//concerns+=Concern*
-		public Assignment getConcernsAssignment_9() { return cConcernsAssignment_9; }
+		public Assignment getConcernsAssignment_13() { return cConcernsAssignment_13; }
 		
 		//Concern
-		public RuleCall getConcernsConcernParserRuleCall_9_0() { return cConcernsConcernParserRuleCall_9_0; }
+		public RuleCall getConcernsConcernParserRuleCall_13_0() { return cConcernsConcernParserRuleCall_13_0; }
 		
 		//urnlinks+=URNlink*
-		public Assignment getUrnlinksAssignment_10() { return cUrnlinksAssignment_10; }
+		public Assignment getUrnlinksAssignment_14() { return cUrnlinksAssignment_14; }
 		
 		//URNlink
-		public RuleCall getUrnlinksURNlinkParserRuleCall_10_0() { return cUrnlinksURNlinkParserRuleCall_10_0; }
+		public RuleCall getUrnlinksURNlinkParserRuleCall_14_0() { return cUrnlinksURNlinkParserRuleCall_14_0; }
 		
 		//metadata+=Metadata*
-		public Assignment getMetadataAssignment_11() { return cMetadataAssignment_11; }
+		public Assignment getMetadataAssignment_15() { return cMetadataAssignment_15; }
 		
 		//Metadata
-		public RuleCall getMetadataMetadataParserRuleCall_11_0() { return cMetadataMetadataParserRuleCall_11_0; }
+		public RuleCall getMetadataMetadataParserRuleCall_15_0() { return cMetadataMetadataParserRuleCall_15_0; }
 	}
 	public class ConcreteURNspecElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.ConcreteURNspec");
@@ -3742,6 +3776,511 @@ public class TurnGrammarAccess extends AbstractGrammarElementFinder {
 		//']]'
 		public Keyword getRightSquareBracketRightSquareBracketKeyword_2() { return cRightSquareBracketRightSquareBracketKeyword_2; }
 	}
+	public class ScenarioGroupElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.ScenarioGroup");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cScenarioGroupKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cLongNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLongNameLongNameParserRuleCall_2_0 = (RuleCall)cLongNameAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cScenarioAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cScenarioReferenceToScenarioDefParserRuleCall_4_0 = (RuleCall)cScenarioAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cScenariosAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cScenariosReferenceToScenarioDefParserRuleCall_5_1_0 = (RuleCall)cScenariosAssignment_5_1.eContents().get(0);
+		
+		//ScenarioGroup:
+		//	'scenarioGroup' name=QualifiedName longName=LongName ':' scenario=ReferenceToScenarioDef (','
+		//	scenarios+=ReferenceToScenarioDef)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'scenarioGroup' name=QualifiedName longName=LongName ':' scenario=ReferenceToScenarioDef (','
+		//scenarios+=ReferenceToScenarioDef)*
+		public Group getGroup() { return cGroup; }
+		
+		//'scenarioGroup'
+		public Keyword getScenarioGroupKeyword_0() { return cScenarioGroupKeyword_0; }
+		
+		//name=QualifiedName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+		
+		//longName=LongName
+		public Assignment getLongNameAssignment_2() { return cLongNameAssignment_2; }
+		
+		//LongName
+		public RuleCall getLongNameLongNameParserRuleCall_2_0() { return cLongNameLongNameParserRuleCall_2_0; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//scenario=ReferenceToScenarioDef
+		public Assignment getScenarioAssignment_4() { return cScenarioAssignment_4; }
+		
+		//ReferenceToScenarioDef
+		public RuleCall getScenarioReferenceToScenarioDefParserRuleCall_4_0() { return cScenarioReferenceToScenarioDefParserRuleCall_4_0; }
+		
+		//(',' scenarios+=ReferenceToScenarioDef)*
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//','
+		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
+		
+		//scenarios+=ReferenceToScenarioDef
+		public Assignment getScenariosAssignment_5_1() { return cScenariosAssignment_5_1; }
+		
+		//ReferenceToScenarioDef
+		public RuleCall getScenariosReferenceToScenarioDefParserRuleCall_5_1_0() { return cScenariosReferenceToScenarioDefParserRuleCall_5_1_0; }
+	}
+	public class ScenarioDefElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.ScenarioDef");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cScenarioKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cLongNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLongNameLongNameParserRuleCall_2_0 = (RuleCall)cLongNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cPreKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cPreconditionsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cPreconditionsConditionParserRuleCall_4_1_0 = (RuleCall)cPreconditionsAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cPostKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cPostconditionsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cPostconditionsConditionParserRuleCall_5_1_0 = (RuleCall)cPostconditionsAssignment_5_1.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cInitializeKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cInitializationsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cInitializationsInitializationParserRuleCall_6_1_0 = (RuleCall)cInitializationsAssignment_6_1.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cStartKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cStartPointAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cStartPointQualifiedReferenceToStartPointParserRuleCall_7_1_0 = (RuleCall)cStartPointAssignment_7_1.eContents().get(0);
+		private final Group cGroup_7_2 = (Group)cGroup_7.eContents().get(2);
+		private final Keyword cCommaKeyword_7_2_0 = (Keyword)cGroup_7_2.eContents().get(0);
+		private final Assignment cStartPointsAssignment_7_2_1 = (Assignment)cGroup_7_2.eContents().get(1);
+		private final RuleCall cStartPointsQualifiedReferenceToStartPointParserRuleCall_7_2_1_0 = (RuleCall)cStartPointsAssignment_7_2_1.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cEndKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cEndPointAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cEndPointQualifiedReferenceToEndPointParserRuleCall_8_1_0 = (RuleCall)cEndPointAssignment_8_1.eContents().get(0);
+		private final Group cGroup_8_2 = (Group)cGroup_8.eContents().get(2);
+		private final Keyword cCommaKeyword_8_2_0 = (Keyword)cGroup_8_2.eContents().get(0);
+		private final Assignment cEndPointsAssignment_8_2_1 = (Assignment)cGroup_8_2.eContents().get(1);
+		private final RuleCall cEndPointsQualifiedReferenceToEndPointParserRuleCall_8_2_1_0 = (RuleCall)cEndPointsAssignment_8_2_1.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cIncludesKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cIncludedScenarioAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cIncludedScenarioReferenceToScenarioDefParserRuleCall_9_1_0 = (RuleCall)cIncludedScenarioAssignment_9_1.eContents().get(0);
+		private final Group cGroup_9_2 = (Group)cGroup_9.eContents().get(2);
+		private final Keyword cCommaKeyword_9_2_0 = (Keyword)cGroup_9_2.eContents().get(0);
+		private final Assignment cIncludedScenariosAssignment_9_2_1 = (Assignment)cGroup_9_2.eContents().get(1);
+		private final RuleCall cIncludedScenariosReferenceToScenarioDefParserRuleCall_9_2_1_0 = (RuleCall)cIncludedScenariosAssignment_9_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		
+		//ScenarioDef:
+		//	'scenario' name=QualifiedName longName=LongName '{' ('pre' preconditions+=Condition)* ('post'
+		//	postconditions+=Condition)* ('initialize' initializations+=Initialization)* ('start'
+		//	startPoint=QualifiedReferenceToStartPoint (',' startPoints+=QualifiedReferenceToStartPoint)*)? ('end'
+		//	endPoint=QualifiedReferenceToEndPoint (',' endPoints+=QualifiedReferenceToEndPoint)*)? ('includes'
+		//	includedScenario=ReferenceToScenarioDef (',' includedScenarios+=ReferenceToScenarioDef)*)? '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'scenario' name=QualifiedName longName=LongName '{' ('pre' preconditions+=Condition)* ('post'
+		//postconditions+=Condition)* ('initialize' initializations+=Initialization)* ('start'
+		//startPoint=QualifiedReferenceToStartPoint (',' startPoints+=QualifiedReferenceToStartPoint)*)? ('end'
+		//endPoint=QualifiedReferenceToEndPoint (',' endPoints+=QualifiedReferenceToEndPoint)*)? ('includes'
+		//includedScenario=ReferenceToScenarioDef (',' includedScenarios+=ReferenceToScenarioDef)*)? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'scenario'
+		public Keyword getScenarioKeyword_0() { return cScenarioKeyword_0; }
+		
+		//name=QualifiedName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+		
+		//longName=LongName
+		public Assignment getLongNameAssignment_2() { return cLongNameAssignment_2; }
+		
+		//LongName
+		public RuleCall getLongNameLongNameParserRuleCall_2_0() { return cLongNameLongNameParserRuleCall_2_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//('pre' preconditions+=Condition)*
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'pre'
+		public Keyword getPreKeyword_4_0() { return cPreKeyword_4_0; }
+		
+		//preconditions+=Condition
+		public Assignment getPreconditionsAssignment_4_1() { return cPreconditionsAssignment_4_1; }
+		
+		//Condition
+		public RuleCall getPreconditionsConditionParserRuleCall_4_1_0() { return cPreconditionsConditionParserRuleCall_4_1_0; }
+		
+		//('post' postconditions+=Condition)*
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'post'
+		public Keyword getPostKeyword_5_0() { return cPostKeyword_5_0; }
+		
+		//postconditions+=Condition
+		public Assignment getPostconditionsAssignment_5_1() { return cPostconditionsAssignment_5_1; }
+		
+		//Condition
+		public RuleCall getPostconditionsConditionParserRuleCall_5_1_0() { return cPostconditionsConditionParserRuleCall_5_1_0; }
+		
+		//('initialize' initializations+=Initialization)*
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'initialize'
+		public Keyword getInitializeKeyword_6_0() { return cInitializeKeyword_6_0; }
+		
+		//initializations+=Initialization
+		public Assignment getInitializationsAssignment_6_1() { return cInitializationsAssignment_6_1; }
+		
+		//Initialization
+		public RuleCall getInitializationsInitializationParserRuleCall_6_1_0() { return cInitializationsInitializationParserRuleCall_6_1_0; }
+		
+		//('start' startPoint=QualifiedReferenceToStartPoint (',' startPoints+=QualifiedReferenceToStartPoint)*)?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'start'
+		public Keyword getStartKeyword_7_0() { return cStartKeyword_7_0; }
+		
+		//startPoint=QualifiedReferenceToStartPoint
+		public Assignment getStartPointAssignment_7_1() { return cStartPointAssignment_7_1; }
+		
+		//QualifiedReferenceToStartPoint
+		public RuleCall getStartPointQualifiedReferenceToStartPointParserRuleCall_7_1_0() { return cStartPointQualifiedReferenceToStartPointParserRuleCall_7_1_0; }
+		
+		//(',' startPoints+=QualifiedReferenceToStartPoint)*
+		public Group getGroup_7_2() { return cGroup_7_2; }
+		
+		//','
+		public Keyword getCommaKeyword_7_2_0() { return cCommaKeyword_7_2_0; }
+		
+		//startPoints+=QualifiedReferenceToStartPoint
+		public Assignment getStartPointsAssignment_7_2_1() { return cStartPointsAssignment_7_2_1; }
+		
+		//QualifiedReferenceToStartPoint
+		public RuleCall getStartPointsQualifiedReferenceToStartPointParserRuleCall_7_2_1_0() { return cStartPointsQualifiedReferenceToStartPointParserRuleCall_7_2_1_0; }
+		
+		//('end' endPoint=QualifiedReferenceToEndPoint (',' endPoints+=QualifiedReferenceToEndPoint)*)?
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'end'
+		public Keyword getEndKeyword_8_0() { return cEndKeyword_8_0; }
+		
+		//endPoint=QualifiedReferenceToEndPoint
+		public Assignment getEndPointAssignment_8_1() { return cEndPointAssignment_8_1; }
+		
+		//QualifiedReferenceToEndPoint
+		public RuleCall getEndPointQualifiedReferenceToEndPointParserRuleCall_8_1_0() { return cEndPointQualifiedReferenceToEndPointParserRuleCall_8_1_0; }
+		
+		//(',' endPoints+=QualifiedReferenceToEndPoint)*
+		public Group getGroup_8_2() { return cGroup_8_2; }
+		
+		//','
+		public Keyword getCommaKeyword_8_2_0() { return cCommaKeyword_8_2_0; }
+		
+		//endPoints+=QualifiedReferenceToEndPoint
+		public Assignment getEndPointsAssignment_8_2_1() { return cEndPointsAssignment_8_2_1; }
+		
+		//QualifiedReferenceToEndPoint
+		public RuleCall getEndPointsQualifiedReferenceToEndPointParserRuleCall_8_2_1_0() { return cEndPointsQualifiedReferenceToEndPointParserRuleCall_8_2_1_0; }
+		
+		//('includes' includedScenario=ReferenceToScenarioDef (',' includedScenarios+=ReferenceToScenarioDef)*)?
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//'includes'
+		public Keyword getIncludesKeyword_9_0() { return cIncludesKeyword_9_0; }
+		
+		//includedScenario=ReferenceToScenarioDef
+		public Assignment getIncludedScenarioAssignment_9_1() { return cIncludedScenarioAssignment_9_1; }
+		
+		//ReferenceToScenarioDef
+		public RuleCall getIncludedScenarioReferenceToScenarioDefParserRuleCall_9_1_0() { return cIncludedScenarioReferenceToScenarioDefParserRuleCall_9_1_0; }
+		
+		//(',' includedScenarios+=ReferenceToScenarioDef)*
+		public Group getGroup_9_2() { return cGroup_9_2; }
+		
+		//','
+		public Keyword getCommaKeyword_9_2_0() { return cCommaKeyword_9_2_0; }
+		
+		//includedScenarios+=ReferenceToScenarioDef
+		public Assignment getIncludedScenariosAssignment_9_2_1() { return cIncludedScenariosAssignment_9_2_1; }
+		
+		//ReferenceToScenarioDef
+		public RuleCall getIncludedScenariosReferenceToScenarioDefParserRuleCall_9_2_1_0() { return cIncludedScenariosReferenceToScenarioDefParserRuleCall_9_2_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+	}
+	public class InitializationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.Initialization");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cVariableAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cVariableReferenceToVariableParserRuleCall_0_0_0 = (RuleCall)cVariableAssignment_0_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cValueAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cValueExpressionParserRuleCall_0_2_0 = (RuleCall)cValueAssignment_0_2.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cVariableAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cVariableReferenceToEnumVariableParserRuleCall_1_0_0 = (RuleCall)cVariableAssignment_1_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cValueAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cValueEnumLiteralParserRuleCall_1_2_0 = (RuleCall)cValueAssignment_1_2.eContents().get(0);
+		
+		//Initialization:
+		//	variable=ReferenceToVariable '=' value=Expression | variable=ReferenceToEnumVariable '=' value=EnumLiteral;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//variable=ReferenceToVariable '=' value=Expression | variable=ReferenceToEnumVariable '=' value=EnumLiteral
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//variable=ReferenceToVariable '=' value=Expression
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//variable=ReferenceToVariable
+		public Assignment getVariableAssignment_0_0() { return cVariableAssignment_0_0; }
+		
+		//ReferenceToVariable
+		public RuleCall getVariableReferenceToVariableParserRuleCall_0_0_0() { return cVariableReferenceToVariableParserRuleCall_0_0_0; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_0_1() { return cEqualsSignKeyword_0_1; }
+		
+		//value=Expression
+		public Assignment getValueAssignment_0_2() { return cValueAssignment_0_2; }
+		
+		//Expression
+		public RuleCall getValueExpressionParserRuleCall_0_2_0() { return cValueExpressionParserRuleCall_0_2_0; }
+		
+		//variable=ReferenceToEnumVariable '=' value=EnumLiteral
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//variable=ReferenceToEnumVariable
+		public Assignment getVariableAssignment_1_0() { return cVariableAssignment_1_0; }
+		
+		//ReferenceToEnumVariable
+		public RuleCall getVariableReferenceToEnumVariableParserRuleCall_1_0_0() { return cVariableReferenceToEnumVariableParserRuleCall_1_0_0; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_1_1() { return cEqualsSignKeyword_1_1; }
+		
+		//value=EnumLiteral
+		public Assignment getValueAssignment_1_2() { return cValueAssignment_1_2; }
+		
+		//EnumLiteral
+		public RuleCall getValueEnumLiteralParserRuleCall_1_2_0() { return cValueEnumLiteralParserRuleCall_1_2_0; }
+	}
+	public class VariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.Variable");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cBoolKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cIntKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Assignment cEnumerationTypeAssignment_0_2 = (Assignment)cAlternatives_0.eContents().get(2);
+		private final RuleCall cEnumerationTypeReferenceToEnumerationTypeParserRuleCall_0_2_0 = (RuleCall)cEnumerationTypeAssignment_0_2.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//Variable:
+		//	('bool' | 'int' | enumerationType=ReferenceToEnumerationType) name=QualifiedName;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//('bool' | 'int' | enumerationType=ReferenceToEnumerationType) name=QualifiedName
+		public Group getGroup() { return cGroup; }
+		
+		//'bool' | 'int' | enumerationType=ReferenceToEnumerationType
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//'bool'
+		public Keyword getBoolKeyword_0_0() { return cBoolKeyword_0_0; }
+		
+		//'int'
+		public Keyword getIntKeyword_0_1() { return cIntKeyword_0_1; }
+		
+		//enumerationType=ReferenceToEnumerationType
+		public Assignment getEnumerationTypeAssignment_0_2() { return cEnumerationTypeAssignment_0_2; }
+		
+		//ReferenceToEnumerationType
+		public RuleCall getEnumerationTypeReferenceToEnumerationTypeParserRuleCall_0_2_0() { return cEnumerationTypeReferenceToEnumerationTypeParserRuleCall_0_2_0; }
+		
+		//name=QualifiedName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+	}
+	public class EnumerationTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.EnumerationType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEnumKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValueEnumLiteralParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cValuesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cValuesEnumLiteralParserRuleCall_4_1_0 = (RuleCall)cValuesAssignment_4_1.eContents().get(0);
+		
+		//EnumerationType:
+		//	'enum' name=ID ':' value=EnumLiteral (',' values+=EnumLiteral)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'enum' name=ID ':' value=EnumLiteral (',' values+=EnumLiteral)*
+		public Group getGroup() { return cGroup; }
+		
+		//'enum'
+		public Keyword getEnumKeyword_0() { return cEnumKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//value=EnumLiteral
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
+		
+		//EnumLiteral
+		public RuleCall getValueEnumLiteralParserRuleCall_3_0() { return cValueEnumLiteralParserRuleCall_3_0; }
+		
+		//(',' values+=EnumLiteral)*
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//','
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
+		
+		//values+=EnumLiteral
+		public Assignment getValuesAssignment_4_1() { return cValuesAssignment_4_1; }
+		
+		//EnumLiteral
+		public RuleCall getValuesEnumLiteralParserRuleCall_4_1_0() { return cValuesEnumLiteralParserRuleCall_4_1_0; }
+	}
+	public class ReferenceToScenarioDefElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.ReferenceToScenarioDef");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameQualifiedNameParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cLongNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLongNameLongNameParserRuleCall_1_0 = (RuleCall)cLongNameAssignment_1.eContents().get(0);
+		
+		//ReferenceToScenarioDef:
+		//	name=QualifiedName longName=LongName;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=QualifiedName longName=LongName
+		public Group getGroup() { return cGroup; }
+		
+		//name=QualifiedName
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_0_0() { return cNameQualifiedNameParserRuleCall_0_0; }
+		
+		//longName=LongName
+		public Assignment getLongNameAssignment_1() { return cLongNameAssignment_1; }
+		
+		//LongName
+		public RuleCall getLongNameLongNameParserRuleCall_1_0() { return cLongNameLongNameParserRuleCall_1_0; }
+	}
+	public class ReferenceToVariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.ReferenceToVariable");
+		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//ReferenceToVariable:
+		//	ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
+	}
+	public class ReferenceToEnumVariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.ReferenceToEnumVariable");
+		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//ReferenceToEnumVariable:
+		//	ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
+	}
+	public class ReferenceToEnumerationTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.ReferenceToEnumerationType");
+		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//ReferenceToEnumerationType:
+		//	ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
+	}
+	public class QualifiedReferenceToStartPointElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.QualifiedReferenceToStartPoint");
+		private final RuleCall cQualifiedNameParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//QualifiedReferenceToStartPoint:
+		//	QualifiedName;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall() { return cQualifiedNameParserRuleCall; }
+	}
+	public class QualifiedReferenceToEndPointElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.QualifiedReferenceToEndPoint");
+		private final RuleCall cQualifiedNameParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//QualifiedReferenceToEndPoint:
+		//	QualifiedName;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall() { return cQualifiedNameParserRuleCall; }
+	}
+	public class ExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.Expression");
+		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//Expression:
+		//	STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
+	}
+	public class EnumLiteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.EnumLiteral");
+		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//EnumLiteral:
+		//	ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
+	}
 	public class PositiveIntegerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.project.turn.Turn.PositiveInteger");
 		private final RuleCall cINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
@@ -4278,6 +4817,19 @@ public class TurnGrammarAccess extends AbstractGrammarElementFinder {
 	private final FailureLabelElements pFailureLabel;
 	private final WAITKINDElements eWAITKIND;
 	private final COMPONENTKINDElements eCOMPONENTKIND;
+	private final ScenarioGroupElements pScenarioGroup;
+	private final ScenarioDefElements pScenarioDef;
+	private final InitializationElements pInitialization;
+	private final VariableElements pVariable;
+	private final EnumerationTypeElements pEnumerationType;
+	private final ReferenceToScenarioDefElements pReferenceToScenarioDef;
+	private final ReferenceToVariableElements pReferenceToVariable;
+	private final ReferenceToEnumVariableElements pReferenceToEnumVariable;
+	private final ReferenceToEnumerationTypeElements pReferenceToEnumerationType;
+	private final QualifiedReferenceToStartPointElements pQualifiedReferenceToStartPoint;
+	private final QualifiedReferenceToEndPointElements pQualifiedReferenceToEndPoint;
+	private final ExpressionElements pExpression;
+	private final EnumLiteralElements pEnumLiteral;
 	private final PositiveIntegerElements pPositiveInteger;
 	private final TextElements pText;
 	private final TextContentElements pTextContent;
@@ -4373,6 +4925,19 @@ public class TurnGrammarAccess extends AbstractGrammarElementFinder {
 		this.pFailureLabel = new FailureLabelElements();
 		this.eWAITKIND = new WAITKINDElements();
 		this.eCOMPONENTKIND = new COMPONENTKINDElements();
+		this.pScenarioGroup = new ScenarioGroupElements();
+		this.pScenarioDef = new ScenarioDefElements();
+		this.pInitialization = new InitializationElements();
+		this.pVariable = new VariableElements();
+		this.pEnumerationType = new EnumerationTypeElements();
+		this.pReferenceToScenarioDef = new ReferenceToScenarioDefElements();
+		this.pReferenceToVariable = new ReferenceToVariableElements();
+		this.pReferenceToEnumVariable = new ReferenceToEnumVariableElements();
+		this.pReferenceToEnumerationType = new ReferenceToEnumerationTypeElements();
+		this.pQualifiedReferenceToStartPoint = new QualifiedReferenceToStartPointElements();
+		this.pQualifiedReferenceToEndPoint = new QualifiedReferenceToEndPointElements();
+		this.pExpression = new ExpressionElements();
+		this.pEnumLiteral = new EnumLiteralElements();
 		this.pPositiveInteger = new PositiveIntegerElements();
 		this.pText = new TextElements();
 		this.pTextContent = new TextContentElements();
@@ -4410,6 +4975,7 @@ public class TurnGrammarAccess extends AbstractGrammarElementFinder {
 	//	'urnModel' name=QualifiedName info=ConcreteURNspec? & actors+=Actor* & showAsMeansEnd?='showAsMeansEnd'? &
 	//	stratGroups+=StrategiesGroup* & strategies+=EvaluationStrategy* & indConversions+=IndicatorConversion* &
 	//	contribContextGroups+=ContributionContextGroup* & contribContexts+=ContributionContext* & ucmMaps+=UCMmap* &
+	//	scenGroups+=ScenarioGroup* & scenDefs+=ScenarioDef* & variables+=Variable* & enumTypes+=EnumerationType* &
 	//	concerns+=Concern* & urnlinks+=URNlink* & metadata+=Metadata*;
 	public URNspecElements getURNspecAccess() {
 		return pURNspec;
@@ -5244,6 +5810,141 @@ public class TurnGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public EnumRule getCOMPONENTKINDRule() {
 		return getCOMPONENTKINDAccess().getRule();
+	}
+	
+	//ScenarioGroup:
+	//	'scenarioGroup' name=QualifiedName longName=LongName ':' scenario=ReferenceToScenarioDef (','
+	//	scenarios+=ReferenceToScenarioDef)*;
+	public ScenarioGroupElements getScenarioGroupAccess() {
+		return pScenarioGroup;
+	}
+	
+	public ParserRule getScenarioGroupRule() {
+		return getScenarioGroupAccess().getRule();
+	}
+	
+	//ScenarioDef:
+	//	'scenario' name=QualifiedName longName=LongName '{' ('pre' preconditions+=Condition)* ('post'
+	//	postconditions+=Condition)* ('initialize' initializations+=Initialization)* ('start'
+	//	startPoint=QualifiedReferenceToStartPoint (',' startPoints+=QualifiedReferenceToStartPoint)*)? ('end'
+	//	endPoint=QualifiedReferenceToEndPoint (',' endPoints+=QualifiedReferenceToEndPoint)*)? ('includes'
+	//	includedScenario=ReferenceToScenarioDef (',' includedScenarios+=ReferenceToScenarioDef)*)? '}';
+	public ScenarioDefElements getScenarioDefAccess() {
+		return pScenarioDef;
+	}
+	
+	public ParserRule getScenarioDefRule() {
+		return getScenarioDefAccess().getRule();
+	}
+	
+	//Initialization:
+	//	variable=ReferenceToVariable '=' value=Expression | variable=ReferenceToEnumVariable '=' value=EnumLiteral;
+	public InitializationElements getInitializationAccess() {
+		return pInitialization;
+	}
+	
+	public ParserRule getInitializationRule() {
+		return getInitializationAccess().getRule();
+	}
+	
+	//Variable:
+	//	('bool' | 'int' | enumerationType=ReferenceToEnumerationType) name=QualifiedName;
+	public VariableElements getVariableAccess() {
+		return pVariable;
+	}
+	
+	public ParserRule getVariableRule() {
+		return getVariableAccess().getRule();
+	}
+	
+	//EnumerationType:
+	//	'enum' name=ID ':' value=EnumLiteral (',' values+=EnumLiteral)*;
+	public EnumerationTypeElements getEnumerationTypeAccess() {
+		return pEnumerationType;
+	}
+	
+	public ParserRule getEnumerationTypeRule() {
+		return getEnumerationTypeAccess().getRule();
+	}
+	
+	//ReferenceToScenarioDef:
+	//	name=QualifiedName longName=LongName;
+	public ReferenceToScenarioDefElements getReferenceToScenarioDefAccess() {
+		return pReferenceToScenarioDef;
+	}
+	
+	public ParserRule getReferenceToScenarioDefRule() {
+		return getReferenceToScenarioDefAccess().getRule();
+	}
+	
+	//ReferenceToVariable:
+	//	ID;
+	public ReferenceToVariableElements getReferenceToVariableAccess() {
+		return pReferenceToVariable;
+	}
+	
+	public ParserRule getReferenceToVariableRule() {
+		return getReferenceToVariableAccess().getRule();
+	}
+	
+	//ReferenceToEnumVariable:
+	//	ID;
+	public ReferenceToEnumVariableElements getReferenceToEnumVariableAccess() {
+		return pReferenceToEnumVariable;
+	}
+	
+	public ParserRule getReferenceToEnumVariableRule() {
+		return getReferenceToEnumVariableAccess().getRule();
+	}
+	
+	//ReferenceToEnumerationType:
+	//	ID;
+	public ReferenceToEnumerationTypeElements getReferenceToEnumerationTypeAccess() {
+		return pReferenceToEnumerationType;
+	}
+	
+	public ParserRule getReferenceToEnumerationTypeRule() {
+		return getReferenceToEnumerationTypeAccess().getRule();
+	}
+	
+	//QualifiedReferenceToStartPoint:
+	//	QualifiedName;
+	public QualifiedReferenceToStartPointElements getQualifiedReferenceToStartPointAccess() {
+		return pQualifiedReferenceToStartPoint;
+	}
+	
+	public ParserRule getQualifiedReferenceToStartPointRule() {
+		return getQualifiedReferenceToStartPointAccess().getRule();
+	}
+	
+	//QualifiedReferenceToEndPoint:
+	//	QualifiedName;
+	public QualifiedReferenceToEndPointElements getQualifiedReferenceToEndPointAccess() {
+		return pQualifiedReferenceToEndPoint;
+	}
+	
+	public ParserRule getQualifiedReferenceToEndPointRule() {
+		return getQualifiedReferenceToEndPointAccess().getRule();
+	}
+	
+	//Expression:
+	//	STRING;
+	public ExpressionElements getExpressionAccess() {
+		return pExpression;
+	}
+	
+	public ParserRule getExpressionRule() {
+		return getExpressionAccess().getRule();
+	}
+	
+	//EnumLiteral:
+	//	ID;
+	public EnumLiteralElements getEnumLiteralAccess() {
+		return pEnumLiteral;
+	}
+	
+	public ParserRule getEnumLiteralRule() {
+		return getEnumLiteralAccess().getRule();
 	}
 	
 	//PositiveInteger ecore::EInt:

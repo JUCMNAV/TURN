@@ -38,6 +38,7 @@ import org.xtext.project.turn.turn.Dependency;
 import org.xtext.project.turn.turn.ElementLink;
 import org.xtext.project.turn.turn.EndPoint;
 import org.xtext.project.turn.turn.EndpointWithConnect;
+import org.xtext.project.turn.turn.EnumerationType;
 import org.xtext.project.turn.turn.Evaluation;
 import org.xtext.project.turn.turn.EvaluationStrategy;
 import org.xtext.project.turn.turn.FailureLabel;
@@ -46,6 +47,7 @@ import org.xtext.project.turn.turn.ImportanceType;
 import org.xtext.project.turn.turn.InBinding;
 import org.xtext.project.turn.turn.IndicatorConversion;
 import org.xtext.project.turn.turn.IndicatorEvaluation;
+import org.xtext.project.turn.turn.Initialization;
 import org.xtext.project.turn.turn.IntentionalElement;
 import org.xtext.project.turn.turn.IntentionalElementType;
 import org.xtext.project.turn.turn.LinearConversion;
@@ -64,11 +66,14 @@ import org.xtext.project.turn.turn.PluginBinding;
 import org.xtext.project.turn.turn.QualToQMapping;
 import org.xtext.project.turn.turn.QualToQMappings;
 import org.xtext.project.turn.turn.QualitativeLabel;
+import org.xtext.project.turn.turn.ReferenceToScenarioDef;
 import org.xtext.project.turn.turn.ReferencedBoundElement;
 import org.xtext.project.turn.turn.ReferencedEnd;
 import org.xtext.project.turn.turn.RegularEnd;
 import org.xtext.project.turn.turn.RegularOrFork;
 import org.xtext.project.turn.turn.RespRef;
+import org.xtext.project.turn.turn.ScenarioDef;
+import org.xtext.project.turn.turn.ScenarioGroup;
 import org.xtext.project.turn.turn.StartPoint;
 import org.xtext.project.turn.turn.StrategiesGroup;
 import org.xtext.project.turn.turn.Stub;
@@ -83,6 +88,7 @@ import org.xtext.project.turn.turn.UCMmap;
 import org.xtext.project.turn.turn.URNlink;
 import org.xtext.project.turn.turn.URNmodelElement;
 import org.xtext.project.turn.turn.URNspec;
+import org.xtext.project.turn.turn.Variable;
 import org.xtext.project.turn.turn.WaitingPlace;
 
 /**
@@ -546,6 +552,48 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass scenarioGroupEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass scenarioDefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass initializationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enumerationTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass referenceToScenarioDefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass textEClass = null;
 
   /**
@@ -782,7 +830,7 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getURNspec_Concerns()
+  public EReference getURNspec_ScenGroups()
   {
     return (EReference)urNspecEClass.getEStructuralFeatures().get(10);
   }
@@ -792,7 +840,7 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getURNspec_Urnlinks()
+  public EReference getURNspec_ScenDefs()
   {
     return (EReference)urNspecEClass.getEStructuralFeatures().get(11);
   }
@@ -802,9 +850,49 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getURNspec_Metadata()
+  public EReference getURNspec_Variables()
   {
     return (EReference)urNspecEClass.getEStructuralFeatures().get(12);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getURNspec_EnumTypes()
+  {
+    return (EReference)urNspecEClass.getEStructuralFeatures().get(13);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getURNspec_Concerns()
+  {
+    return (EReference)urNspecEClass.getEStructuralFeatures().get(14);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getURNspec_Urnlinks()
+  {
+    return (EReference)urNspecEClass.getEStructuralFeatures().get(15);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getURNspec_Metadata()
+  {
+    return (EReference)urNspecEClass.getEStructuralFeatures().get(16);
   }
 
   /**
@@ -3302,6 +3390,306 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getScenarioGroup()
+  {
+    return scenarioGroupEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getScenarioGroup_Name()
+  {
+    return (EAttribute)scenarioGroupEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getScenarioGroup_LongName()
+  {
+    return (EReference)scenarioGroupEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getScenarioGroup_Scenario()
+  {
+    return (EReference)scenarioGroupEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getScenarioGroup_Scenarios()
+  {
+    return (EReference)scenarioGroupEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getScenarioDef()
+  {
+    return scenarioDefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getScenarioDef_Name()
+  {
+    return (EAttribute)scenarioDefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getScenarioDef_LongName()
+  {
+    return (EReference)scenarioDefEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getScenarioDef_Preconditions()
+  {
+    return (EReference)scenarioDefEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getScenarioDef_Postconditions()
+  {
+    return (EReference)scenarioDefEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getScenarioDef_Initializations()
+  {
+    return (EReference)scenarioDefEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getScenarioDef_StartPoint()
+  {
+    return (EAttribute)scenarioDefEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getScenarioDef_StartPoints()
+  {
+    return (EAttribute)scenarioDefEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getScenarioDef_EndPoint()
+  {
+    return (EAttribute)scenarioDefEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getScenarioDef_EndPoints()
+  {
+    return (EAttribute)scenarioDefEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getScenarioDef_IncludedScenario()
+  {
+    return (EReference)scenarioDefEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getScenarioDef_IncludedScenarios()
+  {
+    return (EReference)scenarioDefEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInitialization()
+  {
+    return initializationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInitialization_Variable()
+  {
+    return (EAttribute)initializationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInitialization_Value()
+  {
+    return (EAttribute)initializationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVariable()
+  {
+    return variableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVariable_EnumerationType()
+  {
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVariable_Name()
+  {
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEnumerationType()
+  {
+    return enumerationTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEnumerationType_Name()
+  {
+    return (EAttribute)enumerationTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEnumerationType_Value()
+  {
+    return (EAttribute)enumerationTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEnumerationType_Values()
+  {
+    return (EAttribute)enumerationTypeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getReferenceToScenarioDef()
+  {
+    return referenceToScenarioDefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getReferenceToScenarioDef_Name()
+  {
+    return (EAttribute)referenceToScenarioDefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReferenceToScenarioDef_LongName()
+  {
+    return (EReference)referenceToScenarioDefEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getText()
   {
     return textEClass;
@@ -3448,6 +3836,10 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     createEReference(urNspecEClass, UR_NSPEC__CONTRIB_CONTEXT_GROUPS);
     createEReference(urNspecEClass, UR_NSPEC__CONTRIB_CONTEXTS);
     createEReference(urNspecEClass, UR_NSPEC__UCM_MAPS);
+    createEReference(urNspecEClass, UR_NSPEC__SCEN_GROUPS);
+    createEReference(urNspecEClass, UR_NSPEC__SCEN_DEFS);
+    createEReference(urNspecEClass, UR_NSPEC__VARIABLES);
+    createEReference(urNspecEClass, UR_NSPEC__ENUM_TYPES);
     createEReference(urNspecEClass, UR_NSPEC__CONCERNS);
     createEReference(urNspecEClass, UR_NSPEC__URNLINKS);
     createEReference(urNspecEClass, UR_NSPEC__METADATA);
@@ -3764,6 +4156,42 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     failureLabelEClass = createEClass(FAILURE_LABEL);
     createEAttribute(failureLabelEClass, FAILURE_LABEL__FAILURE);
 
+    scenarioGroupEClass = createEClass(SCENARIO_GROUP);
+    createEAttribute(scenarioGroupEClass, SCENARIO_GROUP__NAME);
+    createEReference(scenarioGroupEClass, SCENARIO_GROUP__LONG_NAME);
+    createEReference(scenarioGroupEClass, SCENARIO_GROUP__SCENARIO);
+    createEReference(scenarioGroupEClass, SCENARIO_GROUP__SCENARIOS);
+
+    scenarioDefEClass = createEClass(SCENARIO_DEF);
+    createEAttribute(scenarioDefEClass, SCENARIO_DEF__NAME);
+    createEReference(scenarioDefEClass, SCENARIO_DEF__LONG_NAME);
+    createEReference(scenarioDefEClass, SCENARIO_DEF__PRECONDITIONS);
+    createEReference(scenarioDefEClass, SCENARIO_DEF__POSTCONDITIONS);
+    createEReference(scenarioDefEClass, SCENARIO_DEF__INITIALIZATIONS);
+    createEAttribute(scenarioDefEClass, SCENARIO_DEF__START_POINT);
+    createEAttribute(scenarioDefEClass, SCENARIO_DEF__START_POINTS);
+    createEAttribute(scenarioDefEClass, SCENARIO_DEF__END_POINT);
+    createEAttribute(scenarioDefEClass, SCENARIO_DEF__END_POINTS);
+    createEReference(scenarioDefEClass, SCENARIO_DEF__INCLUDED_SCENARIO);
+    createEReference(scenarioDefEClass, SCENARIO_DEF__INCLUDED_SCENARIOS);
+
+    initializationEClass = createEClass(INITIALIZATION);
+    createEAttribute(initializationEClass, INITIALIZATION__VARIABLE);
+    createEAttribute(initializationEClass, INITIALIZATION__VALUE);
+
+    variableEClass = createEClass(VARIABLE);
+    createEAttribute(variableEClass, VARIABLE__ENUMERATION_TYPE);
+    createEAttribute(variableEClass, VARIABLE__NAME);
+
+    enumerationTypeEClass = createEClass(ENUMERATION_TYPE);
+    createEAttribute(enumerationTypeEClass, ENUMERATION_TYPE__NAME);
+    createEAttribute(enumerationTypeEClass, ENUMERATION_TYPE__VALUE);
+    createEAttribute(enumerationTypeEClass, ENUMERATION_TYPE__VALUES);
+
+    referenceToScenarioDefEClass = createEClass(REFERENCE_TO_SCENARIO_DEF);
+    createEAttribute(referenceToScenarioDefEClass, REFERENCE_TO_SCENARIO_DEF__NAME);
+    createEReference(referenceToScenarioDefEClass, REFERENCE_TO_SCENARIO_DEF__LONG_NAME);
+
     textEClass = createEClass(TEXT);
     createEAttribute(textEClass, TEXT__CONTENT);
 
@@ -3883,6 +4311,10 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     initEReference(getURNspec_ContribContextGroups(), this.getContributionContextGroup(), null, "contribContextGroups", null, 0, -1, URNspec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getURNspec_ContribContexts(), this.getContributionContext(), null, "contribContexts", null, 0, -1, URNspec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getURNspec_UcmMaps(), this.getUCMmap(), null, "ucmMaps", null, 0, -1, URNspec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getURNspec_ScenGroups(), this.getScenarioGroup(), null, "scenGroups", null, 0, -1, URNspec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getURNspec_ScenDefs(), this.getScenarioDef(), null, "scenDefs", null, 0, -1, URNspec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getURNspec_Variables(), this.getVariable(), null, "variables", null, 0, -1, URNspec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getURNspec_EnumTypes(), this.getEnumerationType(), null, "enumTypes", null, 0, -1, URNspec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getURNspec_Concerns(), this.getConcern(), null, "concerns", null, 0, -1, URNspec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getURNspec_Urnlinks(), this.getURNlink(), null, "urnlinks", null, 0, -1, URNspec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getURNspec_Metadata(), this.getMetadata(), null, "metadata", null, 0, -1, URNspec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4198,6 +4630,42 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
 
     initEClass(failureLabelEClass, FailureLabel.class, "FailureLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFailureLabel_Failure(), ecorePackage.getEString(), "failure", null, 0, 1, FailureLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(scenarioGroupEClass, ScenarioGroup.class, "ScenarioGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getScenarioGroup_Name(), ecorePackage.getEString(), "name", null, 0, 1, ScenarioGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScenarioGroup_LongName(), this.getLongName(), null, "longName", null, 0, 1, ScenarioGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScenarioGroup_Scenario(), this.getReferenceToScenarioDef(), null, "scenario", null, 0, 1, ScenarioGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScenarioGroup_Scenarios(), this.getReferenceToScenarioDef(), null, "scenarios", null, 0, -1, ScenarioGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(scenarioDefEClass, ScenarioDef.class, "ScenarioDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getScenarioDef_Name(), ecorePackage.getEString(), "name", null, 0, 1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScenarioDef_LongName(), this.getLongName(), null, "longName", null, 0, 1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScenarioDef_Preconditions(), this.getCondition(), null, "preconditions", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScenarioDef_Postconditions(), this.getCondition(), null, "postconditions", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScenarioDef_Initializations(), this.getInitialization(), null, "initializations", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getScenarioDef_StartPoint(), ecorePackage.getEString(), "startPoint", null, 0, 1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getScenarioDef_StartPoints(), ecorePackage.getEString(), "startPoints", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getScenarioDef_EndPoint(), ecorePackage.getEString(), "endPoint", null, 0, 1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getScenarioDef_EndPoints(), ecorePackage.getEString(), "endPoints", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScenarioDef_IncludedScenario(), this.getReferenceToScenarioDef(), null, "includedScenario", null, 0, 1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScenarioDef_IncludedScenarios(), this.getReferenceToScenarioDef(), null, "includedScenarios", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(initializationEClass, Initialization.class, "Initialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInitialization_Variable(), ecorePackage.getEString(), "variable", null, 0, 1, Initialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInitialization_Value(), ecorePackage.getEString(), "value", null, 0, 1, Initialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariable_EnumerationType(), ecorePackage.getEString(), "enumerationType", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(enumerationTypeEClass, EnumerationType.class, "EnumerationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEnumerationType_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEnumerationType_Value(), ecorePackage.getEString(), "value", null, 0, 1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEnumerationType_Values(), ecorePackage.getEString(), "values", null, 0, -1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(referenceToScenarioDefEClass, ReferenceToScenarioDef.class, "ReferenceToScenarioDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getReferenceToScenarioDef_Name(), ecorePackage.getEString(), "name", null, 0, 1, ReferenceToScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReferenceToScenarioDef_LongName(), this.getLongName(), null, "longName", null, 0, 1, ReferenceToScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getText_Content(), ecorePackage.getEString(), "content", null, 0, -1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
