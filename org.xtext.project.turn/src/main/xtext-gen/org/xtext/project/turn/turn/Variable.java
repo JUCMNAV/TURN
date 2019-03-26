@@ -3,7 +3,6 @@
  */
 package org.xtext.project.turn.turn;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.project.turn.turn.Variable#getVariableType <em>Variable Type</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.Variable#getEnumerationType <em>Enumeration Type</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.Variable#getName <em>Name</em>}</li>
  * </ul>
@@ -22,33 +22,59 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Variable extends EObject
+public interface Variable extends URNmodelElement
 {
   /**
-   * Returns the value of the '<em><b>Enumeration Type</b></em>' attribute.
+   * Returns the value of the '<em><b>Variable Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Enumeration Type</em>' attribute isn't clear,
+   * If the meaning of the '<em>Variable Type</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Enumeration Type</em>' attribute.
-   * @see #setEnumerationType(String)
+   * @return the value of the '<em>Variable Type</em>' attribute.
+   * @see #setVariableType(String)
+   * @see org.xtext.project.turn.turn.TurnPackage#getVariable_VariableType()
+   * @model
+   * @generated
+   */
+  String getVariableType();
+
+  /**
+   * Sets the value of the '{@link org.xtext.project.turn.turn.Variable#getVariableType <em>Variable Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Variable Type</em>' attribute.
+   * @see #getVariableType()
+   * @generated
+   */
+  void setVariableType(String value);
+
+  /**
+   * Returns the value of the '<em><b>Enumeration Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Enumeration Type</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Enumeration Type</em>' reference.
+   * @see #setEnumerationType(EnumerationType)
    * @see org.xtext.project.turn.turn.TurnPackage#getVariable_EnumerationType()
    * @model
    * @generated
    */
-  String getEnumerationType();
+  EnumerationType getEnumerationType();
 
   /**
-   * Sets the value of the '{@link org.xtext.project.turn.turn.Variable#getEnumerationType <em>Enumeration Type</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.project.turn.turn.Variable#getEnumerationType <em>Enumeration Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Enumeration Type</em>' attribute.
+   * @param value the new value of the '<em>Enumeration Type</em>' reference.
    * @see #getEnumerationType()
    * @generated
    */
-  void setEnumerationType(String value);
+  void setEnumerationType(EnumerationType value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

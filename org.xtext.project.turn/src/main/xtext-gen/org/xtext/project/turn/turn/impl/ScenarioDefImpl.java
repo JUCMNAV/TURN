@@ -14,17 +14,17 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.project.turn.turn.Condition;
+import org.xtext.project.turn.turn.EndPoint;
 import org.xtext.project.turn.turn.Initialization;
 import org.xtext.project.turn.turn.LongName;
-import org.xtext.project.turn.turn.ReferenceToScenarioDef;
 import org.xtext.project.turn.turn.ScenarioDef;
+import org.xtext.project.turn.turn.StartPoint;
 import org.xtext.project.turn.turn.TurnPackage;
 
 /**
@@ -40,17 +40,14 @@ import org.xtext.project.turn.turn.TurnPackage;
  *   <li>{@link org.xtext.project.turn.turn.impl.ScenarioDefImpl#getPreconditions <em>Preconditions</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.ScenarioDefImpl#getPostconditions <em>Postconditions</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.ScenarioDefImpl#getInitializations <em>Initializations</em>}</li>
- *   <li>{@link org.xtext.project.turn.turn.impl.ScenarioDefImpl#getStartPoint <em>Start Point</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.ScenarioDefImpl#getStartPoints <em>Start Points</em>}</li>
- *   <li>{@link org.xtext.project.turn.turn.impl.ScenarioDefImpl#getEndPoint <em>End Point</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.ScenarioDefImpl#getEndPoints <em>End Points</em>}</li>
- *   <li>{@link org.xtext.project.turn.turn.impl.ScenarioDefImpl#getIncludedScenario <em>Included Scenario</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.ScenarioDefImpl#getIncludedScenarios <em>Included Scenarios</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ScenarioDefImpl extends MinimalEObjectImpl.Container implements ScenarioDef
+public class ScenarioDefImpl extends URNmodelElementImpl implements ScenarioDef
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -113,84 +110,34 @@ public class ScenarioDefImpl extends MinimalEObjectImpl.Container implements Sce
   protected EList<Initialization> initializations;
 
   /**
-   * The default value of the '{@link #getStartPoint() <em>Start Point</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStartPoint()
-   * @generated
-   * @ordered
-   */
-  protected static final String START_POINT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getStartPoint() <em>Start Point</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStartPoint()
-   * @generated
-   * @ordered
-   */
-  protected String startPoint = START_POINT_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getStartPoints() <em>Start Points</em>}' attribute list.
+   * The cached value of the '{@link #getStartPoints() <em>Start Points</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getStartPoints()
    * @generated
    * @ordered
    */
-  protected EList<String> startPoints;
+  protected EList<StartPoint> startPoints;
 
   /**
-   * The default value of the '{@link #getEndPoint() <em>End Point</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndPoint()
-   * @generated
-   * @ordered
-   */
-  protected static final String END_POINT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEndPoint() <em>End Point</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndPoint()
-   * @generated
-   * @ordered
-   */
-  protected String endPoint = END_POINT_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getEndPoints() <em>End Points</em>}' attribute list.
+   * The cached value of the '{@link #getEndPoints() <em>End Points</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getEndPoints()
    * @generated
    * @ordered
    */
-  protected EList<String> endPoints;
+  protected EList<EndPoint> endPoints;
 
   /**
-   * The cached value of the '{@link #getIncludedScenario() <em>Included Scenario</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIncludedScenario()
-   * @generated
-   * @ordered
-   */
-  protected ReferenceToScenarioDef includedScenario;
-
-  /**
-   * The cached value of the '{@link #getIncludedScenarios() <em>Included Scenarios</em>}' containment reference list.
+   * The cached value of the '{@link #getIncludedScenarios() <em>Included Scenarios</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getIncludedScenarios()
    * @generated
    * @ordered
    */
-  protected EList<ReferenceToScenarioDef> includedScenarios;
+  protected EList<ScenarioDef> includedScenarios;
 
   /**
    * <!-- begin-user-doc -->
@@ -331,34 +278,11 @@ public class ScenarioDefImpl extends MinimalEObjectImpl.Container implements Sce
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getStartPoint()
-  {
-    return startPoint;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStartPoint(String newStartPoint)
-  {
-    String oldStartPoint = startPoint;
-    startPoint = newStartPoint;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TurnPackage.SCENARIO_DEF__START_POINT, oldStartPoint, startPoint));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getStartPoints()
+  public EList<StartPoint> getStartPoints()
   {
     if (startPoints == null)
     {
-      startPoints = new EDataTypeEList<String>(String.class, this, TurnPackage.SCENARIO_DEF__START_POINTS);
+      startPoints = new EObjectResolvingEList<StartPoint>(StartPoint.class, this, TurnPackage.SCENARIO_DEF__START_POINTS);
     }
     return startPoints;
   }
@@ -368,34 +292,11 @@ public class ScenarioDefImpl extends MinimalEObjectImpl.Container implements Sce
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getEndPoint()
-  {
-    return endPoint;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setEndPoint(String newEndPoint)
-  {
-    String oldEndPoint = endPoint;
-    endPoint = newEndPoint;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TurnPackage.SCENARIO_DEF__END_POINT, oldEndPoint, endPoint));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getEndPoints()
+  public EList<EndPoint> getEndPoints()
   {
     if (endPoints == null)
     {
-      endPoints = new EDataTypeEList<String>(String.class, this, TurnPackage.SCENARIO_DEF__END_POINTS);
+      endPoints = new EObjectResolvingEList<EndPoint>(EndPoint.class, this, TurnPackage.SCENARIO_DEF__END_POINTS);
     }
     return endPoints;
   }
@@ -405,59 +306,11 @@ public class ScenarioDefImpl extends MinimalEObjectImpl.Container implements Sce
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReferenceToScenarioDef getIncludedScenario()
-  {
-    return includedScenario;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetIncludedScenario(ReferenceToScenarioDef newIncludedScenario, NotificationChain msgs)
-  {
-    ReferenceToScenarioDef oldIncludedScenario = includedScenario;
-    includedScenario = newIncludedScenario;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIO, oldIncludedScenario, newIncludedScenario);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setIncludedScenario(ReferenceToScenarioDef newIncludedScenario)
-  {
-    if (newIncludedScenario != includedScenario)
-    {
-      NotificationChain msgs = null;
-      if (includedScenario != null)
-        msgs = ((InternalEObject)includedScenario).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIO, null, msgs);
-      if (newIncludedScenario != null)
-        msgs = ((InternalEObject)newIncludedScenario).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIO, null, msgs);
-      msgs = basicSetIncludedScenario(newIncludedScenario, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIO, newIncludedScenario, newIncludedScenario));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<ReferenceToScenarioDef> getIncludedScenarios()
+  public EList<ScenarioDef> getIncludedScenarios()
   {
     if (includedScenarios == null)
     {
-      includedScenarios = new EObjectContainmentEList<ReferenceToScenarioDef>(ReferenceToScenarioDef.class, this, TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIOS);
+      includedScenarios = new EObjectResolvingEList<ScenarioDef>(ScenarioDef.class, this, TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIOS);
     }
     return includedScenarios;
   }
@@ -480,10 +333,6 @@ public class ScenarioDefImpl extends MinimalEObjectImpl.Container implements Sce
         return ((InternalEList<?>)getPostconditions()).basicRemove(otherEnd, msgs);
       case TurnPackage.SCENARIO_DEF__INITIALIZATIONS:
         return ((InternalEList<?>)getInitializations()).basicRemove(otherEnd, msgs);
-      case TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIO:
-        return basicSetIncludedScenario(null, msgs);
-      case TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIOS:
-        return ((InternalEList<?>)getIncludedScenarios()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -508,16 +357,10 @@ public class ScenarioDefImpl extends MinimalEObjectImpl.Container implements Sce
         return getPostconditions();
       case TurnPackage.SCENARIO_DEF__INITIALIZATIONS:
         return getInitializations();
-      case TurnPackage.SCENARIO_DEF__START_POINT:
-        return getStartPoint();
       case TurnPackage.SCENARIO_DEF__START_POINTS:
         return getStartPoints();
-      case TurnPackage.SCENARIO_DEF__END_POINT:
-        return getEndPoint();
       case TurnPackage.SCENARIO_DEF__END_POINTS:
         return getEndPoints();
-      case TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIO:
-        return getIncludedScenario();
       case TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIOS:
         return getIncludedScenarios();
     }
@@ -553,26 +396,17 @@ public class ScenarioDefImpl extends MinimalEObjectImpl.Container implements Sce
         getInitializations().clear();
         getInitializations().addAll((Collection<? extends Initialization>)newValue);
         return;
-      case TurnPackage.SCENARIO_DEF__START_POINT:
-        setStartPoint((String)newValue);
-        return;
       case TurnPackage.SCENARIO_DEF__START_POINTS:
         getStartPoints().clear();
-        getStartPoints().addAll((Collection<? extends String>)newValue);
-        return;
-      case TurnPackage.SCENARIO_DEF__END_POINT:
-        setEndPoint((String)newValue);
+        getStartPoints().addAll((Collection<? extends StartPoint>)newValue);
         return;
       case TurnPackage.SCENARIO_DEF__END_POINTS:
         getEndPoints().clear();
-        getEndPoints().addAll((Collection<? extends String>)newValue);
-        return;
-      case TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIO:
-        setIncludedScenario((ReferenceToScenarioDef)newValue);
+        getEndPoints().addAll((Collection<? extends EndPoint>)newValue);
         return;
       case TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIOS:
         getIncludedScenarios().clear();
-        getIncludedScenarios().addAll((Collection<? extends ReferenceToScenarioDef>)newValue);
+        getIncludedScenarios().addAll((Collection<? extends ScenarioDef>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -603,20 +437,11 @@ public class ScenarioDefImpl extends MinimalEObjectImpl.Container implements Sce
       case TurnPackage.SCENARIO_DEF__INITIALIZATIONS:
         getInitializations().clear();
         return;
-      case TurnPackage.SCENARIO_DEF__START_POINT:
-        setStartPoint(START_POINT_EDEFAULT);
-        return;
       case TurnPackage.SCENARIO_DEF__START_POINTS:
         getStartPoints().clear();
         return;
-      case TurnPackage.SCENARIO_DEF__END_POINT:
-        setEndPoint(END_POINT_EDEFAULT);
-        return;
       case TurnPackage.SCENARIO_DEF__END_POINTS:
         getEndPoints().clear();
-        return;
-      case TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIO:
-        setIncludedScenario((ReferenceToScenarioDef)null);
         return;
       case TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIOS:
         getIncludedScenarios().clear();
@@ -645,16 +470,10 @@ public class ScenarioDefImpl extends MinimalEObjectImpl.Container implements Sce
         return postconditions != null && !postconditions.isEmpty();
       case TurnPackage.SCENARIO_DEF__INITIALIZATIONS:
         return initializations != null && !initializations.isEmpty();
-      case TurnPackage.SCENARIO_DEF__START_POINT:
-        return START_POINT_EDEFAULT == null ? startPoint != null : !START_POINT_EDEFAULT.equals(startPoint);
       case TurnPackage.SCENARIO_DEF__START_POINTS:
         return startPoints != null && !startPoints.isEmpty();
-      case TurnPackage.SCENARIO_DEF__END_POINT:
-        return END_POINT_EDEFAULT == null ? endPoint != null : !END_POINT_EDEFAULT.equals(endPoint);
       case TurnPackage.SCENARIO_DEF__END_POINTS:
         return endPoints != null && !endPoints.isEmpty();
-      case TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIO:
-        return includedScenario != null;
       case TurnPackage.SCENARIO_DEF__INCLUDED_SCENARIOS:
         return includedScenarios != null && !includedScenarios.isEmpty();
     }
@@ -674,14 +493,6 @@ public class ScenarioDefImpl extends MinimalEObjectImpl.Container implements Sce
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", startPoint: ");
-    result.append(startPoint);
-    result.append(", startPoints: ");
-    result.append(startPoints);
-    result.append(", endPoint: ");
-    result.append(endPoint);
-    result.append(", endPoints: ");
-    result.append(endPoints);
     result.append(')');
     return result.toString();
   }

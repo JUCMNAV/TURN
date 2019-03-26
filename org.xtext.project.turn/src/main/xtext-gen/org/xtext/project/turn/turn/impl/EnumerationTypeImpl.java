@@ -12,7 +12,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
@@ -28,13 +27,12 @@ import org.xtext.project.turn.turn.TurnPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.project.turn.turn.impl.EnumerationTypeImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.project.turn.turn.impl.EnumerationTypeImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.EnumerationTypeImpl#getValues <em>Values</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements EnumerationType
+public class EnumerationTypeImpl extends URNmodelElementImpl implements EnumerationType
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -55,26 +53,6 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected String value = VALUE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
@@ -135,29 +113,6 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValue()
-  {
-    return value;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setValue(String newValue)
-  {
-    String oldValue = value;
-    value = newValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TurnPackage.ENUMERATION_TYPE__VALUE, oldValue, value));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<String> getValues()
   {
     if (values == null)
@@ -179,8 +134,6 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
     {
       case TurnPackage.ENUMERATION_TYPE__NAME:
         return getName();
-      case TurnPackage.ENUMERATION_TYPE__VALUE:
-        return getValue();
       case TurnPackage.ENUMERATION_TYPE__VALUES:
         return getValues();
     }
@@ -200,9 +153,6 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
     {
       case TurnPackage.ENUMERATION_TYPE__NAME:
         setName((String)newValue);
-        return;
-      case TurnPackage.ENUMERATION_TYPE__VALUE:
-        setValue((String)newValue);
         return;
       case TurnPackage.ENUMERATION_TYPE__VALUES:
         getValues().clear();
@@ -225,9 +175,6 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
       case TurnPackage.ENUMERATION_TYPE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case TurnPackage.ENUMERATION_TYPE__VALUE:
-        setValue(VALUE_EDEFAULT);
-        return;
       case TurnPackage.ENUMERATION_TYPE__VALUES:
         getValues().clear();
         return;
@@ -247,8 +194,6 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
     {
       case TurnPackage.ENUMERATION_TYPE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case TurnPackage.ENUMERATION_TYPE__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
       case TurnPackage.ENUMERATION_TYPE__VALUES:
         return values != null && !values.isEmpty();
     }
@@ -268,8 +213,6 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", value: ");
-    result.append(value);
     result.append(", values: ");
     result.append(values);
     result.append(')');

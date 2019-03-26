@@ -14,13 +14,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.project.turn.turn.LongName;
-import org.xtext.project.turn.turn.ReferenceToScenarioDef;
+import org.xtext.project.turn.turn.ScenarioDef;
 import org.xtext.project.turn.turn.ScenarioGroup;
 import org.xtext.project.turn.turn.TurnPackage;
 
@@ -34,13 +32,12 @@ import org.xtext.project.turn.turn.TurnPackage;
  * <ul>
  *   <li>{@link org.xtext.project.turn.turn.impl.ScenarioGroupImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.ScenarioGroupImpl#getLongName <em>Long Name</em>}</li>
- *   <li>{@link org.xtext.project.turn.turn.impl.ScenarioGroupImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.ScenarioGroupImpl#getScenarios <em>Scenarios</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ScenarioGroupImpl extends MinimalEObjectImpl.Container implements ScenarioGroup
+public class ScenarioGroupImpl extends URNmodelElementImpl implements ScenarioGroup
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -73,24 +70,14 @@ public class ScenarioGroupImpl extends MinimalEObjectImpl.Container implements S
   protected LongName longName;
 
   /**
-   * The cached value of the '{@link #getScenario() <em>Scenario</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getScenario()
-   * @generated
-   * @ordered
-   */
-  protected ReferenceToScenarioDef scenario;
-
-  /**
-   * The cached value of the '{@link #getScenarios() <em>Scenarios</em>}' containment reference list.
+   * The cached value of the '{@link #getScenarios() <em>Scenarios</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getScenarios()
    * @generated
    * @ordered
    */
-  protected EList<ReferenceToScenarioDef> scenarios;
+  protected EList<ScenarioDef> scenarios;
 
   /**
    * <!-- begin-user-doc -->
@@ -189,59 +176,11 @@ public class ScenarioGroupImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReferenceToScenarioDef getScenario()
-  {
-    return scenario;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetScenario(ReferenceToScenarioDef newScenario, NotificationChain msgs)
-  {
-    ReferenceToScenarioDef oldScenario = scenario;
-    scenario = newScenario;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TurnPackage.SCENARIO_GROUP__SCENARIO, oldScenario, newScenario);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setScenario(ReferenceToScenarioDef newScenario)
-  {
-    if (newScenario != scenario)
-    {
-      NotificationChain msgs = null;
-      if (scenario != null)
-        msgs = ((InternalEObject)scenario).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TurnPackage.SCENARIO_GROUP__SCENARIO, null, msgs);
-      if (newScenario != null)
-        msgs = ((InternalEObject)newScenario).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TurnPackage.SCENARIO_GROUP__SCENARIO, null, msgs);
-      msgs = basicSetScenario(newScenario, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TurnPackage.SCENARIO_GROUP__SCENARIO, newScenario, newScenario));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<ReferenceToScenarioDef> getScenarios()
+  public EList<ScenarioDef> getScenarios()
   {
     if (scenarios == null)
     {
-      scenarios = new EObjectContainmentEList<ReferenceToScenarioDef>(ReferenceToScenarioDef.class, this, TurnPackage.SCENARIO_GROUP__SCENARIOS);
+      scenarios = new EObjectResolvingEList<ScenarioDef>(ScenarioDef.class, this, TurnPackage.SCENARIO_GROUP__SCENARIOS);
     }
     return scenarios;
   }
@@ -258,10 +197,6 @@ public class ScenarioGroupImpl extends MinimalEObjectImpl.Container implements S
     {
       case TurnPackage.SCENARIO_GROUP__LONG_NAME:
         return basicSetLongName(null, msgs);
-      case TurnPackage.SCENARIO_GROUP__SCENARIO:
-        return basicSetScenario(null, msgs);
-      case TurnPackage.SCENARIO_GROUP__SCENARIOS:
-        return ((InternalEList<?>)getScenarios()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -280,8 +215,6 @@ public class ScenarioGroupImpl extends MinimalEObjectImpl.Container implements S
         return getName();
       case TurnPackage.SCENARIO_GROUP__LONG_NAME:
         return getLongName();
-      case TurnPackage.SCENARIO_GROUP__SCENARIO:
-        return getScenario();
       case TurnPackage.SCENARIO_GROUP__SCENARIOS:
         return getScenarios();
     }
@@ -305,12 +238,9 @@ public class ScenarioGroupImpl extends MinimalEObjectImpl.Container implements S
       case TurnPackage.SCENARIO_GROUP__LONG_NAME:
         setLongName((LongName)newValue);
         return;
-      case TurnPackage.SCENARIO_GROUP__SCENARIO:
-        setScenario((ReferenceToScenarioDef)newValue);
-        return;
       case TurnPackage.SCENARIO_GROUP__SCENARIOS:
         getScenarios().clear();
-        getScenarios().addAll((Collection<? extends ReferenceToScenarioDef>)newValue);
+        getScenarios().addAll((Collection<? extends ScenarioDef>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -331,9 +261,6 @@ public class ScenarioGroupImpl extends MinimalEObjectImpl.Container implements S
         return;
       case TurnPackage.SCENARIO_GROUP__LONG_NAME:
         setLongName((LongName)null);
-        return;
-      case TurnPackage.SCENARIO_GROUP__SCENARIO:
-        setScenario((ReferenceToScenarioDef)null);
         return;
       case TurnPackage.SCENARIO_GROUP__SCENARIOS:
         getScenarios().clear();
@@ -356,8 +283,6 @@ public class ScenarioGroupImpl extends MinimalEObjectImpl.Container implements S
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case TurnPackage.SCENARIO_GROUP__LONG_NAME:
         return longName != null;
-      case TurnPackage.SCENARIO_GROUP__SCENARIO:
-        return scenario != null;
       case TurnPackage.SCENARIO_GROUP__SCENARIOS:
         return scenarios != null && !scenarios.isEmpty();
     }

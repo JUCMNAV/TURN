@@ -90,17 +90,6 @@ ruleConcern:
 	)*
 ;
 
-// Rule LongName
-ruleLongName:
-	(
-		'#'
-		(
-			RULE_ID
-			    |RULE_STRING
-		)
-	)?
-;
-
 // Rule Condition
 ruleCondition:
 	'['
@@ -147,6 +136,59 @@ ruleMetadata:
 	RULE_ID
 	'='
 	ruleText
+;
+
+// Rule ArtificialRule
+ruleArtificialRule:
+	RULE_STRING
+	?
+;
+
+// Rule Text
+ruleText:
+	ruleTextContent
+	+
+;
+
+// Rule LongName
+ruleLongName:
+	(
+		'#'
+		(
+			RULE_ID
+			    |RULE_STRING
+		)
+	)?
+;
+
+// Rule TextContent
+ruleTextContent:
+	(
+		RULE_ID
+		    |
+		'@'
+		    |
+		'#'
+		    |
+		'!'
+		    |
+		'%'
+		    |
+		'&'
+		    |
+		'*'
+		    |
+		RULE_INT
+	)
+;
+
+// Rule QualifiedName
+ruleQualifiedName:
+	RULE_ID
+	(
+		'.'
+		RULE_ID
+	)*
 ;
 
 // Rule Actor
@@ -239,12 +281,6 @@ ruleDependency:
 	)?
 	'dependsOn'
 	ruleQualifiedName
-;
-
-// Rule ArtificialRule
-ruleArtificialRule:
-	RULE_STRING
-	?
 ;
 
 // Rule StrategiesGroup
@@ -465,15 +501,6 @@ ruleStartPoint:
 			RULE_STRING
 			']]'
 		)?
-	)
-;
-
-// Rule FailureKind
-ruleFailureKind:
-	(
-		'abort'
-		    |
-		'failure'
 	)
 ;
 
@@ -751,15 +778,6 @@ ruleStub:
 	?
 ;
 
-// Rule StubType
-ruleStubType:
-	(
-		'synchronizing'
-		    |
-		'blocking'
-	)
-;
-
 // Rule StubParameters
 ruleStubParameters:
 	'('
@@ -893,10 +911,10 @@ ruleScenarioGroup:
 	ruleQualifiedName
 	ruleLongName
 	':'
-	ruleReferenceToScenarioDef
+	RULE_ID
 	(
 		','
-		ruleReferenceToScenarioDef
+		RULE_ID
 	)*
 ;
 
@@ -920,26 +938,26 @@ ruleScenarioDef:
 	)*
 	(
 		'start'
-		ruleQualifiedReferenceToStartPoint
+		RULE_ID
 		(
 			','
-			ruleQualifiedReferenceToStartPoint
+			RULE_ID
 		)*
 	)?
 	(
 		'end'
-		ruleQualifiedReferenceToEndPoint
+		RULE_ID
 		(
 			','
-			ruleQualifiedReferenceToEndPoint
+			RULE_ID
 		)*
 	)?
 	(
 		'includes'
-		ruleReferenceToScenarioDef
+		RULE_ID
 		(
 			','
-			ruleReferenceToScenarioDef
+			RULE_ID
 		)*
 	)?
 	'}'
@@ -947,13 +965,11 @@ ruleScenarioDef:
 
 // Rule Initialization
 ruleInitialization:
+	RULE_ID
+	'='
 	(
-		ruleReferenceToVariable
-		'='
 		ruleExpression
 		    |
-		ruleReferenceToEnumVariable
-		'='
 		ruleEnumLiteral
 	)
 ;
@@ -961,13 +977,11 @@ ruleInitialization:
 // Rule Variable
 ruleVariable:
 	(
-		'bool'
+		ruleVariableType
 		    |
-		'int'
-		    |
-		ruleReferenceToEnumerationType
+		RULE_ID
 	)
-	ruleQualifiedName
+	RULE_ID
 ;
 
 // Rule EnumerationType
@@ -982,35 +996,31 @@ ruleEnumerationType:
 	)*
 ;
 
-// Rule ReferenceToScenarioDef
-ruleReferenceToScenarioDef:
-	ruleQualifiedName
-	ruleLongName
+// Rule FailureKind
+ruleFailureKind:
+	(
+		'abort'
+		    |
+		'failure'
+	)
 ;
 
-// Rule ReferenceToVariable
-ruleReferenceToVariable:
-	RULE_ID
+// Rule StubType
+ruleStubType:
+	(
+		'synchronizing'
+		    |
+		'blocking'
+	)
 ;
 
-// Rule ReferenceToEnumVariable
-ruleReferenceToEnumVariable:
-	RULE_ID
-;
-
-// Rule ReferenceToEnumerationType
-ruleReferenceToEnumerationType:
-	RULE_ID
-;
-
-// Rule QualifiedReferenceToStartPoint
-ruleQualifiedReferenceToStartPoint:
-	ruleQualifiedName
-;
-
-// Rule QualifiedReferenceToEndPoint
-ruleQualifiedReferenceToEndPoint:
-	ruleQualifiedName
+// Rule VariableType
+ruleVariableType:
+	(
+		'bool'
+		    |
+		'int'
+	)
 ;
 
 // Rule Expression
@@ -1026,42 +1036,6 @@ ruleEnumLiteral:
 // Rule PositiveInteger
 rulePositiveInteger:
 	RULE_INT
-;
-
-// Rule Text
-ruleText:
-	ruleTextContent
-	+
-;
-
-// Rule TextContent
-ruleTextContent:
-	(
-		RULE_ID
-		    |
-		'@'
-		    |
-		'#'
-		    |
-		'!'
-		    |
-		'%'
-		    |
-		'&'
-		    |
-		'*'
-		    |
-		RULE_INT
-	)
-;
-
-// Rule QualifiedName
-ruleQualifiedName:
-	RULE_ID
-	(
-		'.'
-		RULE_ID
-	)*
 ;
 
 // Rule QualitativeLabel

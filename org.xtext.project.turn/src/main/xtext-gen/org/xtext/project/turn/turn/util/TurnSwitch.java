@@ -95,13 +95,6 @@ public class TurnSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TurnPackage.LONG_NAME:
-      {
-        LongName longName = (LongName)theEObject;
-        T result = caseLongName(longName);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case TurnPackage.CONDITION:
       {
         Condition condition = (Condition)theEObject;
@@ -135,6 +128,28 @@ public class TurnSwitch<T> extends Switch<T>
       {
         URNmodelElement urNmodelElement = (URNmodelElement)theEObject;
         T result = caseURNmodelElement(urNmodelElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TurnPackage.ARTIFICIAL_RULE:
+      {
+        ArtificialRule artificialRule = (ArtificialRule)theEObject;
+        T result = caseArtificialRule(artificialRule);
+        if (result == null) result = caseURNmodelElement(artificialRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TurnPackage.TEXT:
+      {
+        Text text = (Text)theEObject;
+        T result = caseText(text);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TurnPackage.LONG_NAME:
+      {
+        LongName longName = (LongName)theEObject;
+        T result = caseLongName(longName);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -185,14 +200,6 @@ public class TurnSwitch<T> extends Switch<T>
         T result = caseDependency(dependency);
         if (result == null) result = caseURNmodelElement(dependency);
         if (result == null) result = caseElementLink(dependency);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TurnPackage.ARTIFICIAL_RULE:
-      {
-        ArtificialRule artificialRule = (ArtificialRule)theEObject;
-        T result = caseArtificialRule(artificialRule);
-        if (result == null) result = caseURNmodelElement(artificialRule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -596,6 +603,7 @@ public class TurnSwitch<T> extends Switch<T>
       {
         ScenarioGroup scenarioGroup = (ScenarioGroup)theEObject;
         T result = caseScenarioGroup(scenarioGroup);
+        if (result == null) result = caseURNmodelElement(scenarioGroup);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -603,6 +611,7 @@ public class TurnSwitch<T> extends Switch<T>
       {
         ScenarioDef scenarioDef = (ScenarioDef)theEObject;
         T result = caseScenarioDef(scenarioDef);
+        if (result == null) result = caseURNmodelElement(scenarioDef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -617,6 +626,7 @@ public class TurnSwitch<T> extends Switch<T>
       {
         Variable variable = (Variable)theEObject;
         T result = caseVariable(variable);
+        if (result == null) result = caseURNmodelElement(variable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -624,20 +634,7 @@ public class TurnSwitch<T> extends Switch<T>
       {
         EnumerationType enumerationType = (EnumerationType)theEObject;
         T result = caseEnumerationType(enumerationType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TurnPackage.REFERENCE_TO_SCENARIO_DEF:
-      {
-        ReferenceToScenarioDef referenceToScenarioDef = (ReferenceToScenarioDef)theEObject;
-        T result = caseReferenceToScenarioDef(referenceToScenarioDef);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TurnPackage.TEXT:
-      {
-        Text text = (Text)theEObject;
-        T result = caseText(text);
+        if (result == null) result = caseURNmodelElement(enumerationType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -697,22 +694,6 @@ public class TurnSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConcern(Concern object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Long Name</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Long Name</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLongName(LongName object)
   {
     return null;
   }
@@ -793,6 +774,54 @@ public class TurnSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseURNmodelElement(URNmodelElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Artificial Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Artificial Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArtificialRule(ArtificialRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Text</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Text</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseText(Text object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Long Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Long Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLongName(LongName object)
   {
     return null;
   }
@@ -889,22 +918,6 @@ public class TurnSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDependency(Dependency object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Artificial Rule</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Artificial Rule</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseArtificialRule(ArtificialRule object)
   {
     return null;
   }
@@ -1753,38 +1766,6 @@ public class TurnSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEnumerationType(EnumerationType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Reference To Scenario Def</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Reference To Scenario Def</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseReferenceToScenarioDef(ReferenceToScenarioDef object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Text</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Text</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseText(Text object)
   {
     return null;
   }

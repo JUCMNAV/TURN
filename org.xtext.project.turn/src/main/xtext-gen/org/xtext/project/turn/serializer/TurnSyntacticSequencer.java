@@ -33,7 +33,6 @@ public class TurnSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Stub___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
 	protected AbstractElementAlias match_Timer_TimeoutKeyword_4_1_q;
 	protected AbstractElementAlias match_Timer___LeftCurlyBracketKeyword_4_0_TimeoutKeyword_4_1_q_RightCurlyBracketKeyword_4_4__q;
-	protected AbstractElementAlias match_Variable_BoolKeyword_0_0_or_IntKeyword_0_1;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -49,7 +48,6 @@ public class TurnSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Stub___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getStubAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getStubAccess().getRightCurlyBracketKeyword_4_2()));
 		match_Timer_TimeoutKeyword_4_1_q = new TokenAlias(false, true, grammarAccess.getTimerAccess().getTimeoutKeyword_4_1());
 		match_Timer___LeftCurlyBracketKeyword_4_0_TimeoutKeyword_4_1_q_RightCurlyBracketKeyword_4_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTimerAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, true, grammarAccess.getTimerAccess().getTimeoutKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getTimerAccess().getRightCurlyBracketKeyword_4_4()));
-		match_Variable_BoolKeyword_0_0_or_IntKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getVariableAccess().getBoolKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getVariableAccess().getIntKeyword_0_1()));
 	}
 	
 	@Override
@@ -97,8 +95,6 @@ public class TurnSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Timer_TimeoutKeyword_4_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Timer___LeftCurlyBracketKeyword_4_0_TimeoutKeyword_4_1_q_RightCurlyBracketKeyword_4_4__q.equals(syntax))
 				emit_Timer___LeftCurlyBracketKeyword_4_0_TimeoutKeyword_4_1_q_RightCurlyBracketKeyword_4_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Variable_BoolKeyword_0_0_or_IntKeyword_0_1.equals(syntax))
-				emit_Variable_BoolKeyword_0_0_or_IntKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -240,17 +236,6 @@ public class TurnSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     longName=LongName (ambiguity) condition=Condition
 	 */
 	protected void emit_Timer___LeftCurlyBracketKeyword_4_0_TimeoutKeyword_4_1_q_RightCurlyBracketKeyword_4_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'bool' | 'int'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) name=QualifiedName
-	 */
-	protected void emit_Variable_BoolKeyword_0_0_or_IntKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

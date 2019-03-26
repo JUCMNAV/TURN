@@ -5,8 +5,6 @@ package org.xtext.project.turn.turn;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Scenario Def</b></em>'.
@@ -21,11 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.project.turn.turn.ScenarioDef#getPreconditions <em>Preconditions</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.ScenarioDef#getPostconditions <em>Postconditions</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.ScenarioDef#getInitializations <em>Initializations</em>}</li>
- *   <li>{@link org.xtext.project.turn.turn.ScenarioDef#getStartPoint <em>Start Point</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.ScenarioDef#getStartPoints <em>Start Points</em>}</li>
- *   <li>{@link org.xtext.project.turn.turn.ScenarioDef#getEndPoint <em>End Point</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.ScenarioDef#getEndPoints <em>End Points</em>}</li>
- *   <li>{@link org.xtext.project.turn.turn.ScenarioDef#getIncludedScenario <em>Included Scenario</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.ScenarioDef#getIncludedScenarios <em>Included Scenarios</em>}</li>
  * </ul>
  *
@@ -33,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ScenarioDef extends EObject
+public interface ScenarioDef extends URNmodelElement
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -136,129 +131,51 @@ public interface ScenarioDef extends EObject
   EList<Initialization> getInitializations();
 
   /**
-   * Returns the value of the '<em><b>Start Point</b></em>' attribute.
+   * Returns the value of the '<em><b>Start Points</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.project.turn.turn.StartPoint}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Start Point</em>' attribute isn't clear,
+   * If the meaning of the '<em>Start Points</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Start Point</em>' attribute.
-   * @see #setStartPoint(String)
-   * @see org.xtext.project.turn.turn.TurnPackage#getScenarioDef_StartPoint()
-   * @model
-   * @generated
-   */
-  String getStartPoint();
-
-  /**
-   * Sets the value of the '{@link org.xtext.project.turn.turn.ScenarioDef#getStartPoint <em>Start Point</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Start Point</em>' attribute.
-   * @see #getStartPoint()
-   * @generated
-   */
-  void setStartPoint(String value);
-
-  /**
-   * Returns the value of the '<em><b>Start Points</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Start Points</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Start Points</em>' attribute list.
+   * @return the value of the '<em>Start Points</em>' reference list.
    * @see org.xtext.project.turn.turn.TurnPackage#getScenarioDef_StartPoints()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getStartPoints();
-
-  /**
-   * Returns the value of the '<em><b>End Point</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>End Point</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>End Point</em>' attribute.
-   * @see #setEndPoint(String)
-   * @see org.xtext.project.turn.turn.TurnPackage#getScenarioDef_EndPoint()
    * @model
    * @generated
    */
-  String getEndPoint();
+  EList<StartPoint> getStartPoints();
 
   /**
-   * Sets the value of the '{@link org.xtext.project.turn.turn.ScenarioDef#getEndPoint <em>End Point</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>End Point</em>' attribute.
-   * @see #getEndPoint()
-   * @generated
-   */
-  void setEndPoint(String value);
-
-  /**
-   * Returns the value of the '<em><b>End Points</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>End Points</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.project.turn.turn.EndPoint}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>End Points</em>' attribute list isn't clear,
+   * If the meaning of the '<em>End Points</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>End Points</em>' attribute list.
+   * @return the value of the '<em>End Points</em>' reference list.
    * @see org.xtext.project.turn.turn.TurnPackage#getScenarioDef_EndPoints()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getEndPoints();
+  EList<EndPoint> getEndPoints();
 
   /**
-   * Returns the value of the '<em><b>Included Scenario</b></em>' containment reference.
+   * Returns the value of the '<em><b>Included Scenarios</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.project.turn.turn.ScenarioDef}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Included Scenario</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Included Scenarios</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Included Scenario</em>' containment reference.
-   * @see #setIncludedScenario(ReferenceToScenarioDef)
-   * @see org.xtext.project.turn.turn.TurnPackage#getScenarioDef_IncludedScenario()
-   * @model containment="true"
-   * @generated
-   */
-  ReferenceToScenarioDef getIncludedScenario();
-
-  /**
-   * Sets the value of the '{@link org.xtext.project.turn.turn.ScenarioDef#getIncludedScenario <em>Included Scenario</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Included Scenario</em>' containment reference.
-   * @see #getIncludedScenario()
-   * @generated
-   */
-  void setIncludedScenario(ReferenceToScenarioDef value);
-
-  /**
-   * Returns the value of the '<em><b>Included Scenarios</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.project.turn.turn.ReferenceToScenarioDef}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Included Scenarios</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Included Scenarios</em>' containment reference list.
+   * @return the value of the '<em>Included Scenarios</em>' reference list.
    * @see org.xtext.project.turn.turn.TurnPackage#getScenarioDef_IncludedScenarios()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  EList<ReferenceToScenarioDef> getIncludedScenarios();
+  EList<ScenarioDef> getIncludedScenarios();
 
 } // ScenarioDef

@@ -89,9 +89,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Turn.ecore#//Concern/element"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Turn.ecore#//Concern/elements"/>
     </genClasses>
-    <genClasses ecoreClass="Turn.ecore#//LongName">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//LongName/longname"/>
-    </genClasses>
     <genClasses ecoreClass="Turn.ecore#//Condition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//Condition/expression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//Condition/info"/>
@@ -113,6 +110,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//Metadata/value"/>
     </genClasses>
     <genClasses ecoreClass="Turn.ecore#//URNmodelElement"/>
+    <genClasses ecoreClass="Turn.ecore#//ArtificialRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//ArtificialRule/longName"/>
+    </genClasses>
+    <genClasses ecoreClass="Turn.ecore#//Text">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//Text/content"/>
+    </genClasses>
+    <genClasses ecoreClass="Turn.ecore#//LongName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//LongName/longname"/>
+    </genClasses>
     <genClasses ecoreClass="Turn.ecore#//Actor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//Actor/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//Actor/longName"/>
@@ -148,9 +154,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//Dependency/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//Dependency/longName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Turn.ecore#//Dependency/dest"/>
-    </genClasses>
-    <genClasses ecoreClass="Turn.ecore#//ArtificialRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//ArtificialRule/longName"/>
     </genClasses>
     <genClasses ecoreClass="Turn.ecore#//StrategiesGroup">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//StrategiesGroup/name"/>
@@ -379,8 +382,7 @@
     <genClasses ecoreClass="Turn.ecore#//ScenarioGroup">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//ScenarioGroup/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//ScenarioGroup/longName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//ScenarioGroup/scenario"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//ScenarioGroup/scenarios"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Turn.ecore#//ScenarioGroup/scenarios"/>
     </genClasses>
     <genClasses ecoreClass="Turn.ecore#//ScenarioDef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//ScenarioDef/name"/>
@@ -388,32 +390,22 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//ScenarioDef/preconditions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//ScenarioDef/postconditions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//ScenarioDef/initializations"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//ScenarioDef/startPoint"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//ScenarioDef/startPoints"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//ScenarioDef/endPoint"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//ScenarioDef/endPoints"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//ScenarioDef/includedScenario"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//ScenarioDef/includedScenarios"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Turn.ecore#//ScenarioDef/startPoints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Turn.ecore#//ScenarioDef/endPoints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Turn.ecore#//ScenarioDef/includedScenarios"/>
     </genClasses>
     <genClasses ecoreClass="Turn.ecore#//Initialization">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//Initialization/variable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Turn.ecore#//Initialization/variable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//Initialization/value"/>
     </genClasses>
     <genClasses ecoreClass="Turn.ecore#//Variable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//Variable/enumerationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//Variable/variableType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Turn.ecore#//Variable/enumerationType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//Variable/name"/>
     </genClasses>
     <genClasses ecoreClass="Turn.ecore#//EnumerationType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//EnumerationType/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//EnumerationType/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//EnumerationType/values"/>
-    </genClasses>
-    <genClasses ecoreClass="Turn.ecore#//ReferenceToScenarioDef">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//ReferenceToScenarioDef/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//ReferenceToScenarioDef/longName"/>
-    </genClasses>
-    <genClasses ecoreClass="Turn.ecore#//Text">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turn.ecore#//Text/content"/>
     </genClasses>
     <genClasses ecoreClass="Turn.ecore#//PathBodyNodes">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turn.ecore#//PathBodyNodes/pathNodes"/>

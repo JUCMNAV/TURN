@@ -19,11 +19,12 @@ class TurnParsingTest {
 	ParseHelper<URNspec> parseHelper
 	
 	@Test
-	def void loadModel() {
+	def void testScenarioGroup() {
 		val result = parseHelper.parse('''
-			Hello Xtext!
+			urnModel example
+			scenarioGroup example1 #"Feature-specific UCM scenario definitions" : BasicCallCore, BasicCallSuccess, BasicCallBusy
 		''')
 		Assert.assertNotNull(result)
-		Assert.assertTrue(result.eResource.errors.isEmpty)
+		Assert.assertEquals("[]",result.eResource.errors.toString)
 	}
 }

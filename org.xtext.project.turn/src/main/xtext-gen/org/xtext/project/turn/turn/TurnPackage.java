@@ -311,7 +311,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getURNmodelElement()
    * @generated
    */
-  int UR_NMODEL_ELEMENT = 8;
+  int UR_NMODEL_ELEMENT = 7;
 
   /**
    * The number of structural features of the '<em>UR Nmodel Element</em>' class.
@@ -387,34 +387,6 @@ public interface TurnPackage extends EPackage
   int CONCERN_FEATURE_COUNT = UR_NMODEL_ELEMENT_FEATURE_COUNT + 5;
 
   /**
-   * The meta object id for the '{@link org.xtext.project.turn.turn.impl.LongNameImpl <em>Long Name</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.project.turn.turn.impl.LongNameImpl
-   * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getLongName()
-   * @generated
-   */
-  int LONG_NAME = 3;
-
-  /**
-   * The feature id for the '<em><b>Longname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LONG_NAME__LONGNAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Long Name</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LONG_NAME_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.impl.ConditionImpl <em>Condition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -422,7 +394,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 4;
+  int CONDITION = 3;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -459,7 +431,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getConcreteCondition()
    * @generated
    */
-  int CONCRETE_CONDITION = 5;
+  int CONCRETE_CONDITION = 4;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -496,7 +468,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getURNlink()
    * @generated
    */
-  int UR_NLINK = 6;
+  int UR_NLINK = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -560,7 +532,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getMetadata()
    * @generated
    */
-  int METADATA = 7;
+  int METADATA = 6;
 
   /**
    * The feature id for the '<em><b>Elem</b></em>' reference.
@@ -599,6 +571,90 @@ public interface TurnPackage extends EPackage
   int METADATA_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link org.xtext.project.turn.turn.impl.ArtificialRuleImpl <em>Artificial Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.project.turn.turn.impl.ArtificialRuleImpl
+   * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getArtificialRule()
+   * @generated
+   */
+  int ARTIFICIAL_RULE = 8;
+
+  /**
+   * The feature id for the '<em><b>Long Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARTIFICIAL_RULE__LONG_NAME = UR_NMODEL_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Artificial Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARTIFICIAL_RULE_FEATURE_COUNT = UR_NMODEL_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.project.turn.turn.impl.TextImpl <em>Text</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.project.turn.turn.impl.TextImpl
+   * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getText()
+   * @generated
+   */
+  int TEXT = 9;
+
+  /**
+   * The feature id for the '<em><b>Content</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT__CONTENT = 0;
+
+  /**
+   * The number of structural features of the '<em>Text</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.project.turn.turn.impl.LongNameImpl <em>Long Name</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.project.turn.turn.impl.LongNameImpl
+   * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getLongName()
+   * @generated
+   */
+  int LONG_NAME = 10;
+
+  /**
+   * The feature id for the '<em><b>Longname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_NAME__LONGNAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Long Name</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_NAME_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.impl.ActorImpl <em>Actor</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -606,7 +662,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getActor()
    * @generated
    */
-  int ACTOR = 9;
+  int ACTOR = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -670,7 +726,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getIntentionalElement()
    * @generated
    */
-  int INTENTIONAL_ELEMENT = 10;
+  int INTENTIONAL_ELEMENT = 12;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -752,7 +808,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getElementLink()
    * @generated
    */
-  int ELEMENT_LINK = 11;
+  int ELEMENT_LINK = 13;
 
   /**
    * The number of structural features of the '<em>Element Link</em>' class.
@@ -771,7 +827,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getContribution()
    * @generated
    */
-  int CONTRIBUTION = 12;
+  int CONTRIBUTION = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -844,7 +900,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getDecomposition()
    * @generated
    */
-  int DECOMPOSITION = 13;
+  int DECOMPOSITION = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -899,7 +955,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getDependency()
    * @generated
    */
-  int DEPENDENCY = 14;
+  int DEPENDENCY = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -938,34 +994,6 @@ public interface TurnPackage extends EPackage
   int DEPENDENCY_FEATURE_COUNT = UR_NMODEL_ELEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.project.turn.turn.impl.ArtificialRuleImpl <em>Artificial Rule</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.project.turn.turn.impl.ArtificialRuleImpl
-   * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getArtificialRule()
-   * @generated
-   */
-  int ARTIFICIAL_RULE = 15;
-
-  /**
-   * The feature id for the '<em><b>Long Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARTIFICIAL_RULE__LONG_NAME = UR_NMODEL_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Artificial Rule</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARTIFICIAL_RULE_FEATURE_COUNT = UR_NMODEL_ELEMENT_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.impl.StrategiesGroupImpl <em>Strategies Group</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -973,7 +1001,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getStrategiesGroup()
    * @generated
    */
-  int STRATEGIES_GROUP = 16;
+  int STRATEGIES_GROUP = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1028,7 +1056,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getEvaluationStrategy()
    * @generated
    */
-  int EVALUATION_STRATEGY = 17;
+  int EVALUATION_STRATEGY = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1101,7 +1129,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getConcreteStrategy()
    * @generated
    */
-  int CONCRETE_STRATEGY = 18;
+  int CONCRETE_STRATEGY = 19;
 
   /**
    * The feature id for the '<em><b>Author</b></em>' attribute.
@@ -1129,7 +1157,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getEvaluation()
    * @generated
    */
-  int EVALUATION = 19;
+  int EVALUATION = 20;
 
   /**
    * The feature id for the '<em><b>Int Element</b></em>' reference.
@@ -1202,7 +1230,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getIndicatorEvaluation()
    * @generated
    */
-  int INDICATOR_EVALUATION = 20;
+  int INDICATOR_EVALUATION = 21;
 
   /**
    * The feature id for the '<em><b>Real World Label</b></em>' attribute.
@@ -1239,7 +1267,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getIndicatorConversion()
    * @generated
    */
-  int INDICATOR_CONVERSION = 21;
+  int INDICATOR_CONVERSION = 22;
 
   /**
    * The number of structural features of the '<em>Indicator Conversion</em>' class.
@@ -1258,7 +1286,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getLinearConversion()
    * @generated
    */
-  int LINEAR_CONVERSION = 22;
+  int LINEAR_CONVERSION = 23;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1331,7 +1359,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getQualToQMappings()
    * @generated
    */
-  int QUAL_TO_QMAPPINGS = 23;
+  int QUAL_TO_QMAPPINGS = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1386,7 +1414,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getQualToQMapping()
    * @generated
    */
-  int QUAL_TO_QMAPPING = 24;
+  int QUAL_TO_QMAPPING = 25;
 
   /**
    * The feature id for the '<em><b>Exceeds</b></em>' attribute.
@@ -1441,7 +1469,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getContributionContextGroup()
    * @generated
    */
-  int CONTRIBUTION_CONTEXT_GROUP = 25;
+  int CONTRIBUTION_CONTEXT_GROUP = 26;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1496,7 +1524,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getContributionContext()
    * @generated
    */
-  int CONTRIBUTION_CONTEXT = 26;
+  int CONTRIBUTION_CONTEXT = 27;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1560,7 +1588,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getContributionChange()
    * @generated
    */
-  int CONTRIBUTION_CHANGE = 27;
+  int CONTRIBUTION_CHANGE = 28;
 
   /**
    * The feature id for the '<em><b>Contribution</b></em>' reference.
@@ -1606,7 +1634,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getUCMmap()
    * @generated
    */
-  int UC_MMAP = 28;
+  int UC_MMAP = 29;
 
   /**
    * The feature id for the '<em><b>Singleton</b></em>' attribute.
@@ -1679,7 +1707,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getPath()
    * @generated
    */
-  int PATH = 29;
+  int PATH = 30;
 
   /**
    * The feature id for the '<em><b>Start Point</b></em>' containment reference.
@@ -1716,7 +1744,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getStartPoint()
    * @generated
    */
-  int START_POINT = 30;
+  int START_POINT = 31;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1780,7 +1808,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getPathBody()
    * @generated
    */
-  int PATH_BODY = 31;
+  int PATH_BODY = 32;
 
   /**
    * The feature id for the '<em><b>Path End</b></em>' containment reference.
@@ -1835,7 +1863,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getReferencedBoundElement()
    * @generated
    */
-  int REFERENCED_BOUND_ELEMENT = 57;
+  int REFERENCED_BOUND_ELEMENT = 58;
 
   /**
    * The number of structural features of the '<em>Referenced Bound Element</em>' class.
@@ -1854,7 +1882,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getPathBodyNode()
    * @generated
    */
-  int PATH_BODY_NODE = 32;
+  int PATH_BODY_NODE = 33;
 
   /**
    * The number of structural features of the '<em>Path Body Node</em>' class.
@@ -1873,7 +1901,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getRegularEnd()
    * @generated
    */
-  int REGULAR_END = 33;
+  int REGULAR_END = 34;
 
   /**
    * The number of structural features of the '<em>Regular End</em>' class.
@@ -1892,7 +1920,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getEndpointWithConnect()
    * @generated
    */
-  int ENDPOINT_WITH_CONNECT = 34;
+  int ENDPOINT_WITH_CONNECT = 35;
 
   /**
    * The feature id for the '<em><b>Regular End</b></em>' containment reference.
@@ -1929,7 +1957,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getReferencedEnd()
    * @generated
    */
-  int REFERENCED_END = 35;
+  int REFERENCED_END = 36;
 
   /**
    * The number of structural features of the '<em>Referenced End</em>' class.
@@ -1948,7 +1976,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getRespRef()
    * @generated
    */
-  int RESP_REF = 36;
+  int RESP_REF = 37;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1985,7 +2013,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getOrJoin()
    * @generated
    */
-  int OR_JOIN = 37;
+  int OR_JOIN = 38;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2022,7 +2050,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getAndJoin()
    * @generated
    */
-  int AND_JOIN = 38;
+  int AND_JOIN = 39;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2059,7 +2087,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getWaitingPlace()
    * @generated
    */
-  int WAITING_PLACE = 39;
+  int WAITING_PLACE = 40;
 
   /**
    * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -2114,7 +2142,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getTimer()
    * @generated
    */
-  int TIMER = 40;
+  int TIMER = 41;
 
   /**
    * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -2187,7 +2215,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getConnect()
    * @generated
    */
-  int CONNECT = 41;
+  int CONNECT = 42;
 
   /**
    * The feature id for the '<em><b>Connects To</b></em>' reference.
@@ -2215,7 +2243,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getConnectElement()
    * @generated
    */
-  int CONNECT_ELEMENT = 42;
+  int CONNECT_ELEMENT = 43;
 
   /**
    * The number of structural features of the '<em>Connect Element</em>' class.
@@ -2234,7 +2262,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getFailurePoint()
    * @generated
    */
-  int FAILURE_POINT = 43;
+  int FAILURE_POINT = 44;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2289,7 +2317,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getEndPoint()
    * @generated
    */
-  int END_POINT = 44;
+  int END_POINT = 45;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2335,7 +2363,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getOrFork()
    * @generated
    */
-  int OR_FORK = 45;
+  int OR_FORK = 46;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2399,7 +2427,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getOrBody()
    * @generated
    */
-  int OR_BODY = 46;
+  int OR_BODY = 47;
 
   /**
    * The feature id for the '<em><b>Else Body</b></em>' containment reference.
@@ -2436,7 +2464,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getRegularOrFork()
    * @generated
    */
-  int REGULAR_OR_FORK = 47;
+  int REGULAR_OR_FORK = 48;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -2473,7 +2501,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getAndFork()
    * @generated
    */
-  int AND_FORK = 48;
+  int AND_FORK = 49;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2528,7 +2556,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getStub()
    * @generated
    */
-  int STUB = 49;
+  int STUB = 50;
 
   /**
    * The feature id for the '<em><b>Stub Type</b></em>' attribute.
@@ -2619,7 +2647,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getStubParameters()
    * @generated
    */
-  int STUB_PARAMETERS = 50;
+  int STUB_PARAMETERS = 51;
 
   /**
    * The feature id for the '<em><b>Plugin</b></em>' containment reference list.
@@ -2647,7 +2675,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getStubDeclaration()
    * @generated
    */
-  int STUB_DECLARATION = 51;
+  int STUB_DECLARATION = 52;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2693,7 +2721,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getStubOutPath()
    * @generated
    */
-  int STUB_OUT_PATH = 52;
+  int STUB_OUT_PATH = 53;
 
   /**
    * The feature id for the '<em><b>Index</b></em>' attribute.
@@ -2739,7 +2767,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getPluginBinding()
    * @generated
    */
-  int PLUGIN_BINDING = 53;
+  int PLUGIN_BINDING = 54;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -2803,7 +2831,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getComponentRef()
    * @generated
    */
-  int COMPONENT_REF = 54;
+  int COMPONENT_REF = 55;
 
   /**
    * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -2867,7 +2895,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getBoundOption()
    * @generated
    */
-  int BOUND_OPTION = 55;
+  int BOUND_OPTION = 56;
 
   /**
    * The number of structural features of the '<em>Bound Option</em>' class.
@@ -2886,7 +2914,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getBoundElement()
    * @generated
    */
-  int BOUND_ELEMENT = 56;
+  int BOUND_ELEMENT = 57;
 
   /**
    * The feature id for the '<em><b>Elem</b></em>' reference.
@@ -2914,7 +2942,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getLongBoundElement()
    * @generated
    */
-  int LONG_BOUND_ELEMENT = 58;
+  int LONG_BOUND_ELEMENT = 59;
 
   /**
    * The feature id for the '<em><b>From</b></em>' attribute.
@@ -2951,7 +2979,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getBinding()
    * @generated
    */
-  int BINDING = 59;
+  int BINDING = 60;
 
   /**
    * The number of structural features of the '<em>Binding</em>' class.
@@ -2970,7 +2998,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getInBinding()
    * @generated
    */
-  int IN_BINDING = 60;
+  int IN_BINDING = 61;
 
   /**
    * The feature id for the '<em><b>Map Start</b></em>' reference.
@@ -3007,7 +3035,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getOutBinding()
    * @generated
    */
-  int OUT_BINDING = 61;
+  int OUT_BINDING = 62;
 
   /**
    * The feature id for the '<em><b>Map End</b></em>' reference.
@@ -3044,7 +3072,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getComponentBinding()
    * @generated
    */
-  int COMPONENT_BINDING = 62;
+  int COMPONENT_BINDING = 63;
 
   /**
    * The feature id for the '<em><b>Component In</b></em>' reference.
@@ -3081,7 +3109,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getFailureLabel()
    * @generated
    */
-  int FAILURE_LABEL = 63;
+  int FAILURE_LABEL = 64;
 
   /**
    * The feature id for the '<em><b>Failure</b></em>' attribute.
@@ -3109,7 +3137,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getScenarioGroup()
    * @generated
    */
-  int SCENARIO_GROUP = 64;
+  int SCENARIO_GROUP = 65;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3118,7 +3146,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO_GROUP__NAME = 0;
+  int SCENARIO_GROUP__NAME = UR_NMODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Long Name</b></em>' containment reference.
@@ -3127,25 +3155,16 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO_GROUP__LONG_NAME = 1;
+  int SCENARIO_GROUP__LONG_NAME = UR_NMODEL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Scenario</b></em>' containment reference.
+   * The feature id for the '<em><b>Scenarios</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCENARIO_GROUP__SCENARIO = 2;
-
-  /**
-   * The feature id for the '<em><b>Scenarios</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCENARIO_GROUP__SCENARIOS = 3;
+  int SCENARIO_GROUP__SCENARIOS = UR_NMODEL_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Scenario Group</em>' class.
@@ -3154,7 +3173,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO_GROUP_FEATURE_COUNT = 4;
+  int SCENARIO_GROUP_FEATURE_COUNT = UR_NMODEL_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.impl.ScenarioDefImpl <em>Scenario Def</em>}' class.
@@ -3164,7 +3183,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getScenarioDef()
    * @generated
    */
-  int SCENARIO_DEF = 65;
+  int SCENARIO_DEF = 66;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3173,7 +3192,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO_DEF__NAME = 0;
+  int SCENARIO_DEF__NAME = UR_NMODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Long Name</b></em>' containment reference.
@@ -3182,7 +3201,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO_DEF__LONG_NAME = 1;
+  int SCENARIO_DEF__LONG_NAME = UR_NMODEL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Preconditions</b></em>' containment reference list.
@@ -3191,7 +3210,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO_DEF__PRECONDITIONS = 2;
+  int SCENARIO_DEF__PRECONDITIONS = UR_NMODEL_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Postconditions</b></em>' containment reference list.
@@ -3200,7 +3219,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO_DEF__POSTCONDITIONS = 3;
+  int SCENARIO_DEF__POSTCONDITIONS = UR_NMODEL_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Initializations</b></em>' containment reference list.
@@ -3209,61 +3228,34 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO_DEF__INITIALIZATIONS = 4;
+  int SCENARIO_DEF__INITIALIZATIONS = UR_NMODEL_ELEMENT_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Start Point</b></em>' attribute.
+   * The feature id for the '<em><b>Start Points</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCENARIO_DEF__START_POINT = 5;
+  int SCENARIO_DEF__START_POINTS = UR_NMODEL_ELEMENT_FEATURE_COUNT + 5;
 
   /**
-   * The feature id for the '<em><b>Start Points</b></em>' attribute list.
+   * The feature id for the '<em><b>End Points</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCENARIO_DEF__START_POINTS = 6;
+  int SCENARIO_DEF__END_POINTS = UR_NMODEL_ELEMENT_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>End Point</b></em>' attribute.
+   * The feature id for the '<em><b>Included Scenarios</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCENARIO_DEF__END_POINT = 7;
-
-  /**
-   * The feature id for the '<em><b>End Points</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCENARIO_DEF__END_POINTS = 8;
-
-  /**
-   * The feature id for the '<em><b>Included Scenario</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCENARIO_DEF__INCLUDED_SCENARIO = 9;
-
-  /**
-   * The feature id for the '<em><b>Included Scenarios</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCENARIO_DEF__INCLUDED_SCENARIOS = 10;
+  int SCENARIO_DEF__INCLUDED_SCENARIOS = UR_NMODEL_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>Scenario Def</em>' class.
@@ -3272,7 +3264,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO_DEF_FEATURE_COUNT = 11;
+  int SCENARIO_DEF_FEATURE_COUNT = UR_NMODEL_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.impl.InitializationImpl <em>Initialization</em>}' class.
@@ -3282,10 +3274,10 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getInitialization()
    * @generated
    */
-  int INITIALIZATION = 66;
+  int INITIALIZATION = 67;
 
   /**
-   * The feature id for the '<em><b>Variable</b></em>' attribute.
+   * The feature id for the '<em><b>Variable</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -3319,16 +3311,25 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 67;
+  int VARIABLE = 68;
 
   /**
-   * The feature id for the '<em><b>Enumeration Type</b></em>' attribute.
+   * The feature id for the '<em><b>Variable Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE__ENUMERATION_TYPE = 0;
+  int VARIABLE__VARIABLE_TYPE = UR_NMODEL_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Enumeration Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__ENUMERATION_TYPE = UR_NMODEL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3337,7 +3338,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE__NAME = 1;
+  int VARIABLE__NAME = UR_NMODEL_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Variable</em>' class.
@@ -3346,7 +3347,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_FEATURE_COUNT = 2;
+  int VARIABLE_FEATURE_COUNT = UR_NMODEL_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.
@@ -3356,7 +3357,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getEnumerationType()
    * @generated
    */
-  int ENUMERATION_TYPE = 68;
+  int ENUMERATION_TYPE = 69;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3365,16 +3366,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_TYPE__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENUMERATION_TYPE__VALUE = 1;
+  int ENUMERATION_TYPE__NAME = UR_NMODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -3383,7 +3375,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_TYPE__VALUES = 2;
+  int ENUMERATION_TYPE__VALUES = UR_NMODEL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Enumeration Type</em>' class.
@@ -3392,72 +3384,7 @@ public interface TurnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_TYPE_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link org.xtext.project.turn.turn.impl.ReferenceToScenarioDefImpl <em>Reference To Scenario Def</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.project.turn.turn.impl.ReferenceToScenarioDefImpl
-   * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getReferenceToScenarioDef()
-   * @generated
-   */
-  int REFERENCE_TO_SCENARIO_DEF = 69;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REFERENCE_TO_SCENARIO_DEF__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Long Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REFERENCE_TO_SCENARIO_DEF__LONG_NAME = 1;
-
-  /**
-   * The number of structural features of the '<em>Reference To Scenario Def</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REFERENCE_TO_SCENARIO_DEF_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.project.turn.turn.impl.TextImpl <em>Text</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.project.turn.turn.impl.TextImpl
-   * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getText()
-   * @generated
-   */
-  int TEXT = 70;
-
-  /**
-   * The feature id for the '<em><b>Content</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEXT__CONTENT = 0;
-
-  /**
-   * The number of structural features of the '<em>Text</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEXT_FEATURE_COUNT = 1;
+  int ENUMERATION_TYPE_FEATURE_COUNT = UR_NMODEL_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.impl.PathBodyNodesImpl <em>Path Body Nodes</em>}' class.
@@ -3467,7 +3394,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getPathBodyNodes()
    * @generated
    */
-  int PATH_BODY_NODES = 71;
+  int PATH_BODY_NODES = 70;
 
   /**
    * The feature id for the '<em><b>Path End</b></em>' containment reference.
@@ -3531,7 +3458,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getQualitativeLabel()
    * @generated
    */
-  int QUALITATIVE_LABEL = 72;
+  int QUALITATIVE_LABEL = 71;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.IntentionalElementType <em>Intentional Element Type</em>}' enum.
@@ -3541,7 +3468,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getIntentionalElementType()
    * @generated
    */
-  int INTENTIONAL_ELEMENT_TYPE = 73;
+  int INTENTIONAL_ELEMENT_TYPE = 72;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.ContributionType <em>Contribution Type</em>}' enum.
@@ -3551,7 +3478,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getContributionType()
    * @generated
    */
-  int CONTRIBUTION_TYPE = 74;
+  int CONTRIBUTION_TYPE = 73;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.ImportanceType <em>Importance Type</em>}' enum.
@@ -3561,7 +3488,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getImportanceType()
    * @generated
    */
-  int IMPORTANCE_TYPE = 75;
+  int IMPORTANCE_TYPE = 74;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.DecompositionType <em>Decomposition Type</em>}' enum.
@@ -3571,7 +3498,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getDecompositionType()
    * @generated
    */
-  int DECOMPOSITION_TYPE = 76;
+  int DECOMPOSITION_TYPE = 75;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.WAITKIND <em>WAITKIND</em>}' enum.
@@ -3581,7 +3508,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getWAITKIND()
    * @generated
    */
-  int WAITKIND = 77;
+  int WAITKIND = 76;
 
   /**
    * The meta object id for the '{@link org.xtext.project.turn.turn.COMPONENTKIND <em>COMPONENTKIND</em>}' enum.
@@ -3591,7 +3518,7 @@ public interface TurnPackage extends EPackage
    * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getCOMPONENTKIND()
    * @generated
    */
-  int COMPONENTKIND = 78;
+  int COMPONENTKIND = 77;
 
 
   /**
@@ -3933,27 +3860,6 @@ public interface TurnPackage extends EPackage
   EReference getConcern_Elements();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.project.turn.turn.LongName <em>Long Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Long Name</em>'.
-   * @see org.xtext.project.turn.turn.LongName
-   * @generated
-   */
-  EClass getLongName();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.LongName#getLongname <em>Longname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Longname</em>'.
-   * @see org.xtext.project.turn.turn.LongName#getLongname()
-   * @see #getLongName()
-   * @generated
-   */
-  EAttribute getLongName_Longname();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.project.turn.turn.Condition <em>Condition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4134,6 +4040,69 @@ public interface TurnPackage extends EPackage
    * @generated
    */
   EClass getURNmodelElement();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.project.turn.turn.ArtificialRule <em>Artificial Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Artificial Rule</em>'.
+   * @see org.xtext.project.turn.turn.ArtificialRule
+   * @generated
+   */
+  EClass getArtificialRule();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.ArtificialRule#getLongName <em>Long Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Long Name</em>'.
+   * @see org.xtext.project.turn.turn.ArtificialRule#getLongName()
+   * @see #getArtificialRule()
+   * @generated
+   */
+  EAttribute getArtificialRule_LongName();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.project.turn.turn.Text <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Text</em>'.
+   * @see org.xtext.project.turn.turn.Text
+   * @generated
+   */
+  EClass getText();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.project.turn.turn.Text#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Content</em>'.
+   * @see org.xtext.project.turn.turn.Text#getContent()
+   * @see #getText()
+   * @generated
+   */
+  EAttribute getText_Content();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.project.turn.turn.LongName <em>Long Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Long Name</em>'.
+   * @see org.xtext.project.turn.turn.LongName
+   * @generated
+   */
+  EClass getLongName();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.LongName#getLongname <em>Longname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Longname</em>'.
+   * @see org.xtext.project.turn.turn.LongName#getLongname()
+   * @see #getLongName()
+   * @generated
+   */
+  EAttribute getLongName_Longname();
 
   /**
    * Returns the meta object for class '{@link org.xtext.project.turn.turn.Actor <em>Actor</em>}'.
@@ -4469,27 +4438,6 @@ public interface TurnPackage extends EPackage
    * @generated
    */
   EReference getDependency_Dest();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.project.turn.turn.ArtificialRule <em>Artificial Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Artificial Rule</em>'.
-   * @see org.xtext.project.turn.turn.ArtificialRule
-   * @generated
-   */
-  EClass getArtificialRule();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.ArtificialRule#getLongName <em>Long Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Long Name</em>'.
-   * @see org.xtext.project.turn.turn.ArtificialRule#getLongName()
-   * @see #getArtificialRule()
-   * @generated
-   */
-  EAttribute getArtificialRule_LongName();
 
   /**
    * Returns the meta object for class '{@link org.xtext.project.turn.turn.StrategiesGroup <em>Strategies Group</em>}'.
@@ -6500,21 +6448,10 @@ public interface TurnPackage extends EPackage
   EReference getScenarioGroup_LongName();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.project.turn.turn.ScenarioGroup#getScenario <em>Scenario</em>}'.
+   * Returns the meta object for the reference list '{@link org.xtext.project.turn.turn.ScenarioGroup#getScenarios <em>Scenarios</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Scenario</em>'.
-   * @see org.xtext.project.turn.turn.ScenarioGroup#getScenario()
-   * @see #getScenarioGroup()
-   * @generated
-   */
-  EReference getScenarioGroup_Scenario();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.project.turn.turn.ScenarioGroup#getScenarios <em>Scenarios</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Scenarios</em>'.
+   * @return the meta object for the reference list '<em>Scenarios</em>'.
    * @see org.xtext.project.turn.turn.ScenarioGroup#getScenarios()
    * @see #getScenarioGroup()
    * @generated
@@ -6587,65 +6524,32 @@ public interface TurnPackage extends EPackage
   EReference getScenarioDef_Initializations();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.ScenarioDef#getStartPoint <em>Start Point</em>}'.
+   * Returns the meta object for the reference list '{@link org.xtext.project.turn.turn.ScenarioDef#getStartPoints <em>Start Points</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Start Point</em>'.
-   * @see org.xtext.project.turn.turn.ScenarioDef#getStartPoint()
-   * @see #getScenarioDef()
-   * @generated
-   */
-  EAttribute getScenarioDef_StartPoint();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.xtext.project.turn.turn.ScenarioDef#getStartPoints <em>Start Points</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Start Points</em>'.
+   * @return the meta object for the reference list '<em>Start Points</em>'.
    * @see org.xtext.project.turn.turn.ScenarioDef#getStartPoints()
    * @see #getScenarioDef()
    * @generated
    */
-  EAttribute getScenarioDef_StartPoints();
+  EReference getScenarioDef_StartPoints();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.ScenarioDef#getEndPoint <em>End Point</em>}'.
+   * Returns the meta object for the reference list '{@link org.xtext.project.turn.turn.ScenarioDef#getEndPoints <em>End Points</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>End Point</em>'.
-   * @see org.xtext.project.turn.turn.ScenarioDef#getEndPoint()
-   * @see #getScenarioDef()
-   * @generated
-   */
-  EAttribute getScenarioDef_EndPoint();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.xtext.project.turn.turn.ScenarioDef#getEndPoints <em>End Points</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>End Points</em>'.
+   * @return the meta object for the reference list '<em>End Points</em>'.
    * @see org.xtext.project.turn.turn.ScenarioDef#getEndPoints()
    * @see #getScenarioDef()
    * @generated
    */
-  EAttribute getScenarioDef_EndPoints();
+  EReference getScenarioDef_EndPoints();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.project.turn.turn.ScenarioDef#getIncludedScenario <em>Included Scenario</em>}'.
+   * Returns the meta object for the reference list '{@link org.xtext.project.turn.turn.ScenarioDef#getIncludedScenarios <em>Included Scenarios</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Included Scenario</em>'.
-   * @see org.xtext.project.turn.turn.ScenarioDef#getIncludedScenario()
-   * @see #getScenarioDef()
-   * @generated
-   */
-  EReference getScenarioDef_IncludedScenario();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.project.turn.turn.ScenarioDef#getIncludedScenarios <em>Included Scenarios</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Included Scenarios</em>'.
+   * @return the meta object for the reference list '<em>Included Scenarios</em>'.
    * @see org.xtext.project.turn.turn.ScenarioDef#getIncludedScenarios()
    * @see #getScenarioDef()
    * @generated
@@ -6663,15 +6567,15 @@ public interface TurnPackage extends EPackage
   EClass getInitialization();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.Initialization#getVariable <em>Variable</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.project.turn.turn.Initialization#getVariable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Variable</em>'.
+   * @return the meta object for the reference '<em>Variable</em>'.
    * @see org.xtext.project.turn.turn.Initialization#getVariable()
    * @see #getInitialization()
    * @generated
    */
-  EAttribute getInitialization_Variable();
+  EReference getInitialization_Variable();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.Initialization#getValue <em>Value</em>}'.
@@ -6695,15 +6599,26 @@ public interface TurnPackage extends EPackage
   EClass getVariable();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.Variable#getEnumerationType <em>Enumeration Type</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.Variable#getVariableType <em>Variable Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Enumeration Type</em>'.
+   * @return the meta object for the attribute '<em>Variable Type</em>'.
+   * @see org.xtext.project.turn.turn.Variable#getVariableType()
+   * @see #getVariable()
+   * @generated
+   */
+  EAttribute getVariable_VariableType();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.project.turn.turn.Variable#getEnumerationType <em>Enumeration Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Enumeration Type</em>'.
    * @see org.xtext.project.turn.turn.Variable#getEnumerationType()
    * @see #getVariable()
    * @generated
    */
-  EAttribute getVariable_EnumerationType();
+  EReference getVariable_EnumerationType();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.Variable#getName <em>Name</em>}'.
@@ -6738,17 +6653,6 @@ public interface TurnPackage extends EPackage
   EAttribute getEnumerationType_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.EnumerationType#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.project.turn.turn.EnumerationType#getValue()
-   * @see #getEnumerationType()
-   * @generated
-   */
-  EAttribute getEnumerationType_Value();
-
-  /**
    * Returns the meta object for the attribute list '{@link org.xtext.project.turn.turn.EnumerationType#getValues <em>Values</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -6758,59 +6662,6 @@ public interface TurnPackage extends EPackage
    * @generated
    */
   EAttribute getEnumerationType_Values();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.project.turn.turn.ReferenceToScenarioDef <em>Reference To Scenario Def</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Reference To Scenario Def</em>'.
-   * @see org.xtext.project.turn.turn.ReferenceToScenarioDef
-   * @generated
-   */
-  EClass getReferenceToScenarioDef();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.turn.turn.ReferenceToScenarioDef#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.project.turn.turn.ReferenceToScenarioDef#getName()
-   * @see #getReferenceToScenarioDef()
-   * @generated
-   */
-  EAttribute getReferenceToScenarioDef_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.project.turn.turn.ReferenceToScenarioDef#getLongName <em>Long Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Long Name</em>'.
-   * @see org.xtext.project.turn.turn.ReferenceToScenarioDef#getLongName()
-   * @see #getReferenceToScenarioDef()
-   * @generated
-   */
-  EReference getReferenceToScenarioDef_LongName();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.project.turn.turn.Text <em>Text</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Text</em>'.
-   * @see org.xtext.project.turn.turn.Text
-   * @generated
-   */
-  EClass getText();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.xtext.project.turn.turn.Text#getContent <em>Content</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Content</em>'.
-   * @see org.xtext.project.turn.turn.Text#getContent()
-   * @see #getText()
-   * @generated
-   */
-  EAttribute getText_Content();
 
   /**
    * Returns the meta object for class '{@link org.xtext.project.turn.turn.PathBodyNodes <em>Path Body Nodes</em>}'.
@@ -7181,24 +7032,6 @@ public interface TurnPackage extends EPackage
     EReference CONCERN__ELEMENTS = eINSTANCE.getConcern_Elements();
 
     /**
-     * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.LongNameImpl <em>Long Name</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.project.turn.turn.impl.LongNameImpl
-     * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getLongName()
-     * @generated
-     */
-    EClass LONG_NAME = eINSTANCE.getLongName();
-
-    /**
-     * The meta object literal for the '<em><b>Longname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LONG_NAME__LONGNAME = eINSTANCE.getLongName_Longname();
-
-    /**
      * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.ConditionImpl <em>Condition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7343,6 +7176,60 @@ public interface TurnPackage extends EPackage
      * @generated
      */
     EClass UR_NMODEL_ELEMENT = eINSTANCE.getURNmodelElement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.ArtificialRuleImpl <em>Artificial Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.project.turn.turn.impl.ArtificialRuleImpl
+     * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getArtificialRule()
+     * @generated
+     */
+    EClass ARTIFICIAL_RULE = eINSTANCE.getArtificialRule();
+
+    /**
+     * The meta object literal for the '<em><b>Long Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ARTIFICIAL_RULE__LONG_NAME = eINSTANCE.getArtificialRule_LongName();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.TextImpl <em>Text</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.project.turn.turn.impl.TextImpl
+     * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getText()
+     * @generated
+     */
+    EClass TEXT = eINSTANCE.getText();
+
+    /**
+     * The meta object literal for the '<em><b>Content</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TEXT__CONTENT = eINSTANCE.getText_Content();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.LongNameImpl <em>Long Name</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.project.turn.turn.impl.LongNameImpl
+     * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getLongName()
+     * @generated
+     */
+    EClass LONG_NAME = eINSTANCE.getLongName();
+
+    /**
+     * The meta object literal for the '<em><b>Longname</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LONG_NAME__LONGNAME = eINSTANCE.getLongName_Longname();
 
     /**
      * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.ActorImpl <em>Actor</em>}' class.
@@ -7603,24 +7490,6 @@ public interface TurnPackage extends EPackage
      * @generated
      */
     EReference DEPENDENCY__DEST = eINSTANCE.getDependency_Dest();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.ArtificialRuleImpl <em>Artificial Rule</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.project.turn.turn.impl.ArtificialRuleImpl
-     * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getArtificialRule()
-     * @generated
-     */
-    EClass ARTIFICIAL_RULE = eINSTANCE.getArtificialRule();
-
-    /**
-     * The meta object literal for the '<em><b>Long Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ARTIFICIAL_RULE__LONG_NAME = eINSTANCE.getArtificialRule_LongName();
 
     /**
      * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.StrategiesGroupImpl <em>Strategies Group</em>}' class.
@@ -9217,15 +9086,7 @@ public interface TurnPackage extends EPackage
     EReference SCENARIO_GROUP__LONG_NAME = eINSTANCE.getScenarioGroup_LongName();
 
     /**
-     * The meta object literal for the '<em><b>Scenario</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SCENARIO_GROUP__SCENARIO = eINSTANCE.getScenarioGroup_Scenario();
-
-    /**
-     * The meta object literal for the '<em><b>Scenarios</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Scenarios</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -9283,47 +9144,23 @@ public interface TurnPackage extends EPackage
     EReference SCENARIO_DEF__INITIALIZATIONS = eINSTANCE.getScenarioDef_Initializations();
 
     /**
-     * The meta object literal for the '<em><b>Start Point</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Start Points</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SCENARIO_DEF__START_POINT = eINSTANCE.getScenarioDef_StartPoint();
+    EReference SCENARIO_DEF__START_POINTS = eINSTANCE.getScenarioDef_StartPoints();
 
     /**
-     * The meta object literal for the '<em><b>Start Points</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>End Points</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SCENARIO_DEF__START_POINTS = eINSTANCE.getScenarioDef_StartPoints();
+    EReference SCENARIO_DEF__END_POINTS = eINSTANCE.getScenarioDef_EndPoints();
 
     /**
-     * The meta object literal for the '<em><b>End Point</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SCENARIO_DEF__END_POINT = eINSTANCE.getScenarioDef_EndPoint();
-
-    /**
-     * The meta object literal for the '<em><b>End Points</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SCENARIO_DEF__END_POINTS = eINSTANCE.getScenarioDef_EndPoints();
-
-    /**
-     * The meta object literal for the '<em><b>Included Scenario</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SCENARIO_DEF__INCLUDED_SCENARIO = eINSTANCE.getScenarioDef_IncludedScenario();
-
-    /**
-     * The meta object literal for the '<em><b>Included Scenarios</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Included Scenarios</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -9341,12 +9178,12 @@ public interface TurnPackage extends EPackage
     EClass INITIALIZATION = eINSTANCE.getInitialization();
 
     /**
-     * The meta object literal for the '<em><b>Variable</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INITIALIZATION__VARIABLE = eINSTANCE.getInitialization_Variable();
+    EReference INITIALIZATION__VARIABLE = eINSTANCE.getInitialization_Variable();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -9367,12 +9204,20 @@ public interface TurnPackage extends EPackage
     EClass VARIABLE = eINSTANCE.getVariable();
 
     /**
-     * The meta object literal for the '<em><b>Enumeration Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Variable Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE__ENUMERATION_TYPE = eINSTANCE.getVariable_EnumerationType();
+    EAttribute VARIABLE__VARIABLE_TYPE = eINSTANCE.getVariable_VariableType();
+
+    /**
+     * The meta object literal for the '<em><b>Enumeration Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE__ENUMERATION_TYPE = eINSTANCE.getVariable_EnumerationType();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -9401,64 +9246,12 @@ public interface TurnPackage extends EPackage
     EAttribute ENUMERATION_TYPE__NAME = eINSTANCE.getEnumerationType_Name();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ENUMERATION_TYPE__VALUE = eINSTANCE.getEnumerationType_Value();
-
-    /**
      * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute ENUMERATION_TYPE__VALUES = eINSTANCE.getEnumerationType_Values();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.ReferenceToScenarioDefImpl <em>Reference To Scenario Def</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.project.turn.turn.impl.ReferenceToScenarioDefImpl
-     * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getReferenceToScenarioDef()
-     * @generated
-     */
-    EClass REFERENCE_TO_SCENARIO_DEF = eINSTANCE.getReferenceToScenarioDef();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute REFERENCE_TO_SCENARIO_DEF__NAME = eINSTANCE.getReferenceToScenarioDef_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Long Name</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REFERENCE_TO_SCENARIO_DEF__LONG_NAME = eINSTANCE.getReferenceToScenarioDef_LongName();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.TextImpl <em>Text</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.project.turn.turn.impl.TextImpl
-     * @see org.xtext.project.turn.turn.impl.TurnPackageImpl#getText()
-     * @generated
-     */
-    EClass TEXT = eINSTANCE.getText();
-
-    /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEXT__CONTENT = eINSTANCE.getText_Content();
 
     /**
      * The meta object literal for the '{@link org.xtext.project.turn.turn.impl.PathBodyNodesImpl <em>Path Body Nodes</em>}' class.

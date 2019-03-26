@@ -5,8 +5,6 @@ package org.xtext.project.turn.turn;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Enumeration Type</b></em>'.
@@ -17,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.project.turn.turn.EnumerationType#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.project.turn.turn.EnumerationType#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.EnumerationType#getValues <em>Values</em>}</li>
  * </ul>
  *
@@ -25,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface EnumerationType extends EObject
+public interface EnumerationType extends URNmodelElement
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -52,32 +49,6 @@ public interface EnumerationType extends EObject
    * @generated
    */
   void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Value</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(String)
-   * @see org.xtext.project.turn.turn.TurnPackage#getEnumerationType_Value()
-   * @model
-   * @generated
-   */
-  String getValue();
-
-  /**
-   * Sets the value of the '{@link org.xtext.project.turn.turn.EnumerationType#getValue <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' attribute.
-   * @see #getValue()
-   * @generated
-   */
-  void setValue(String value);
 
   /**
    * Returns the value of the '<em><b>Values</b></em>' attribute list.

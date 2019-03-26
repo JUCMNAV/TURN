@@ -3,6 +3,10 @@ grammar org.xtext.project.turn.Turn with org.eclipse.xtext.common.Terminals
 generate turn "http://www.xtext.org/project/turn/Turn"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
+/* ------------------------------------------------------------------------------------------------- */
+/* --- TURN Core Concepts --- */
+/* ------------------------------------------------------------------------------------------------- */
+
 URNspec:
 	'urnModel' name=QualifiedName
 	info=(ConcreteURNspec)? &
@@ -39,9 +43,6 @@ Concern:
 	element=[URNmodelElement|QualifiedName]
 	(',' elements+=[URNmodelElement|QualifiedName])*;
 
-LongName:
-	{LongName} ('#' longname=(ID | STRING))?;
-
 Condition:
 	'[' expression=Text ']'
 	('{' (info=ConcreteCondition)? '}')?;
@@ -65,7 +66,26 @@ URNmodelElement:
 	Contribution | Decomposition | Dependency | StrategiesGroup | EvaluationStrategy |
 	LinearConversion | QualToQMappings | ContributionContextGroup | ContributionContext |
 	UCMmap | StartPoint | RespRef | WaitingPlace | FailurePoint | Stub | OrFork | OrJoin |
-	AndFork | AndJoin | Timer | ComponentRef;
+	AndFork | AndJoin | Timer | ComponentRef | ScenarioGroup | ScenarioDef | Variable | EnumerationType;
+	
+ArtificialRule:
+	(longName=STRING)?;
+	
+Text:
+	content+=TextContent+;
+	
+LongName:
+	{LongName} ('#' longname=(ID | STRING))?;
+
+TextContent:
+	ID | ('@') | ('#') | '!' | '%' | '&' | '*' | INT;
+
+QualifiedName:
+	ID ('.' ID)*;
+	
+/* ------------------------------------------------------------------------------------------------- */
+/* --- TGRL --- */
+/* ------------------------------------------------------------------------------------------------- */
 
 Actor:
 	'actor' name=QualifiedName
@@ -100,9 +120,6 @@ Decomposition:
 Dependency:
 	(name=QualifiedName longName=LongName)?
 	'dependsOn' dest=[IntentionalElement|QualifiedName];
-
-ArtificialRule:
-	(longName=STRING)?;
 
 StrategiesGroup:
 	'strategiesGroup' name=QualifiedName longName=LongName ':'
@@ -191,6 +208,10 @@ enum DecompositionType:
 QuantitativeValue returns ecore::EInt:
 	('-' | '+')? INT;
 
+/* ------------------------------------------------------------------------------------------------- */
+/* --- TUCM --- */
+/* ------------------------------------------------------------------------------------------------- */
+
 UCMmap:
 	(singleton?='singleton')? 'map' name=QualifiedName
 	longName=LongName '{'
@@ -207,9 +228,6 @@ StartPoint:
 	(('start' (name=QualifiedName longName=LongName)? (precondition=Condition)?) |
 	(failKind=FailureKind name=QualifiedName longName=LongName
 	('catches' '[[' catches=STRING ']]')?));
-
-FailureKind:
-	'abort' | 'failure';
 
 PathBody:
 	PathWithRegularEnd;
@@ -310,9 +328,6 @@ Stub:
 	outPaths+=StubOutPath*
 	'}')? (connectingStubBody=PathBody)?;
 
-StubType:
-	'synchronizing' | 'blocking';
-
 StubParameters:
 	{StubParameters}
 	'(' plugin+=PluginBinding* ')';
@@ -366,55 +381,44 @@ ComponentBinding:
 FailureLabel:
 	'[[' failure=STRING ']]';
 
-enum WAITKIND:
-	persistent | transient;
-
-enum COMPONENTKIND:
-	team | object | process | agent | actor | parent;
-	
 ScenarioGroup:
 	'scenarioGroup' name=QualifiedName longName=LongName ':'
-	scenario=ReferenceToScenarioDef
-	(',' scenarios+=ReferenceToScenarioDef)*;
+	scenarios+=[ScenarioDef]
+	(',' scenarios+=[ScenarioDef])*;
 	
 ScenarioDef:
 	'scenario' name=QualifiedName longName=LongName '{'
 	('pre' preconditions+=Condition)*
 	('post' postconditions+=Condition)*
 	('initialize' initializations+=Initialization)*
-	('start' startPoint=QualifiedReferenceToStartPoint (',' startPoints+=QualifiedReferenceToStartPoint)*)?
-	('end' endPoint=QualifiedReferenceToEndPoint (',' endPoints+=QualifiedReferenceToEndPoint)*)?
-	('includes' includedScenario=ReferenceToScenarioDef (',' includedScenarios+=ReferenceToScenarioDef)*)?
+	('start' startPoints+=[StartPoint] (',' startPoints+=[StartPoint])*)?
+	('end' endPoints+=[EndPoint] (',' endPoints+=[EndPoint])*)?
+	('includes' includedScenarios+=[ScenarioDef] (',' includedScenarios+=[ScenarioDef])*)?
 '}';
 
 Initialization:
-	(variable=ReferenceToVariable '=' value=Expression)|
-	(variable=ReferenceToEnumVariable '=' value=EnumLiteral);
-	
+	variable=[Variable] '=' ( value=Expression | value=EnumLiteral);
+
 Variable:	
-	('bool'|'int'|enumerationType=ReferenceToEnumerationType) name=QualifiedName;
+	(variableType=VariableType | enumerationType=[EnumerationType]) name=ID;
 
 EnumerationType:
-	'enum' name=ID ':'
-	value=EnumLiteral (',' values+=EnumLiteral)*;
-
-ReferenceToScenarioDef: 
-	name=QualifiedName longName=LongName;
+	'enum' name=ID ':' values+=EnumLiteral (',' values+=EnumLiteral)*;
 	
-ReferenceToVariable: 
-	ID;
+enum WAITKIND:
+	persistent | transient;
 
-ReferenceToEnumVariable: 
-	ID;
-
-ReferenceToEnumerationType: 
-	ID;
-
-QualifiedReferenceToStartPoint: 
-	QualifiedName;
-
-QualifiedReferenceToEndPoint: 
-	QualifiedName;
+enum COMPONENTKIND:
+	team | object | process | agent | actor | parent;
+	
+FailureKind:
+	'abort' | 'failure';
+	
+StubType:
+	'synchronizing' | 'blocking';
+	
+VariableType:
+	'bool' | 'int';
 	
 Expression:
 	STRING;
@@ -424,12 +428,3 @@ EnumLiteral:
 
 PositiveInteger returns ecore::EInt:
 	INT;
-
-Text:
-	content+=TextContent+;
-
-TextContent:
-	ID | ('@') | ('#') | '!' | '%' | '&' | '*' | INT;
-
-QualifiedName:
-	ID ('.' ID)*;

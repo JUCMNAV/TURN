@@ -6,10 +6,11 @@ package org.xtext.project.turn.turn.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.project.turn.turn.EnumerationType;
 import org.xtext.project.turn.turn.TurnPackage;
 import org.xtext.project.turn.turn.Variable;
 
@@ -21,33 +22,44 @@ import org.xtext.project.turn.turn.Variable;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.project.turn.turn.impl.VariableImpl#getVariableType <em>Variable Type</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.VariableImpl#getEnumerationType <em>Enumeration Type</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.impl.VariableImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class VariableImpl extends MinimalEObjectImpl.Container implements Variable
+public class VariableImpl extends URNmodelElementImpl implements Variable
 {
   /**
-   * The default value of the '{@link #getEnumerationType() <em>Enumeration Type</em>}' attribute.
+   * The default value of the '{@link #getVariableType() <em>Variable Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEnumerationType()
+   * @see #getVariableType()
    * @generated
    * @ordered
    */
-  protected static final String ENUMERATION_TYPE_EDEFAULT = null;
+  protected static final String VARIABLE_TYPE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getEnumerationType() <em>Enumeration Type</em>}' attribute.
+   * The cached value of the '{@link #getVariableType() <em>Variable Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVariableType()
+   * @generated
+   * @ordered
+   */
+  protected String variableType = VARIABLE_TYPE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getEnumerationType() <em>Enumeration Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getEnumerationType()
    * @generated
    * @ordered
    */
-  protected String enumerationType = ENUMERATION_TYPE_EDEFAULT;
+  protected EnumerationType enumerationType;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -95,7 +107,50 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getEnumerationType()
+  public String getVariableType()
+  {
+    return variableType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVariableType(String newVariableType)
+  {
+    String oldVariableType = variableType;
+    variableType = newVariableType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TurnPackage.VARIABLE__VARIABLE_TYPE, oldVariableType, variableType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EnumerationType getEnumerationType()
+  {
+    if (enumerationType != null && enumerationType.eIsProxy())
+    {
+      InternalEObject oldEnumerationType = (InternalEObject)enumerationType;
+      enumerationType = (EnumerationType)eResolveProxy(oldEnumerationType);
+      if (enumerationType != oldEnumerationType)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, TurnPackage.VARIABLE__ENUMERATION_TYPE, oldEnumerationType, enumerationType));
+      }
+    }
+    return enumerationType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EnumerationType basicGetEnumerationType()
   {
     return enumerationType;
   }
@@ -105,9 +160,9 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEnumerationType(String newEnumerationType)
+  public void setEnumerationType(EnumerationType newEnumerationType)
   {
-    String oldEnumerationType = enumerationType;
+    EnumerationType oldEnumerationType = enumerationType;
     enumerationType = newEnumerationType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, TurnPackage.VARIABLE__ENUMERATION_TYPE, oldEnumerationType, enumerationType));
@@ -146,8 +201,11 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
   {
     switch (featureID)
     {
+      case TurnPackage.VARIABLE__VARIABLE_TYPE:
+        return getVariableType();
       case TurnPackage.VARIABLE__ENUMERATION_TYPE:
-        return getEnumerationType();
+        if (resolve) return getEnumerationType();
+        return basicGetEnumerationType();
       case TurnPackage.VARIABLE__NAME:
         return getName();
     }
@@ -164,8 +222,11 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
   {
     switch (featureID)
     {
+      case TurnPackage.VARIABLE__VARIABLE_TYPE:
+        setVariableType((String)newValue);
+        return;
       case TurnPackage.VARIABLE__ENUMERATION_TYPE:
-        setEnumerationType((String)newValue);
+        setEnumerationType((EnumerationType)newValue);
         return;
       case TurnPackage.VARIABLE__NAME:
         setName((String)newValue);
@@ -184,8 +245,11 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
   {
     switch (featureID)
     {
+      case TurnPackage.VARIABLE__VARIABLE_TYPE:
+        setVariableType(VARIABLE_TYPE_EDEFAULT);
+        return;
       case TurnPackage.VARIABLE__ENUMERATION_TYPE:
-        setEnumerationType(ENUMERATION_TYPE_EDEFAULT);
+        setEnumerationType((EnumerationType)null);
         return;
       case TurnPackage.VARIABLE__NAME:
         setName(NAME_EDEFAULT);
@@ -204,8 +268,10 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
   {
     switch (featureID)
     {
+      case TurnPackage.VARIABLE__VARIABLE_TYPE:
+        return VARIABLE_TYPE_EDEFAULT == null ? variableType != null : !VARIABLE_TYPE_EDEFAULT.equals(variableType);
       case TurnPackage.VARIABLE__ENUMERATION_TYPE:
-        return ENUMERATION_TYPE_EDEFAULT == null ? enumerationType != null : !ENUMERATION_TYPE_EDEFAULT.equals(enumerationType);
+        return enumerationType != null;
       case TurnPackage.VARIABLE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
@@ -223,8 +289,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (enumerationType: ");
-    result.append(enumerationType);
+    result.append(" (variableType: ");
+    result.append(variableType);
     result.append(", name: ");
     result.append(name);
     result.append(')');

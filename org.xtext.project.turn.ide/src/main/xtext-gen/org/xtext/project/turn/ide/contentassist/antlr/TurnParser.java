@@ -31,8 +31,9 @@ public class TurnParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, TurnGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getLongNameAccess().getLongnameAlternatives_1_1_0(), "rule__LongName__LongnameAlternatives_1_1_0");
 			builder.put(grammarAccess.getURNmodelElementAccess().getAlternatives(), "rule__URNmodelElement__Alternatives");
+			builder.put(grammarAccess.getLongNameAccess().getLongnameAlternatives_1_1_0(), "rule__LongName__LongnameAlternatives_1_1_0");
+			builder.put(grammarAccess.getTextContentAccess().getAlternatives(), "rule__TextContent__Alternatives");
 			builder.put(grammarAccess.getActorAccess().getAlternatives_4_1(), "rule__Actor__Alternatives_4_1");
 			builder.put(grammarAccess.getIntentionalElementAccess().getAlternatives_4_1(), "rule__IntentionalElement__Alternatives_4_1");
 			builder.put(grammarAccess.getElementLinkAccess().getAlternatives(), "rule__ElementLink__Alternatives");
@@ -45,7 +46,6 @@ public class TurnParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getContributionChangeAccess().getAlternatives_2(), "rule__ContributionChange__Alternatives_2");
 			builder.put(grammarAccess.getQuantitativeValueAccess().getAlternatives_0(), "rule__QuantitativeValue__Alternatives_0");
 			builder.put(grammarAccess.getStartPointAccess().getAlternatives(), "rule__StartPoint__Alternatives");
-			builder.put(grammarAccess.getFailureKindAccess().getAlternatives(), "rule__FailureKind__Alternatives");
 			builder.put(grammarAccess.getPathBodyNodeAccess().getAlternatives(), "rule__PathBodyNode__Alternatives");
 			builder.put(grammarAccess.getRegularEndAccess().getAlternatives(), "rule__RegularEnd__Alternatives");
 			builder.put(grammarAccess.getReferencedEndAccess().getAlternatives(), "rule__ReferencedEnd__Alternatives");
@@ -54,13 +54,14 @@ public class TurnParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFailurePointAccess().getAlternatives_2(), "rule__FailurePoint__Alternatives_2");
 			builder.put(grammarAccess.getOrForkAccess().getAlternatives_1(), "rule__OrFork__Alternatives_1");
 			builder.put(grammarAccess.getStubAccess().getAlternatives_3(), "rule__Stub__Alternatives_3");
-			builder.put(grammarAccess.getStubTypeAccess().getAlternatives(), "rule__StubType__Alternatives");
 			builder.put(grammarAccess.getBoundOptionAccess().getAlternatives(), "rule__BoundOption__Alternatives");
 			builder.put(grammarAccess.getReferencedBoundElementAccess().getAlternatives(), "rule__ReferencedBoundElement__Alternatives");
 			builder.put(grammarAccess.getBindingAccess().getAlternatives(), "rule__Binding__Alternatives");
-			builder.put(grammarAccess.getInitializationAccess().getAlternatives(), "rule__Initialization__Alternatives");
+			builder.put(grammarAccess.getInitializationAccess().getAlternatives_2(), "rule__Initialization__Alternatives_2");
 			builder.put(grammarAccess.getVariableAccess().getAlternatives_0(), "rule__Variable__Alternatives_0");
-			builder.put(grammarAccess.getTextContentAccess().getAlternatives(), "rule__TextContent__Alternatives");
+			builder.put(grammarAccess.getFailureKindAccess().getAlternatives(), "rule__FailureKind__Alternatives");
+			builder.put(grammarAccess.getStubTypeAccess().getAlternatives(), "rule__StubType__Alternatives");
+			builder.put(grammarAccess.getVariableTypeAccess().getAlternatives(), "rule__VariableType__Alternatives");
 			builder.put(grammarAccess.getQualitativeLabelAccess().getAlternatives(), "rule__QualitativeLabel__Alternatives");
 			builder.put(grammarAccess.getIntentionalElementTypeAccess().getAlternatives(), "rule__IntentionalElementType__Alternatives");
 			builder.put(grammarAccess.getContributionTypeAccess().getAlternatives(), "rule__ContributionType__Alternatives");
@@ -72,8 +73,6 @@ public class TurnParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConcreteURNspecAccess().getGroup(), "rule__ConcreteURNspec__Group__0");
 			builder.put(grammarAccess.getConcernAccess().getGroup(), "rule__Concern__Group__0");
 			builder.put(grammarAccess.getConcernAccess().getGroup_6(), "rule__Concern__Group_6__0");
-			builder.put(grammarAccess.getLongNameAccess().getGroup(), "rule__LongName__Group__0");
-			builder.put(grammarAccess.getLongNameAccess().getGroup_1(), "rule__LongName__Group_1__0");
 			builder.put(grammarAccess.getConditionAccess().getGroup(), "rule__Condition__Group__0");
 			builder.put(grammarAccess.getConditionAccess().getGroup_3(), "rule__Condition__Group_3__0");
 			builder.put(grammarAccess.getConcreteConditionAccess().getGroup(), "rule__ConcreteCondition__Group__0");
@@ -82,6 +81,10 @@ public class TurnParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getURNlinkAccess().getGroup_2(), "rule__URNlink__Group_2__0");
 			builder.put(grammarAccess.getMetadataAccess().getGroup(), "rule__Metadata__Group__0");
 			builder.put(grammarAccess.getMetadataAccess().getGroup_1(), "rule__Metadata__Group_1__0");
+			builder.put(grammarAccess.getLongNameAccess().getGroup(), "rule__LongName__Group__0");
+			builder.put(grammarAccess.getLongNameAccess().getGroup_1(), "rule__LongName__Group_1__0");
+			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
+			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 			builder.put(grammarAccess.getActorAccess().getGroup(), "rule__Actor__Group__0");
 			builder.put(grammarAccess.getActorAccess().getGroup_4(), "rule__Actor__Group_4__0");
 			builder.put(grammarAccess.getIntentionalElementAccess().getGroup(), "rule__IntentionalElement__Group__0");
@@ -188,14 +191,10 @@ public class TurnParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getScenarioDefAccess().getGroup_8_2(), "rule__ScenarioDef__Group_8_2__0");
 			builder.put(grammarAccess.getScenarioDefAccess().getGroup_9(), "rule__ScenarioDef__Group_9__0");
 			builder.put(grammarAccess.getScenarioDefAccess().getGroup_9_2(), "rule__ScenarioDef__Group_9_2__0");
-			builder.put(grammarAccess.getInitializationAccess().getGroup_0(), "rule__Initialization__Group_0__0");
-			builder.put(grammarAccess.getInitializationAccess().getGroup_1(), "rule__Initialization__Group_1__0");
+			builder.put(grammarAccess.getInitializationAccess().getGroup(), "rule__Initialization__Group__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
 			builder.put(grammarAccess.getEnumerationTypeAccess().getGroup(), "rule__EnumerationType__Group__0");
 			builder.put(grammarAccess.getEnumerationTypeAccess().getGroup_4(), "rule__EnumerationType__Group_4__0");
-			builder.put(grammarAccess.getReferenceToScenarioDefAccess().getGroup(), "rule__ReferenceToScenarioDef__Group__0");
-			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
-			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 			builder.put(grammarAccess.getURNspecAccess().getNameAssignment_0_1(), "rule__URNspec__NameAssignment_0_1");
 			builder.put(grammarAccess.getURNspecAccess().getInfoAssignment_0_2(), "rule__URNspec__InfoAssignment_0_2");
 			builder.put(grammarAccess.getURNspecAccess().getActorsAssignment_1(), "rule__URNspec__ActorsAssignment_1");
@@ -224,7 +223,6 @@ public class TurnParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConcernAccess().getConditionAssignment_4(), "rule__Concern__ConditionAssignment_4");
 			builder.put(grammarAccess.getConcernAccess().getElementAssignment_5(), "rule__Concern__ElementAssignment_5");
 			builder.put(grammarAccess.getConcernAccess().getElementsAssignment_6_1(), "rule__Concern__ElementsAssignment_6_1");
-			builder.put(grammarAccess.getLongNameAccess().getLongnameAssignment_1_1(), "rule__LongName__LongnameAssignment_1_1");
 			builder.put(grammarAccess.getConditionAccess().getExpressionAssignment_1(), "rule__Condition__ExpressionAssignment_1");
 			builder.put(grammarAccess.getConditionAccess().getInfoAssignment_3_1(), "rule__Condition__InfoAssignment_3_1");
 			builder.put(grammarAccess.getConcreteConditionAccess().getLabelAssignment_0(), "rule__ConcreteCondition__LabelAssignment_0");
@@ -237,6 +235,9 @@ public class TurnParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMetadataAccess().getElemAssignment_1_0(), "rule__Metadata__ElemAssignment_1_0");
 			builder.put(grammarAccess.getMetadataAccess().getNameAssignment_2(), "rule__Metadata__NameAssignment_2");
 			builder.put(grammarAccess.getMetadataAccess().getValueAssignment_4(), "rule__Metadata__ValueAssignment_4");
+			builder.put(grammarAccess.getArtificialRuleAccess().getLongNameAssignment(), "rule__ArtificialRule__LongNameAssignment");
+			builder.put(grammarAccess.getTextAccess().getContentAssignment(), "rule__Text__ContentAssignment");
+			builder.put(grammarAccess.getLongNameAccess().getLongnameAssignment_1_1(), "rule__LongName__LongnameAssignment_1_1");
 			builder.put(grammarAccess.getActorAccess().getNameAssignment_1(), "rule__Actor__NameAssignment_1");
 			builder.put(grammarAccess.getActorAccess().getLongNameAssignment_2(), "rule__Actor__LongNameAssignment_2");
 			builder.put(grammarAccess.getActorAccess().getImportanceAssignment_4_1_0(), "rule__Actor__ImportanceAssignment_4_1_0");
@@ -262,7 +263,6 @@ public class TurnParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDependencyAccess().getNameAssignment_0_0(), "rule__Dependency__NameAssignment_0_0");
 			builder.put(grammarAccess.getDependencyAccess().getLongNameAssignment_0_1(), "rule__Dependency__LongNameAssignment_0_1");
 			builder.put(grammarAccess.getDependencyAccess().getDestAssignment_2(), "rule__Dependency__DestAssignment_2");
-			builder.put(grammarAccess.getArtificialRuleAccess().getLongNameAssignment(), "rule__ArtificialRule__LongNameAssignment");
 			builder.put(grammarAccess.getStrategiesGroupAccess().getNameAssignment_1(), "rule__StrategiesGroup__NameAssignment_1");
 			builder.put(grammarAccess.getStrategiesGroupAccess().getLongNameAssignment_2(), "rule__StrategiesGroup__LongNameAssignment_2");
 			builder.put(grammarAccess.getStrategiesGroupAccess().getEvalStrategyAssignment_4(), "rule__StrategiesGroup__EvalStrategyAssignment_4");
@@ -406,31 +406,28 @@ public class TurnParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFailureLabelAccess().getFailureAssignment_1(), "rule__FailureLabel__FailureAssignment_1");
 			builder.put(grammarAccess.getScenarioGroupAccess().getNameAssignment_1(), "rule__ScenarioGroup__NameAssignment_1");
 			builder.put(grammarAccess.getScenarioGroupAccess().getLongNameAssignment_2(), "rule__ScenarioGroup__LongNameAssignment_2");
-			builder.put(grammarAccess.getScenarioGroupAccess().getScenarioAssignment_4(), "rule__ScenarioGroup__ScenarioAssignment_4");
+			builder.put(grammarAccess.getScenarioGroupAccess().getScenariosAssignment_4(), "rule__ScenarioGroup__ScenariosAssignment_4");
 			builder.put(grammarAccess.getScenarioGroupAccess().getScenariosAssignment_5_1(), "rule__ScenarioGroup__ScenariosAssignment_5_1");
 			builder.put(grammarAccess.getScenarioDefAccess().getNameAssignment_1(), "rule__ScenarioDef__NameAssignment_1");
 			builder.put(grammarAccess.getScenarioDefAccess().getLongNameAssignment_2(), "rule__ScenarioDef__LongNameAssignment_2");
 			builder.put(grammarAccess.getScenarioDefAccess().getPreconditionsAssignment_4_1(), "rule__ScenarioDef__PreconditionsAssignment_4_1");
 			builder.put(grammarAccess.getScenarioDefAccess().getPostconditionsAssignment_5_1(), "rule__ScenarioDef__PostconditionsAssignment_5_1");
 			builder.put(grammarAccess.getScenarioDefAccess().getInitializationsAssignment_6_1(), "rule__ScenarioDef__InitializationsAssignment_6_1");
-			builder.put(grammarAccess.getScenarioDefAccess().getStartPointAssignment_7_1(), "rule__ScenarioDef__StartPointAssignment_7_1");
+			builder.put(grammarAccess.getScenarioDefAccess().getStartPointsAssignment_7_1(), "rule__ScenarioDef__StartPointsAssignment_7_1");
 			builder.put(grammarAccess.getScenarioDefAccess().getStartPointsAssignment_7_2_1(), "rule__ScenarioDef__StartPointsAssignment_7_2_1");
-			builder.put(grammarAccess.getScenarioDefAccess().getEndPointAssignment_8_1(), "rule__ScenarioDef__EndPointAssignment_8_1");
+			builder.put(grammarAccess.getScenarioDefAccess().getEndPointsAssignment_8_1(), "rule__ScenarioDef__EndPointsAssignment_8_1");
 			builder.put(grammarAccess.getScenarioDefAccess().getEndPointsAssignment_8_2_1(), "rule__ScenarioDef__EndPointsAssignment_8_2_1");
-			builder.put(grammarAccess.getScenarioDefAccess().getIncludedScenarioAssignment_9_1(), "rule__ScenarioDef__IncludedScenarioAssignment_9_1");
+			builder.put(grammarAccess.getScenarioDefAccess().getIncludedScenariosAssignment_9_1(), "rule__ScenarioDef__IncludedScenariosAssignment_9_1");
 			builder.put(grammarAccess.getScenarioDefAccess().getIncludedScenariosAssignment_9_2_1(), "rule__ScenarioDef__IncludedScenariosAssignment_9_2_1");
-			builder.put(grammarAccess.getInitializationAccess().getVariableAssignment_0_0(), "rule__Initialization__VariableAssignment_0_0");
-			builder.put(grammarAccess.getInitializationAccess().getValueAssignment_0_2(), "rule__Initialization__ValueAssignment_0_2");
-			builder.put(grammarAccess.getInitializationAccess().getVariableAssignment_1_0(), "rule__Initialization__VariableAssignment_1_0");
-			builder.put(grammarAccess.getInitializationAccess().getValueAssignment_1_2(), "rule__Initialization__ValueAssignment_1_2");
-			builder.put(grammarAccess.getVariableAccess().getEnumerationTypeAssignment_0_2(), "rule__Variable__EnumerationTypeAssignment_0_2");
+			builder.put(grammarAccess.getInitializationAccess().getVariableAssignment_0(), "rule__Initialization__VariableAssignment_0");
+			builder.put(grammarAccess.getInitializationAccess().getValueAssignment_2_0(), "rule__Initialization__ValueAssignment_2_0");
+			builder.put(grammarAccess.getInitializationAccess().getValueAssignment_2_1(), "rule__Initialization__ValueAssignment_2_1");
+			builder.put(grammarAccess.getVariableAccess().getVariableTypeAssignment_0_0(), "rule__Variable__VariableTypeAssignment_0_0");
+			builder.put(grammarAccess.getVariableAccess().getEnumerationTypeAssignment_0_1(), "rule__Variable__EnumerationTypeAssignment_0_1");
 			builder.put(grammarAccess.getVariableAccess().getNameAssignment_1(), "rule__Variable__NameAssignment_1");
 			builder.put(grammarAccess.getEnumerationTypeAccess().getNameAssignment_1(), "rule__EnumerationType__NameAssignment_1");
-			builder.put(grammarAccess.getEnumerationTypeAccess().getValueAssignment_3(), "rule__EnumerationType__ValueAssignment_3");
+			builder.put(grammarAccess.getEnumerationTypeAccess().getValuesAssignment_3(), "rule__EnumerationType__ValuesAssignment_3");
 			builder.put(grammarAccess.getEnumerationTypeAccess().getValuesAssignment_4_1(), "rule__EnumerationType__ValuesAssignment_4_1");
-			builder.put(grammarAccess.getReferenceToScenarioDefAccess().getNameAssignment_0(), "rule__ReferenceToScenarioDef__NameAssignment_0");
-			builder.put(grammarAccess.getReferenceToScenarioDefAccess().getLongNameAssignment_1(), "rule__ReferenceToScenarioDef__LongNameAssignment_1");
-			builder.put(grammarAccess.getTextAccess().getContentAssignment(), "rule__Text__ContentAssignment");
 			builder.put(grammarAccess.getURNspecAccess().getUnorderedGroup(), "rule__URNspec__UnorderedGroup");
 		}
 	}

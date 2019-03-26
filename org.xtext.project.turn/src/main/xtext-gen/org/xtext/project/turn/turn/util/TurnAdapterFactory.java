@@ -91,11 +91,6 @@ public class TurnAdapterFactory extends AdapterFactoryImpl
         return createConcernAdapter();
       }
       @Override
-      public Adapter caseLongName(LongName object)
-      {
-        return createLongNameAdapter();
-      }
-      @Override
       public Adapter caseCondition(Condition object)
       {
         return createConditionAdapter();
@@ -119,6 +114,21 @@ public class TurnAdapterFactory extends AdapterFactoryImpl
       public Adapter caseURNmodelElement(URNmodelElement object)
       {
         return createURNmodelElementAdapter();
+      }
+      @Override
+      public Adapter caseArtificialRule(ArtificialRule object)
+      {
+        return createArtificialRuleAdapter();
+      }
+      @Override
+      public Adapter caseText(Text object)
+      {
+        return createTextAdapter();
+      }
+      @Override
+      public Adapter caseLongName(LongName object)
+      {
+        return createLongNameAdapter();
       }
       @Override
       public Adapter caseActor(Actor object)
@@ -149,11 +159,6 @@ public class TurnAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDependency(Dependency object)
       {
         return createDependencyAdapter();
-      }
-      @Override
-      public Adapter caseArtificialRule(ArtificialRule object)
-      {
-        return createArtificialRuleAdapter();
       }
       @Override
       public Adapter caseStrategiesGroup(StrategiesGroup object)
@@ -421,16 +426,6 @@ public class TurnAdapterFactory extends AdapterFactoryImpl
         return createEnumerationTypeAdapter();
       }
       @Override
-      public Adapter caseReferenceToScenarioDef(ReferenceToScenarioDef object)
-      {
-        return createReferenceToScenarioDefAdapter();
-      }
-      @Override
-      public Adapter caseText(Text object)
-      {
-        return createTextAdapter();
-      }
-      @Override
       public Adapter casePathBodyNodes(PathBodyNodes object)
       {
         return createPathBodyNodesAdapter();
@@ -498,21 +493,6 @@ public class TurnAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConcernAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.project.turn.turn.LongName <em>Long Name</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.project.turn.turn.LongName
-   * @generated
-   */
-  public Adapter createLongNameAdapter()
   {
     return null;
   }
@@ -588,6 +568,51 @@ public class TurnAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createURNmodelElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.project.turn.turn.ArtificialRule <em>Artificial Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.project.turn.turn.ArtificialRule
+   * @generated
+   */
+  public Adapter createArtificialRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.project.turn.turn.Text <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.project.turn.turn.Text
+   * @generated
+   */
+  public Adapter createTextAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.project.turn.turn.LongName <em>Long Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.project.turn.turn.LongName
+   * @generated
+   */
+  public Adapter createLongNameAdapter()
   {
     return null;
   }
@@ -678,21 +703,6 @@ public class TurnAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDependencyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.project.turn.turn.ArtificialRule <em>Artificial Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.project.turn.turn.ArtificialRule
-   * @generated
-   */
-  public Adapter createArtificialRuleAdapter()
   {
     return null;
   }
@@ -1488,36 +1498,6 @@ public class TurnAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEnumerationTypeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.project.turn.turn.ReferenceToScenarioDef <em>Reference To Scenario Def</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.project.turn.turn.ReferenceToScenarioDef
-   * @generated
-   */
-  public Adapter createReferenceToScenarioDefAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.project.turn.turn.Text <em>Text</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.project.turn.turn.Text
-   * @generated
-   */
-  public Adapter createTextAdapter()
   {
     return null;
   }

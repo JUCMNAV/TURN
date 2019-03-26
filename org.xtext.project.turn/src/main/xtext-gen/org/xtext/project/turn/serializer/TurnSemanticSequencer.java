@@ -58,7 +58,6 @@ import org.xtext.project.turn.turn.PathBodyNodes;
 import org.xtext.project.turn.turn.PluginBinding;
 import org.xtext.project.turn.turn.QualToQMapping;
 import org.xtext.project.turn.turn.QualToQMappings;
-import org.xtext.project.turn.turn.ReferenceToScenarioDef;
 import org.xtext.project.turn.turn.RegularOrFork;
 import org.xtext.project.turn.turn.RespRef;
 import org.xtext.project.turn.turn.ScenarioDef;
@@ -244,9 +243,6 @@ public class TurnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case TurnPackage.QUAL_TO_QMAPPINGS:
 				sequence_QualToQMappings(context, (QualToQMappings) semanticObject); 
-				return; 
-			case TurnPackage.REFERENCE_TO_SCENARIO_DEF:
-				sequence_ReferenceToScenarioDef(context, (ReferenceToScenarioDef) semanticObject); 
 				return; 
 			case TurnPackage.REGULAR_OR_FORK:
 				sequence_RegularOrFork(context, (RegularOrFork) semanticObject); 
@@ -687,10 +683,11 @@ public class TurnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     URNmodelElement returns EnumerationType
 	 *     EnumerationType returns EnumerationType
 	 *
 	 * Constraint:
-	 *     (name=ID value=EnumLiteral values+=EnumLiteral*)
+	 *     (name=ID values+=EnumLiteral values+=EnumLiteral*)
 	 */
 	protected void sequence_EnumerationType(ISerializationContext context, EnumerationType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -808,7 +805,7 @@ public class TurnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Initialization returns Initialization
 	 *
 	 * Constraint:
-	 *     ((variable=ReferenceToVariable value=Expression) | (variable=ReferenceToEnumVariable value=EnumLiteral))
+	 *     (variable=[Variable|ID] (value=Expression | value=EnumLiteral))
 	 */
 	protected void sequence_Initialization(ISerializationContext context, Initialization semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1107,27 +1104,6 @@ public class TurnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     ReferenceToScenarioDef returns ReferenceToScenarioDef
-	 *
-	 * Constraint:
-	 *     (name=QualifiedName longName=LongName)
-	 */
-	protected void sequence_ReferenceToScenarioDef(ISerializationContext context, ReferenceToScenarioDef semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TurnPackage.Literals.REFERENCE_TO_SCENARIO_DEF__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TurnPackage.Literals.REFERENCE_TO_SCENARIO_DEF__NAME));
-			if (transientValues.isValueTransient(semanticObject, TurnPackage.Literals.REFERENCE_TO_SCENARIO_DEF__LONG_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TurnPackage.Literals.REFERENCE_TO_SCENARIO_DEF__LONG_NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getReferenceToScenarioDefAccess().getNameQualifiedNameParserRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getReferenceToScenarioDefAccess().getLongNameLongNameParserRuleCall_1_0(), semanticObject.getLongName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     RegularOrFork returns RegularOrFork
 	 *
 	 * Constraint:
@@ -1174,6 +1150,7 @@ public class TurnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     URNmodelElement returns ScenarioDef
 	 *     ScenarioDef returns ScenarioDef
 	 *
 	 * Constraint:
@@ -1183,9 +1160,9 @@ public class TurnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         preconditions+=Condition* 
 	 *         postconditions+=Condition* 
 	 *         initializations+=Initialization* 
-	 *         (startPoint=QualifiedReferenceToStartPoint startPoints+=QualifiedReferenceToStartPoint*)? 
-	 *         (endPoint=QualifiedReferenceToEndPoint endPoints+=QualifiedReferenceToEndPoint*)? 
-	 *         (includedScenario=ReferenceToScenarioDef includedScenarios+=ReferenceToScenarioDef*)?
+	 *         (startPoints+=[StartPoint|ID] startPoints+=[StartPoint|ID]*)? 
+	 *         (endPoints+=[EndPoint|ID] endPoints+=[EndPoint|ID]*)? 
+	 *         (includedScenarios+=[ScenarioDef|ID] includedScenarios+=[ScenarioDef|ID]*)?
 	 *     )
 	 */
 	protected void sequence_ScenarioDef(ISerializationContext context, ScenarioDef semanticObject) {
@@ -1195,10 +1172,11 @@ public class TurnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     URNmodelElement returns ScenarioGroup
 	 *     ScenarioGroup returns ScenarioGroup
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName longName=LongName scenario=ReferenceToScenarioDef scenarios+=ReferenceToScenarioDef*)
+	 *     (name=QualifiedName longName=LongName scenarios+=[ScenarioDef|ID] scenarios+=[ScenarioDef|ID]*)
 	 */
 	protected void sequence_ScenarioGroup(ISerializationContext context, ScenarioGroup semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1399,10 +1377,11 @@ public class TurnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     URNmodelElement returns Variable
 	 *     Variable returns Variable
 	 *
 	 * Constraint:
-	 *     (enumerationType=ReferenceToEnumerationType? name=QualifiedName)
+	 *     ((variableType=VariableType | enumerationType=[EnumerationType|ID]) name=ID)
 	 */
 	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

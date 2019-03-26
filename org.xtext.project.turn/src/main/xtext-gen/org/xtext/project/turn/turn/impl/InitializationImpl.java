@@ -6,12 +6,14 @@ package org.xtext.project.turn.turn.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.project.turn.turn.Initialization;
 import org.xtext.project.turn.turn.TurnPackage;
+import org.xtext.project.turn.turn.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,24 +32,14 @@ import org.xtext.project.turn.turn.TurnPackage;
 public class InitializationImpl extends MinimalEObjectImpl.Container implements Initialization
 {
   /**
-   * The default value of the '{@link #getVariable() <em>Variable</em>}' attribute.
+   * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getVariable()
    * @generated
    * @ordered
    */
-  protected static final String VARIABLE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getVariable() <em>Variable</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVariable()
-   * @generated
-   * @ordered
-   */
-  protected String variable = VARIABLE_EDEFAULT;
+  protected Variable variable;
 
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -95,7 +87,27 @@ public class InitializationImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVariable()
+  public Variable getVariable()
+  {
+    if (variable != null && variable.eIsProxy())
+    {
+      InternalEObject oldVariable = (InternalEObject)variable;
+      variable = (Variable)eResolveProxy(oldVariable);
+      if (variable != oldVariable)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, TurnPackage.INITIALIZATION__VARIABLE, oldVariable, variable));
+      }
+    }
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable basicGetVariable()
   {
     return variable;
   }
@@ -105,9 +117,9 @@ public class InitializationImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariable(String newVariable)
+  public void setVariable(Variable newVariable)
   {
-    String oldVariable = variable;
+    Variable oldVariable = variable;
     variable = newVariable;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, TurnPackage.INITIALIZATION__VARIABLE, oldVariable, variable));
@@ -147,7 +159,8 @@ public class InitializationImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case TurnPackage.INITIALIZATION__VARIABLE:
-        return getVariable();
+        if (resolve) return getVariable();
+        return basicGetVariable();
       case TurnPackage.INITIALIZATION__VALUE:
         return getValue();
     }
@@ -165,7 +178,7 @@ public class InitializationImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case TurnPackage.INITIALIZATION__VARIABLE:
-        setVariable((String)newValue);
+        setVariable((Variable)newValue);
         return;
       case TurnPackage.INITIALIZATION__VALUE:
         setValue((String)newValue);
@@ -185,7 +198,7 @@ public class InitializationImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case TurnPackage.INITIALIZATION__VARIABLE:
-        setVariable(VARIABLE_EDEFAULT);
+        setVariable((Variable)null);
         return;
       case TurnPackage.INITIALIZATION__VALUE:
         setValue(VALUE_EDEFAULT);
@@ -205,7 +218,7 @@ public class InitializationImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case TurnPackage.INITIALIZATION__VARIABLE:
-        return VARIABLE_EDEFAULT == null ? variable != null : !VARIABLE_EDEFAULT.equals(variable);
+        return variable != null;
       case TurnPackage.INITIALIZATION__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
@@ -223,9 +236,7 @@ public class InitializationImpl extends MinimalEObjectImpl.Container implements 
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (variable: ");
-    result.append(variable);
-    result.append(", value: ");
+    result.append(" (value: ");
     result.append(value);
     result.append(')');
     return result.toString();

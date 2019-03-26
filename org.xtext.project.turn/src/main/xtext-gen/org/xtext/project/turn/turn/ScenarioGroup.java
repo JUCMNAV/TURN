@@ -5,8 +5,6 @@ package org.xtext.project.turn.turn;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Scenario Group</b></em>'.
@@ -18,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.project.turn.turn.ScenarioGroup#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.ScenarioGroup#getLongName <em>Long Name</em>}</li>
- *   <li>{@link org.xtext.project.turn.turn.ScenarioGroup#getScenario <em>Scenario</em>}</li>
  *   <li>{@link org.xtext.project.turn.turn.ScenarioGroup#getScenarios <em>Scenarios</em>}</li>
  * </ul>
  *
@@ -26,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ScenarioGroup extends EObject
+public interface ScenarioGroup extends URNmodelElement
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -81,45 +78,19 @@ public interface ScenarioGroup extends EObject
   void setLongName(LongName value);
 
   /**
-   * Returns the value of the '<em><b>Scenario</b></em>' containment reference.
+   * Returns the value of the '<em><b>Scenarios</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.project.turn.turn.ScenarioDef}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Scenario</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Scenarios</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Scenario</em>' containment reference.
-   * @see #setScenario(ReferenceToScenarioDef)
-   * @see org.xtext.project.turn.turn.TurnPackage#getScenarioGroup_Scenario()
-   * @model containment="true"
-   * @generated
-   */
-  ReferenceToScenarioDef getScenario();
-
-  /**
-   * Sets the value of the '{@link org.xtext.project.turn.turn.ScenarioGroup#getScenario <em>Scenario</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Scenario</em>' containment reference.
-   * @see #getScenario()
-   * @generated
-   */
-  void setScenario(ReferenceToScenarioDef value);
-
-  /**
-   * Returns the value of the '<em><b>Scenarios</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.project.turn.turn.ReferenceToScenarioDef}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Scenarios</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Scenarios</em>' containment reference list.
+   * @return the value of the '<em>Scenarios</em>' reference list.
    * @see org.xtext.project.turn.turn.TurnPackage#getScenarioGroup_Scenarios()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  EList<ReferenceToScenarioDef> getScenarios();
+  EList<ScenarioDef> getScenarios();
 
 } // ScenarioGroup

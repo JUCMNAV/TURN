@@ -51,15 +51,6 @@ public interface TurnFactory extends EFactory
   Concern createConcern();
 
   /**
-   * Returns a new object of class '<em>Long Name</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Long Name</em>'.
-   * @generated
-   */
-  LongName createLongName();
-
-  /**
    * Returns a new object of class '<em>Condition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,6 +94,33 @@ public interface TurnFactory extends EFactory
    * @generated
    */
   URNmodelElement createURNmodelElement();
+
+  /**
+   * Returns a new object of class '<em>Artificial Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Artificial Rule</em>'.
+   * @generated
+   */
+  ArtificialRule createArtificialRule();
+
+  /**
+   * Returns a new object of class '<em>Text</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text</em>'.
+   * @generated
+   */
+  Text createText();
+
+  /**
+   * Returns a new object of class '<em>Long Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Long Name</em>'.
+   * @generated
+   */
+  LongName createLongName();
 
   /**
    * Returns a new object of class '<em>Actor</em>'.
@@ -157,15 +175,6 @@ public interface TurnFactory extends EFactory
    * @generated
    */
   Dependency createDependency();
-
-  /**
-   * Returns a new object of class '<em>Artificial Rule</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Artificial Rule</em>'.
-   * @generated
-   */
-  ArtificialRule createArtificialRule();
 
   /**
    * Returns a new object of class '<em>Strategies Group</em>'.
@@ -643,24 +652,6 @@ public interface TurnFactory extends EFactory
    * @generated
    */
   EnumerationType createEnumerationType();
-
-  /**
-   * Returns a new object of class '<em>Reference To Scenario Def</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Reference To Scenario Def</em>'.
-   * @generated
-   */
-  ReferenceToScenarioDef createReferenceToScenarioDef();
-
-  /**
-   * Returns a new object of class '<em>Text</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Text</em>'.
-   * @generated
-   */
-  Text createText();
 
   /**
    * Returns a new object of class '<em>Path Body Nodes</em>'.

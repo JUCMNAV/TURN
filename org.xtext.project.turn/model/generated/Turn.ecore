@@ -53,9 +53,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" unique="false"
         upperBound="-1" eType="#//URNmodelElement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LongName">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="longname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Text"
         containment="true"/>
@@ -81,6 +78,16 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="URNmodelElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArtificialRule" eSuperTypes="#//URNmodelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="longName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Text">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LongName">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="longname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//URNmodelElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="longName" eType="#//LongName"
@@ -126,9 +133,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="longName" eType="#//LongName"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dest" eType="#//IntentionalElement"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArtificialRule" eSuperTypes="#//URNmodelElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="longName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StrategiesGroup" eSuperTypes="#//URNmodelElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -459,6 +463,44 @@
   <eClassifiers xsi:type="ecore:EClass" name="FailureLabel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="failure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScenarioGroup" eSuperTypes="#//URNmodelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="longName" eType="#//LongName"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenarios" unique="false"
+        upperBound="-1" eType="#//ScenarioDef"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScenarioDef" eSuperTypes="#//URNmodelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="longName" eType="#//LongName"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preconditions" upperBound="-1"
+        eType="#//Condition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="postconditions" upperBound="-1"
+        eType="#//Condition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initializations" upperBound="-1"
+        eType="#//Initialization" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startPoints" unique="false"
+        upperBound="-1" eType="#//StartPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endPoints" unique="false"
+        upperBound="-1" eType="#//EndPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includedScenarios" unique="false"
+        upperBound="-1" eType="#//ScenarioDef"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Initialization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//URNmodelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumerationType" eType="#//EnumerationType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationType" eSuperTypes="#//URNmodelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="WAITKIND">
     <eLiterals name="persistent" literal="persistent"/>
     <eLiterals name="transient" value="1" literal="transient"/>
@@ -470,59 +512,6 @@
     <eLiterals name="agent" value="3" literal="agent"/>
     <eLiterals name="actor" value="4" literal="actor"/>
     <eLiterals name="parent" value="5" literal="parent"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ScenarioGroup">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="longName" eType="#//LongName"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//ReferenceToScenarioDef"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scenarios" upperBound="-1"
-        eType="#//ReferenceToScenarioDef" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ScenarioDef">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="longName" eType="#//LongName"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="preconditions" upperBound="-1"
-        eType="#//Condition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="postconditions" upperBound="-1"
-        eType="#//Condition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initializations" upperBound="-1"
-        eType="#//Initialization" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startPoints" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endPoints" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="includedScenario" eType="#//ReferenceToScenarioDef"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="includedScenarios" upperBound="-1"
-        eType="#//ReferenceToScenarioDef" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Initialization">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumerationType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnumerationType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReferenceToScenarioDef">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="longName" eType="#//LongName"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Text">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PathBodyNodes" eSuperTypes="#//PathBody">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pathNodes" upperBound="-1"

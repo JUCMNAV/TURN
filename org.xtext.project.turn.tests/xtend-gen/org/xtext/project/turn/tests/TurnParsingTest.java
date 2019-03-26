@@ -23,14 +23,16 @@ public class TurnParsingTest {
   private ParseHelper<URNspec> parseHelper;
   
   @Test
-  public void loadModel() {
+  public void testScenarioGroup() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("Hello Xtext!");
+      _builder.append("urnModel example");
+      _builder.newLine();
+      _builder.append("scenarioGroup example1 #\"Feature-specific UCM scenario definitions\" : BasicCallCore, BasicCallSuccess, BasicCallBusy");
       _builder.newLine();
       final URNspec result = this.parseHelper.parse(_builder);
       Assert.assertNotNull(result);
-      Assert.assertTrue(result.eResource().getErrors().isEmpty());
+      Assert.assertEquals("[]", result.eResource().getErrors().toString());
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

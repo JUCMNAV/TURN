@@ -40,7 +40,7 @@ public class CommonValueConverter extends DefaultTerminalConverters {
                 throw new ValueConverterException("Cannot be empty", node, null);
             }
             if(Integer.parseInt(string) <= 0){
-            	throw new ValueConverterException("value cannot be less than 0", node, null);
+            	throw new ValueConverterException("Value cannot be less than 0", node, null);
             }
             try {
                 return Integer.parseInt(string);

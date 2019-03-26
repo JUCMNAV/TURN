@@ -69,19 +69,20 @@ public class TurnFactoryImpl extends EFactoryImpl implements TurnFactory
       case TurnPackage.UR_NSPEC: return createURNspec();
       case TurnPackage.CONCRETE_UR_NSPEC: return createConcreteURNspec();
       case TurnPackage.CONCERN: return createConcern();
-      case TurnPackage.LONG_NAME: return createLongName();
       case TurnPackage.CONDITION: return createCondition();
       case TurnPackage.CONCRETE_CONDITION: return createConcreteCondition();
       case TurnPackage.UR_NLINK: return createURNlink();
       case TurnPackage.METADATA: return createMetadata();
       case TurnPackage.UR_NMODEL_ELEMENT: return createURNmodelElement();
+      case TurnPackage.ARTIFICIAL_RULE: return createArtificialRule();
+      case TurnPackage.TEXT: return createText();
+      case TurnPackage.LONG_NAME: return createLongName();
       case TurnPackage.ACTOR: return createActor();
       case TurnPackage.INTENTIONAL_ELEMENT: return createIntentionalElement();
       case TurnPackage.ELEMENT_LINK: return createElementLink();
       case TurnPackage.CONTRIBUTION: return createContribution();
       case TurnPackage.DECOMPOSITION: return createDecomposition();
       case TurnPackage.DEPENDENCY: return createDependency();
-      case TurnPackage.ARTIFICIAL_RULE: return createArtificialRule();
       case TurnPackage.STRATEGIES_GROUP: return createStrategiesGroup();
       case TurnPackage.EVALUATION_STRATEGY: return createEvaluationStrategy();
       case TurnPackage.CONCRETE_STRATEGY: return createConcreteStrategy();
@@ -135,8 +136,6 @@ public class TurnFactoryImpl extends EFactoryImpl implements TurnFactory
       case TurnPackage.INITIALIZATION: return createInitialization();
       case TurnPackage.VARIABLE: return createVariable();
       case TurnPackage.ENUMERATION_TYPE: return createEnumerationType();
-      case TurnPackage.REFERENCE_TO_SCENARIO_DEF: return createReferenceToScenarioDef();
-      case TurnPackage.TEXT: return createText();
       case TurnPackage.PATH_BODY_NODES: return createPathBodyNodes();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -239,17 +238,6 @@ public class TurnFactoryImpl extends EFactoryImpl implements TurnFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public LongName createLongName()
-  {
-    LongNameImpl longName = new LongNameImpl();
-    return longName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Condition createCondition()
   {
     ConditionImpl condition = new ConditionImpl();
@@ -298,6 +286,39 @@ public class TurnFactoryImpl extends EFactoryImpl implements TurnFactory
   {
     URNmodelElementImpl urNmodelElement = new URNmodelElementImpl();
     return urNmodelElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArtificialRule createArtificialRule()
+  {
+    ArtificialRuleImpl artificialRule = new ArtificialRuleImpl();
+    return artificialRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Text createText()
+  {
+    TextImpl text = new TextImpl();
+    return text;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LongName createLongName()
+  {
+    LongNameImpl longName = new LongNameImpl();
+    return longName;
   }
 
   /**
@@ -364,17 +385,6 @@ public class TurnFactoryImpl extends EFactoryImpl implements TurnFactory
   {
     DependencyImpl dependency = new DependencyImpl();
     return dependency;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ArtificialRule createArtificialRule()
-  {
-    ArtificialRuleImpl artificialRule = new ArtificialRuleImpl();
-    return artificialRule;
   }
 
   /**
@@ -958,28 +968,6 @@ public class TurnFactoryImpl extends EFactoryImpl implements TurnFactory
   {
     EnumerationTypeImpl enumerationType = new EnumerationTypeImpl();
     return enumerationType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ReferenceToScenarioDef createReferenceToScenarioDef()
-  {
-    ReferenceToScenarioDefImpl referenceToScenarioDef = new ReferenceToScenarioDefImpl();
-    return referenceToScenarioDef;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Text createText()
-  {
-    TextImpl text = new TextImpl();
-    return text;
   }
 
   /**

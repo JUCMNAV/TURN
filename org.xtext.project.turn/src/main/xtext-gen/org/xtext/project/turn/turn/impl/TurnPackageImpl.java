@@ -66,7 +66,6 @@ import org.xtext.project.turn.turn.PluginBinding;
 import org.xtext.project.turn.turn.QualToQMapping;
 import org.xtext.project.turn.turn.QualToQMappings;
 import org.xtext.project.turn.turn.QualitativeLabel;
-import org.xtext.project.turn.turn.ReferenceToScenarioDef;
 import org.xtext.project.turn.turn.ReferencedBoundElement;
 import org.xtext.project.turn.turn.ReferencedEnd;
 import org.xtext.project.turn.turn.RegularEnd;
@@ -125,13 +124,6 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass longNameEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass conditionEClass = null;
 
   /**
@@ -161,6 +153,27 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * @generated
    */
   private EClass urNmodelElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass artificialRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass textEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass longNameEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -203,13 +216,6 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * @generated
    */
   private EClass dependencyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass artificialRuleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -581,20 +587,6 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * @generated
    */
   private EClass enumerationTypeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass referenceToScenarioDefEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass textEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1030,26 +1022,6 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLongName()
-  {
-    return longNameEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getLongName_Longname()
-  {
-    return (EAttribute)longNameEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getCondition()
   {
     return conditionEClass;
@@ -1213,6 +1185,66 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
   public EClass getURNmodelElement()
   {
     return urNmodelElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getArtificialRule()
+  {
+    return artificialRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getArtificialRule_LongName()
+  {
+    return (EAttribute)artificialRuleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getText()
+  {
+    return textEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getText_Content()
+  {
+    return (EAttribute)textEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLongName()
+  {
+    return longNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLongName_Longname()
+  {
+    return (EAttribute)longNameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1523,26 +1555,6 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
   public EReference getDependency_Dest()
   {
     return (EReference)dependencyEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getArtificialRule()
-  {
-    return artificialRuleEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getArtificialRule_LongName()
-  {
-    return (EAttribute)artificialRuleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3420,19 +3432,9 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getScenarioGroup_Scenario()
-  {
-    return (EReference)scenarioGroupEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getScenarioGroup_Scenarios()
   {
-    return (EReference)scenarioGroupEClass.getEStructuralFeatures().get(3);
+    return (EReference)scenarioGroupEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3500,9 +3502,9 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getScenarioDef_StartPoint()
+  public EReference getScenarioDef_StartPoints()
   {
-    return (EAttribute)scenarioDefEClass.getEStructuralFeatures().get(5);
+    return (EReference)scenarioDefEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -3510,39 +3512,9 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getScenarioDef_StartPoints()
+  public EReference getScenarioDef_EndPoints()
   {
-    return (EAttribute)scenarioDefEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getScenarioDef_EndPoint()
-  {
-    return (EAttribute)scenarioDefEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getScenarioDef_EndPoints()
-  {
-    return (EAttribute)scenarioDefEClass.getEStructuralFeatures().get(8);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getScenarioDef_IncludedScenario()
-  {
-    return (EReference)scenarioDefEClass.getEStructuralFeatures().get(9);
+    return (EReference)scenarioDefEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -3552,7 +3524,7 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    */
   public EReference getScenarioDef_IncludedScenarios()
   {
-    return (EReference)scenarioDefEClass.getEStructuralFeatures().get(10);
+    return (EReference)scenarioDefEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -3570,9 +3542,9 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInitialization_Variable()
+  public EReference getInitialization_Variable()
   {
-    return (EAttribute)initializationEClass.getEStructuralFeatures().get(0);
+    return (EReference)initializationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3600,7 +3572,7 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariable_EnumerationType()
+  public EAttribute getVariable_VariableType()
   {
     return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
   }
@@ -3610,9 +3582,19 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getVariable_EnumerationType()
+  {
+    return (EReference)variableEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getVariable_Name()
   {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3640,69 +3622,9 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEnumerationType_Value()
-  {
-    return (EAttribute)enumerationTypeEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getEnumerationType_Values()
   {
-    return (EAttribute)enumerationTypeEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getReferenceToScenarioDef()
-  {
-    return referenceToScenarioDefEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getReferenceToScenarioDef_Name()
-  {
-    return (EAttribute)referenceToScenarioDefEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getReferenceToScenarioDef_LongName()
-  {
-    return (EReference)referenceToScenarioDefEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getText()
-  {
-    return textEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getText_Content()
-  {
-    return (EAttribute)textEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)enumerationTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3859,9 +3781,6 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     createEReference(concernEClass, CONCERN__ELEMENT);
     createEReference(concernEClass, CONCERN__ELEMENTS);
 
-    longNameEClass = createEClass(LONG_NAME);
-    createEAttribute(longNameEClass, LONG_NAME__LONGNAME);
-
     conditionEClass = createEClass(CONDITION);
     createEReference(conditionEClass, CONDITION__EXPRESSION);
     createEReference(conditionEClass, CONDITION__INFO);
@@ -3883,6 +3802,15 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     createEReference(metadataEClass, METADATA__VALUE);
 
     urNmodelElementEClass = createEClass(UR_NMODEL_ELEMENT);
+
+    artificialRuleEClass = createEClass(ARTIFICIAL_RULE);
+    createEAttribute(artificialRuleEClass, ARTIFICIAL_RULE__LONG_NAME);
+
+    textEClass = createEClass(TEXT);
+    createEAttribute(textEClass, TEXT__CONTENT);
+
+    longNameEClass = createEClass(LONG_NAME);
+    createEAttribute(longNameEClass, LONG_NAME__LONGNAME);
 
     actorEClass = createEClass(ACTOR);
     createEAttribute(actorEClass, ACTOR__NAME);
@@ -3920,9 +3848,6 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     createEAttribute(dependencyEClass, DEPENDENCY__NAME);
     createEReference(dependencyEClass, DEPENDENCY__LONG_NAME);
     createEReference(dependencyEClass, DEPENDENCY__DEST);
-
-    artificialRuleEClass = createEClass(ARTIFICIAL_RULE);
-    createEAttribute(artificialRuleEClass, ARTIFICIAL_RULE__LONG_NAME);
 
     strategiesGroupEClass = createEClass(STRATEGIES_GROUP);
     createEAttribute(strategiesGroupEClass, STRATEGIES_GROUP__NAME);
@@ -4159,7 +4084,6 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     scenarioGroupEClass = createEClass(SCENARIO_GROUP);
     createEAttribute(scenarioGroupEClass, SCENARIO_GROUP__NAME);
     createEReference(scenarioGroupEClass, SCENARIO_GROUP__LONG_NAME);
-    createEReference(scenarioGroupEClass, SCENARIO_GROUP__SCENARIO);
     createEReference(scenarioGroupEClass, SCENARIO_GROUP__SCENARIOS);
 
     scenarioDefEClass = createEClass(SCENARIO_DEF);
@@ -4168,32 +4092,22 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     createEReference(scenarioDefEClass, SCENARIO_DEF__PRECONDITIONS);
     createEReference(scenarioDefEClass, SCENARIO_DEF__POSTCONDITIONS);
     createEReference(scenarioDefEClass, SCENARIO_DEF__INITIALIZATIONS);
-    createEAttribute(scenarioDefEClass, SCENARIO_DEF__START_POINT);
-    createEAttribute(scenarioDefEClass, SCENARIO_DEF__START_POINTS);
-    createEAttribute(scenarioDefEClass, SCENARIO_DEF__END_POINT);
-    createEAttribute(scenarioDefEClass, SCENARIO_DEF__END_POINTS);
-    createEReference(scenarioDefEClass, SCENARIO_DEF__INCLUDED_SCENARIO);
+    createEReference(scenarioDefEClass, SCENARIO_DEF__START_POINTS);
+    createEReference(scenarioDefEClass, SCENARIO_DEF__END_POINTS);
     createEReference(scenarioDefEClass, SCENARIO_DEF__INCLUDED_SCENARIOS);
 
     initializationEClass = createEClass(INITIALIZATION);
-    createEAttribute(initializationEClass, INITIALIZATION__VARIABLE);
+    createEReference(initializationEClass, INITIALIZATION__VARIABLE);
     createEAttribute(initializationEClass, INITIALIZATION__VALUE);
 
     variableEClass = createEClass(VARIABLE);
-    createEAttribute(variableEClass, VARIABLE__ENUMERATION_TYPE);
+    createEAttribute(variableEClass, VARIABLE__VARIABLE_TYPE);
+    createEReference(variableEClass, VARIABLE__ENUMERATION_TYPE);
     createEAttribute(variableEClass, VARIABLE__NAME);
 
     enumerationTypeEClass = createEClass(ENUMERATION_TYPE);
     createEAttribute(enumerationTypeEClass, ENUMERATION_TYPE__NAME);
-    createEAttribute(enumerationTypeEClass, ENUMERATION_TYPE__VALUE);
     createEAttribute(enumerationTypeEClass, ENUMERATION_TYPE__VALUES);
-
-    referenceToScenarioDefEClass = createEClass(REFERENCE_TO_SCENARIO_DEF);
-    createEAttribute(referenceToScenarioDefEClass, REFERENCE_TO_SCENARIO_DEF__NAME);
-    createEReference(referenceToScenarioDefEClass, REFERENCE_TO_SCENARIO_DEF__LONG_NAME);
-
-    textEClass = createEClass(TEXT);
-    createEAttribute(textEClass, TEXT__CONTENT);
 
     pathBodyNodesEClass = createEClass(PATH_BODY_NODES);
     createEReference(pathBodyNodesEClass, PATH_BODY_NODES__PATH_NODES);
@@ -4239,6 +4153,7 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     // Add supertypes to classes
     concernEClass.getESuperTypes().add(this.getURNmodelElement());
     urNlinkEClass.getESuperTypes().add(this.getURNmodelElement());
+    artificialRuleEClass.getESuperTypes().add(this.getURNmodelElement());
     actorEClass.getESuperTypes().add(this.getURNmodelElement());
     intentionalElementEClass.getESuperTypes().add(this.getURNmodelElement());
     contributionEClass.getESuperTypes().add(this.getURNmodelElement());
@@ -4247,7 +4162,6 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     decompositionEClass.getESuperTypes().add(this.getElementLink());
     dependencyEClass.getESuperTypes().add(this.getURNmodelElement());
     dependencyEClass.getESuperTypes().add(this.getElementLink());
-    artificialRuleEClass.getESuperTypes().add(this.getURNmodelElement());
     strategiesGroupEClass.getESuperTypes().add(this.getURNmodelElement());
     evaluationStrategyEClass.getESuperTypes().add(this.getURNmodelElement());
     linearConversionEClass.getESuperTypes().add(this.getURNmodelElement());
@@ -4297,6 +4211,10 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     inBindingEClass.getESuperTypes().add(this.getBinding());
     outBindingEClass.getESuperTypes().add(this.getBinding());
     componentBindingEClass.getESuperTypes().add(this.getBinding());
+    scenarioGroupEClass.getESuperTypes().add(this.getURNmodelElement());
+    scenarioDefEClass.getESuperTypes().add(this.getURNmodelElement());
+    variableEClass.getESuperTypes().add(this.getURNmodelElement());
+    enumerationTypeEClass.getESuperTypes().add(this.getURNmodelElement());
     pathBodyNodesEClass.getESuperTypes().add(this.getPathBody());
 
     // Initialize classes and features; add operations and parameters
@@ -4334,9 +4252,6 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     initEReference(getConcern_Element(), this.getURNmodelElement(), null, "element", null, 0, 1, Concern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConcern_Elements(), this.getURNmodelElement(), null, "elements", null, 0, -1, Concern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(longNameEClass, LongName.class, "LongName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLongName_Longname(), ecorePackage.getEString(), "longname", null, 0, 1, LongName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCondition_Expression(), this.getText(), null, "expression", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCondition_Info(), this.getConcreteCondition(), null, "info", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4358,6 +4273,15 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     initEReference(getMetadata_Value(), this.getText(), null, "value", null, 0, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(urNmodelElementEClass, URNmodelElement.class, "URNmodelElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(artificialRuleEClass, ArtificialRule.class, "ArtificialRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getArtificialRule_LongName(), ecorePackage.getEString(), "longName", null, 0, 1, ArtificialRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getText_Content(), ecorePackage.getEString(), "content", null, 0, -1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(longNameEClass, LongName.class, "LongName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLongName_Longname(), ecorePackage.getEString(), "longname", null, 0, 1, LongName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getActor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4395,9 +4319,6 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     initEAttribute(getDependency_Name(), ecorePackage.getEString(), "name", null, 0, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDependency_LongName(), this.getLongName(), null, "longName", null, 0, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDependency_Dest(), this.getIntentionalElement(), null, "dest", null, 0, 1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(artificialRuleEClass, ArtificialRule.class, "ArtificialRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getArtificialRule_LongName(), ecorePackage.getEString(), "longName", null, 0, 1, ArtificialRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(strategiesGroupEClass, StrategiesGroup.class, "StrategiesGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStrategiesGroup_Name(), ecorePackage.getEString(), "name", null, 0, 1, StrategiesGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4634,8 +4555,7 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     initEClass(scenarioGroupEClass, ScenarioGroup.class, "ScenarioGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScenarioGroup_Name(), ecorePackage.getEString(), "name", null, 0, 1, ScenarioGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getScenarioGroup_LongName(), this.getLongName(), null, "longName", null, 0, 1, ScenarioGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScenarioGroup_Scenario(), this.getReferenceToScenarioDef(), null, "scenario", null, 0, 1, ScenarioGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScenarioGroup_Scenarios(), this.getReferenceToScenarioDef(), null, "scenarios", null, 0, -1, ScenarioGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScenarioGroup_Scenarios(), this.getScenarioDef(), null, "scenarios", null, 0, -1, ScenarioGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scenarioDefEClass, ScenarioDef.class, "ScenarioDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScenarioDef_Name(), ecorePackage.getEString(), "name", null, 0, 1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4643,32 +4563,22 @@ public class TurnPackageImpl extends EPackageImpl implements TurnPackage
     initEReference(getScenarioDef_Preconditions(), this.getCondition(), null, "preconditions", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getScenarioDef_Postconditions(), this.getCondition(), null, "postconditions", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getScenarioDef_Initializations(), this.getInitialization(), null, "initializations", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getScenarioDef_StartPoint(), ecorePackage.getEString(), "startPoint", null, 0, 1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getScenarioDef_StartPoints(), ecorePackage.getEString(), "startPoints", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getScenarioDef_EndPoint(), ecorePackage.getEString(), "endPoint", null, 0, 1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getScenarioDef_EndPoints(), ecorePackage.getEString(), "endPoints", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScenarioDef_IncludedScenario(), this.getReferenceToScenarioDef(), null, "includedScenario", null, 0, 1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScenarioDef_IncludedScenarios(), this.getReferenceToScenarioDef(), null, "includedScenarios", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScenarioDef_StartPoints(), this.getStartPoint(), null, "startPoints", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScenarioDef_EndPoints(), this.getEndPoint(), null, "endPoints", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScenarioDef_IncludedScenarios(), this.getScenarioDef(), null, "includedScenarios", null, 0, -1, ScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(initializationEClass, Initialization.class, "Initialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInitialization_Variable(), ecorePackage.getEString(), "variable", null, 0, 1, Initialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInitialization_Variable(), this.getVariable(), null, "variable", null, 0, 1, Initialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInitialization_Value(), ecorePackage.getEString(), "value", null, 0, 1, Initialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariable_EnumerationType(), ecorePackage.getEString(), "enumerationType", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVariable_VariableType(), ecorePackage.getEString(), "variableType", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariable_EnumerationType(), this.getEnumerationType(), null, "enumerationType", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(enumerationTypeEClass, EnumerationType.class, "EnumerationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEnumerationType_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEnumerationType_Value(), ecorePackage.getEString(), "value", null, 0, 1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEnumerationType_Values(), ecorePackage.getEString(), "values", null, 0, -1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(referenceToScenarioDefEClass, ReferenceToScenarioDef.class, "ReferenceToScenarioDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getReferenceToScenarioDef_Name(), ecorePackage.getEString(), "name", null, 0, 1, ReferenceToScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReferenceToScenarioDef_LongName(), this.getLongName(), null, "longName", null, 0, 1, ReferenceToScenarioDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getText_Content(), ecorePackage.getEString(), "content", null, 0, -1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pathBodyNodesEClass, PathBodyNodes.class, "PathBodyNodes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPathBodyNodes_PathNodes(), this.getPathBodyNode(), null, "pathNodes", null, 0, -1, PathBodyNodes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
