@@ -1,0 +1,143 @@
+urnModel FailurePointTest
+
+// FailurePoint followed by a PathBodyNode (Responsibility, OrJoin, AndJoin, WaitingPlace, Timer, FailurePoint, Connect)
+// or RegularEnd (EndpointWithConnect, OrFork, AndFork, Stub)
+
+map FailurePointTestEndPoint {
+   start s -> fail -> end e.
+}
+
+map FailurePointTestEndPointAgain {
+   start s -> fail -> end e.
+   start s2 -> fail -> end e.
+}
+
+map FailurePointTestResponsibility {
+   start s -> fail -> X r1 -> end e.
+}
+
+map FailurePointTestResponsibilityAgain {
+   start s -> fail -> X r1 -> end e.
+   start s2 -> fail -> X r1 -> end e2.
+}
+
+map FailurePointTestOrFork {
+   start s -> fail -> or {
+      [condition] -> ;
+   } -> end e.
+}
+
+map FailurePointTestOrJoin {
+   start s -> fail -> join j -> end e.
+   start s2 -> j;
+}
+
+map FailurePointTestAndFork {
+   start s -> fail -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+}
+
+map FailurePointTestAndJoin {
+   start s -> fail -> sync sy -> end e.
+   start s2 -> sy;
+}
+
+map FailurePointTestWaitingPlace {
+   start s -> fail -> wait -> end e.
+}
+
+map FailurePointTestWaitingPlaceWithWaitKind {
+   start s -> fail -> transient wait -> end e.
+}
+
+map FailurePointTestTimer {
+   start s -> fail -> timer {} -> end e.
+}
+
+map FailurePointTestTimerWithWaitKind {
+   start s -> fail -> persistent timer {} -> end e.
+}
+
+map FailurePointTestFailurePoint {
+   start s -> fail -> fail -> end e.
+}
+
+map FailurePointTestStub {
+   start s -> fail -> stub () -> end e.
+}
+
+map FailurePointTestStubWithStubType {
+   start s -> fail -> blocking stub () -> end e.
+}
+
+map FailurePointTestAsynchronousConnectStartPoint {
+   start s -> fail -> trigger s2; -> end e.
+   start s2 -> end e2.
+}
+
+map FailurePointTestAsynchronousConnectWaitingPlace {
+   start s -> fail -> trigger wp; -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map FailurePointTestAsynchronousConnectTimer {
+   start s -> fail -> trigger t; -> end e.
+   start s2 -> timer t -> end e2.
+}
+
+// FailurePoint followed by a ReferencedEnd 
+// (Responsibility, OrJoin, AndJoin, FailurePoint, Stub)
+
+map FailurePointTestReferencedResponsibility {
+   start s -> X r1 -> end e.
+   start s2 -> fail -> r1;
+}
+
+map FailurePointTestReferencedOrJoin {
+   start s -> join j -> end e.
+   start s2 -> fail -> j;
+}
+
+map FailurePointTestReferencedAndJoin {
+   start s -> sync sy -> end e.
+   start s2 -> fail -> sy;
+}
+
+map FailurePointTestReferencedFailurePoint {
+   start s -> fail f -> end e.
+   start s2 -> fail -> f;
+}
+
+map FailurePointTestReferencedStub {
+   start s -> stub st() -> end e.
+   start s2 -> fail -> in st 1;
+}
+
+map FailurePointTestReferencedStubInpath2 {
+   start s -> stub st () -> end e.
+   start s2 -> fail -> in st 2;
+}
+
+// full specification of FailurePoint
+
+map FailurePointTestFull {
+   start s -> fail f#"FailurePoint One" -> end e.
+}
+
+map FailurePointTestWithException1 {
+   start s -> fail f#"FailurePoint One" [condition] [["exception"]] -> end e.
+}
+
+map FailurePointTestWithException2 {
+   start s -> fail f#"FailurePoint One" [["exception"]] [condition] -> end e.
+}
+
+map FailurePointTestJustWithException1 {
+   start s -> fail [condition] [["exception"]] -> end e.
+}
+
+map FailurePointTestJustWithException2 {
+   start s -> fail [["exception"]] [condition] -> end e.
+}

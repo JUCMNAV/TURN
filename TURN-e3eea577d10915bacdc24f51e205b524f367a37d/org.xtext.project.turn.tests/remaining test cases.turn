@@ -1,0 +1,179 @@
+urnModel Test
+
+concern TCConcern : TelP
+link TelP --> OriginatingAgent
+
+metadata 	TCS: popularity = 90
+metadata 	TL: popularity = 35 
+metadata 	TelP.HighRel: test=90
+metadata 	SG1: hh=90
+metadata 	OF: hh=00
+metadata 	OF.startPoint:ff=00
+metadata 	Agent: rr=10
+
+
+actor TelP#"Telecom Provider" {
+	importance 100
+	goal VoiceConn#"Voice Connection Be Setup" {
+		importance 50
+	}
+
+	softgoal HighRel#"High Reliability" {
+		importance 75
+	}
+
+	softgoal SpecUsage#"Minimize Spectrum Usage" {
+		importance 60
+	}
+
+	task MakeVoiceOverInternet#"Make Voice Connection Over Internet" {
+		contributesTo HighRel with somePositive
+		contributesTo SpecUsage correlated with somePositive
+		xor decomposes VoiceConn
+	}
+
+	task MakeVoiceOverWireless#"Make Voice Connection Over Wireless" {
+		contWirelessVoiceConnToHighRel contributesTo HighRel with make
+		contributesTo SpecUsage correlated with someNegative 
+	xor decomposes VoiceConn
+	}
+indicator VoiceConnFailureRate#"Failure Rate for Voice Connection Over 
+		Internet" {
+		unit "failures/week/10000 connections"
+		contVoiceConnFailureRateToInternetVoiceConn contributesTo
+			MakeVoiceOverInternet with 100
+		dependsOn Tech.LoggEquip
+	}
+
+	belief WirelessReliability#"Wireless is less reliable than Internet" {
+		contributesTo HighRel with someNegative
+	}
+}
+
+actor Tech#"Technician" {
+	resource LoggEquip#"Logging Equipment" {
+		dependsOn EquipSetup
+	}
+
+	task EquipSetup#"Correctly setup logging equipment" {
+		importance 100
+	}
+}
+
+strategiesGroup SG1: Eval1
+
+strategy Eval1#"Internet Connection" {
+	author "ITU-T"
+	Tech.EquipSetup evaluation 100
+	TelP.VoiceConnFailureRate real 265 convertedWith LC1
+}
+
+linearConversion LC1#"Weakly Failures" {
+	unit "failures/week/10000 connections"
+	target 0
+	threshold 500
+	worst 10000
+	}
+
+	mappingConversion MC1#"EquipmentClassification" {
+	unit "equipment class"
+	real "Class 1" --> 100
+	real "Class 2" --> 47
+	real "Class 3" --> -25
+}
+
+contributionContextGroup CCG1: CCP, CCPI
+
+contributionContext CCP#"Pessimistic" {
+	TelP.contVoiceConnFailureRateToInternetVoiceConn with help
+}
+
+contributionContext CCPI#"PessimisticIneffective" {
+	TelP.contVoiceConnFailureRateToInternetVoiceConn with 50
+	includes CCP
+}
+
+map Default {
+	start startPoint -> end continue.
+	parent Agent: startPoint, continue
+}
+
+map OF #"Originating Features" {
+	start startPoint -> stub OrigFeatures(
+		[!subTL] Default: startPoint=in 1, continue=out 1, Agent=Agent	
+		[subTL] TL: startPoint=in 1, success=out 1, failPoint=out 2,
+		Agent=Agent
+	) {
+		out 1 -> X sendRequest -> end success.
+		out 2 -> end failPoint.
+	}
+	parent Agent: startPoint..success, failPoint
+
+
+}
+
+map TCS #"Terminating Call Screening (TCS)" {
+	start startPoint -> X checkTCS -> or {
+		[!onTCSlist] -> end success.
+[onTCSlist] -> end failPoint.
+	}
+	parent Agent: startPoint..success, failPoint, TCSCreeningList
+	parent TCSCreeningList: checkTCS
+}
+
+map TF #"Terminating Features" {
+	start startPoint -> stub TermFeatures(
+		[!subTCS] Default: startPoint=in 1, continue=out 1, Agent=Agent
+[subTCS] TCS: startPoint=in 1, success=out 1, failPoint=out 2, Agent=Agent
+	) {
+		out 1 -> or {
+			[!busy] -> and {
+				* -> X ringTreatment -> end success.
+				* -> X ringingTreatment -> end reportSuccess.
+			}
+			[busy] -> X busyTreatment -> end busy.
+		}
+		out 2 -> end failPoint.
+	}
+parent Agent: startPoint..success, startPoint..reportSuccess, startPoint..busy, failPoint
+}
+
+map SC#"Simple Connection" {
+start request -> stub Originating(
+	OF: success=out 1, failPoint=out 2, startPoint=in 1, 	Agent=OriginatingAgent
+) {
+		out 1 -> stub Terminating(
+			TF: success=out 1, reportSuccess=out 2, busy=out 3, 
+			failPoint=out 4, startPoint=in 1, 
+			Agent=TerminatingAgent
+		) {
+			out 1 -> end ring.
+			out 2 -> X forwardSignal -> end ringing.
+			out 3 -> X forwardSignal -> end busy.
+			out 4 -> end notify.
+		}
+		out 2 -> end notify.
+	}
+	parent OriginatingUser: request, notify, busy, ringing
+	parent OriginatingAgent: Originating, forwardSignal
+	parent TerminatingAgent: Terminating
+	parent TerminatingUser: ring
+}
+map TL {
+	start startPoint -> X checkTime -> or {
+		[!TLactive] -> end success.
+		[TLactive] -> timer getPIN {-> deny;} -> or {
+[PINvalid] -> end success.	
+			[!PINvalid] -> ;
+		} -> X deny -> end failPoint.
+	}
+	start enterPIN -> trigger getPIN ;->
+	parent Agent: startPoint..failPoint, success
+	parent OriginatingUser: enterPIN
+
+}
+
+
+
+
+	

@@ -1,0 +1,46 @@
+urnModel TaskTest
+
+// Task followed by an ElementLink (Contribution, Decomposition, Dependency) to  
+// another IntentionalElement (Softgoal, Goal, Task in case of Contribution; 
+// Softgoal, Goal, Task, Resource in case of Decomposition; 
+// Softgoal, Goal, Task, Resource, Indicator in case of Dependency)
+
+actor T#"Task Test for ElementLinks" {
+   task tSource {
+      contributesTo sg1 with make
+      contributesTo g1 with 100
+      contributesTo t1 correlated with break
+      and decomposes sg2
+      or decomposes g2
+      xor decomposes t2
+      and decomposes r2
+      dependsOn Other.sg3
+      dependsOn Other.g3
+      dependsOn Other.t3
+      dependsOn Other.r3
+      dependsOn Other.i3
+   }
+   softgoal sg1 {}
+   softgoal sg2 {}
+   goal g1 {}
+   goal g2 {}
+   task t1{}
+   task t2 {}
+   resource r2 {}
+}
+
+actor Other {
+   softgoal sg3 {}
+   goal g3 {}
+   task t3 {}
+   resource r3 {}
+   indicator i3 {}
+}
+
+// full specification of Task
+
+actor T2#"Task Test for Optional Elements" {
+   task tSource2#"Task" {
+      importance 100
+   }
+}

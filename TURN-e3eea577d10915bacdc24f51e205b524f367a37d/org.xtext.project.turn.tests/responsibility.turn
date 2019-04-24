@@ -1,0 +1,130 @@
+urnModel ResponsibilityTest
+
+// Responsibility followed by a PathBodyNode (Responsibility, OrJoin, AndJoin, WaitingPlace, Timer, FailurePoint, Connect)
+// or RegularEnd (EndpointWithConnect, OrFork, AndFork, Stub)
+
+map ResponsibilityTestEndPoint {
+   start s -> X r1 -> end e.
+}
+
+map ResponsibilityTestEndPointAgain {
+   start s -> X r1 -> end e.
+   start s2 -> X r2 -> end e.
+}
+
+map ResponsibilityTestResponsibilityDifferent {
+   start s -> X r1 -> X r2 -> end e.
+}
+
+map ResponsibilityTestResponsibilitySame {
+   start s -> X r1 -> X r1 -> end e.
+}
+
+map ResponsibilityTestOrFork {
+   start s -> X r1 -> or {
+      [condition] -> ;
+   } -> end e.
+}
+
+map ResponsibilityTestOrJoin {
+   start s -> X r1 -> join j -> end e.
+   start s2 -> j;
+}
+
+map ResponsibilityTestAndFork {
+   start s -> X r1 -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+}
+
+map ResponsibilityTestAndJoin {
+   start s -> X r1 -> sync sy -> end e.
+   start s2 -> sy;
+}
+
+map ResponsibilityTestWaitingPlace {
+   start s -> X r1 -> wait -> end e.
+}
+
+map ResponsibilityTestWaitingPlaceWithWaitKind {
+   start s -> X r1 -> transient wait -> end e.
+}
+
+map ResponsibilityTestTimer {
+   start s -> X r1 -> timer {} -> end e.
+}
+
+map ResponsibilityTestTimerWithWaitKind {
+   start s -> X r1 -> persistent timer 
+   -> end e.
+}
+
+map ResponsibilityTestFailurePoint {
+   start s -> X r1 -> fail -> end e.
+}
+
+map ResponsibilityTestStub { 
+   start s -> X r1 -> stub () -> end e.
+}
+
+map ResponsibilityTestStubWithStubType { 
+   start s -> X r1 -> blocking stub () 
+   -> end e.
+}
+
+map ResponsibilityTestAsynchronousConnectStartPoint {
+   start s -> X r1 -> trigger s2; -> end e.
+   start s2 -> end e2.
+}
+
+map ResponsibilityTestAsynchronousConnectWaitingPlace {
+   start s -> X r1 -> trigger wp; -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map ResponsibilityTestAsynchronousConnectTimer {
+   start s -> X r1 -> trigger t; -> end e.
+   start s2 -> timer t -> end e2.
+}
+
+// Responsibility followed by a ReferencedEnd 
+// (Responsibility, OrJoin, AndJoin, FailurePoint, Stub)
+
+map ResponsibilityTestReferencedResponsibility {  
+   start s -> X r1 -> end e.
+   start s2 -> X r2 -> r1;
+}
+
+map ResponsibilityTestReferencedOrJoin {
+   start s -> join j -> end e.
+   start s2 -> X r1 -> j;
+}
+
+map ResponsibilityTestReferencedAndJoin {
+   start s -> sync sy -> end e.
+   start s2 -> X r1 -> sy;
+}
+
+map ResponsibilityTestReferencedFailurePoint {
+   start s -> fail f -> end e.
+   start s2 -> X r1 -> f;
+}
+
+map ResponsibilityTestReferencedStub { 
+   start s -> stub st () -> end e. 
+   start s2 -> X r1 -> in st 1;
+}
+
+map ResponsibilityTestReferencedStubInpath2  { 
+   start s -> stub st(
+   	ResponsibilityTestFull: s = in 1,  	e = out 1
+   ) -> end e. 
+   start s2 -> X r1 -> in st 2;
+}
+
+// full specification of Responsibility
+
+map ResponsibilityTestFull {
+   start s -> X r#"Responsibility" -> end e.
+}

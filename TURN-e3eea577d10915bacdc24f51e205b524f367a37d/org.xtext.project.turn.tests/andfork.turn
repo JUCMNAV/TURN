@@ -1,0 +1,230 @@
+urnModel AndForkTest
+
+// AndFork followed by a PathBodyNode (Responsibility, OrJoin, AndJoin, WaitingPlace, Timer, FailurePoint, Connect)
+// or RegularEnd (EndpointWithConnect, OrFork, AndFork, Stub)
+
+map AndForkTestEndPoint {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+}
+
+map AndForkTestEndPointAgain {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+   start s2 -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+}
+
+map AndForkTestResponsibility {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> X r1 -> end e.
+}
+
+map AndForkTestResponsibilityAgain {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> X r1 -> end e.
+   start s2 -> and {
+      * -> ;
+      * -> ;
+   } -> X r1 -> end e2.
+}
+
+map AndForkTestOrFork {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> or {
+      [condition] -> ;
+   } -> end e.
+}
+
+map AndForkTestOrJoin {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> join j -> end e.
+   start s2 -> j;
+}
+
+map AndForkTestAndFork {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+}
+
+map AndForkTestAndJoin {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> sync sy -> end e.
+   start s2 -> sy;
+}
+
+map AndForkTestWaitingPlace {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> wait -> end e.
+}
+
+map AndForkTestWaitingPlaceWithWaitKind {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> transient wait -> end e.
+}
+
+map AndForkTestTimer {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> timer {} -> end e.
+}
+
+map AndForkTestTimerWithWaitKind {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> persistent timer {} -> end e.
+}
+
+map AndForkTestFailurePoint {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> fail -> end e.
+}
+
+map AndForkTestStub {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> stub () -> end e.
+}
+
+map AndForkTestStubWithStubType {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> blocking stub () -> end e.
+}
+
+map AndForkTestAsynchronousConnectStartPoint {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> trigger s2; -> end e.
+   start s2 -> end e2.
+}
+
+map AndForkTestAsynchronousConnectWaitingPlace {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> trigger wp; -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map AndForkTestAsynchronousConnectTimer {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> trigger t; -> end e.
+   start s2 -> timer t -> end e2.
+}
+
+// AndFork followed by a ReferencedEnd 
+// (Responsibility, OrJoin, AndJoin, FailurePoint, Stub)
+
+map AndForkTestReferencedResponsibility {
+   start s -> X r1 -> end e.
+   start s2 -> and {
+      * -> ;
+      * -> ;
+   } -> r1;
+}
+
+map AndForkTestReferencedOrJoin {
+   start s -> join j -> end e.
+   start s2 -> and {
+      * -> ;
+      * -> ;
+   } -> j;
+}
+
+map AndForkTestReferencedAndJoin {
+   start s -> sync sy -> end e.
+   start s2 -> and {
+      * -> ;
+      * -> ;
+   } -> sy;
+}
+
+map AndForkTestReferencedFailurePoint {
+   start s -> fail f -> end e.
+   start s2 -> and {
+      * -> ;
+      * -> ;
+   } -> f;
+}
+
+map AndForkTestReferencedStub {
+   start s -> stub st() -> end e.
+   start s2 -> and {
+      * -> ;
+      * -> ;
+   } -> in st 1;
+}
+
+map AndForkTestReferencedStubInpath2 {
+   start s -> stub st () -> end e.
+   start s2 -> and {
+      * -> ;
+      * -> ;
+   } -> in st 2;
+}
+
+// full specification of AndFork
+
+map AndForkTestFull {
+   start s -> and a#"AndFork One" {
+      * -> ;
+      * -> ;
+   } -> end e.
+}
+
+map AndForkTestNoConnectingBody {
+   start s -> and a#"AndFork One" {
+      * -> end e1.
+      * -> end e2.
+   }
+}
+
+map AndForkTestRegularBranchAndConnectingBranch {
+   start s -> and a#"AndFork One" {
+      * -> end e1.
+      * -> ;
+   } -> end e2.
+}
+
+map AndForkTestRegularBranchAndTwoConnectingBranches {
+   start s -> and a#"AndFork One" {
+      * -> end e1.
+      * -> ;
+      * -> ;
+   } -> end e2.
+}

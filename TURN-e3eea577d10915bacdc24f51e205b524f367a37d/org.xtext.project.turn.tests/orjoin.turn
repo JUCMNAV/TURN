@@ -1,0 +1,154 @@
+urnModel OrJoinTest
+
+// OrJoin followed by a PathBodyNode (Responsibility, OrJoin, AndJoin, WaitingPlace, Timer, FailurePoint, Connect)
+// or RegularEnd (EndpointWithConnect, OrFork, AndFork, Stub)
+
+map OrJoinTestEndPoint {
+   start s -> join j -> end e.
+   start s2 -> j;
+}
+
+map OrJoinTestEndPointAgain {
+   start s -> join j -> end e.
+   start s2 -> j;
+   start s3 -> join j2 -> end e.
+   start s4 -> j2;
+}
+
+map OrJoinTestResponsibility {
+   start s -> join j -> X r1 -> end e.
+   start s2 -> j;
+}
+
+map OrJoinTestResponsibilityAgain {
+   start s -> join j -> X r1 -> end e.
+   start s2 -> j;
+   start s3 -> join j2 -> X r1 -> end e2.
+   start s4 -> j2;
+}
+
+map OrJoinTestOrFork {
+   start s -> join j -> or {
+      [condition] -> ;
+   } -> end e.
+   start s2 -> j;
+}
+
+map OrJoinTestOrJoin {
+   start s -> join j -> join j2 -> end e.
+   start s2 -> j;
+   start s3 -> j2;
+}
+
+map OrJoinTestAndFork {
+   start s -> join j -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+   start s2 -> j;
+}
+
+map OrJoinTestAndJoin {
+   start s -> join j -> sync sy -> end e.
+   start s2 -> j;
+   start s3 -> sy;
+}
+
+map OrJoinTestWaitingPlace {
+   start s -> join j -> wait -> end e.
+   start s2 -> j;
+}
+
+map OrJoinTestWaitingPlaceWithWaitKind {
+   start s -> join j -> transient wait -> end e.
+   start s2 -> j;
+}
+
+map OrJoinTestTimer {
+   start s -> join j -> timer {} -> end e.
+   start s2 -> j;
+}
+
+map OrJoinTestTimerWithWaitKind {
+   start s -> join j -> persistent timer {} -> end e.
+   start s2 -> j;
+}
+
+map OrJoinTestFailurePoint {
+   start s -> join j -> fail -> end e.
+   start s2 -> j;
+}
+
+map OrJoinTestStub {
+   start s -> join j -> stub () -> end e.
+   start s2 -> j;
+}
+
+map OrJoinTestStubWithStubType {
+   start s -> join j -> blocking stub () -> end e.
+   start s2 -> j;
+}
+
+map OrJoinTestAsynchronousConnectStartPoint {
+   start s -> join j -> trigger s3; -> end e.
+   start s2 -> j;
+   start s3 -> end e2.
+}
+
+map OrJoinTestAsynchronousConnectWaitingPlace {
+   start s -> join j -> trigger wp; -> end e.
+   start s2 -> j;
+   start s3-> wait wp -> end e2.
+}
+
+map OrJoinTestAsynchronousConnectTimer {
+   start s -> join j -> trigger t; -> end e.
+   start s2 -> j;
+   start s3 -> timer t -> end e2.
+}
+
+// OrJoin followed by a ReferencedEnd 
+// (Responsibility, OrJoin, AndJoin, FailurePoint, Stub)
+
+map OrJoinTestReferencedResponsibility {
+   start s -> X r1 -> end e.
+   start s2 -> join j -> r1;
+   start s3 -> j;
+}
+
+map OrJoinTestReferencedOrJoin {
+   start s -> join j2 -> end e.
+   start s2 -> join j -> j2;
+   start s3 -> j;
+}
+
+map OrJoinTestReferencedAndJoin {
+   start s -> sync sy -> end e.
+   start s2 -> join j -> sy;
+   start s3 -> j;
+}
+
+map OrJoinTestReferencedFailurePoint {
+   start s -> fail f -> end e.
+   start s2 -> join j -> f;
+   start s3 -> j;
+}
+
+map OrJoinTestReferencedStub {
+   start s -> stub st() -> end e.
+   start s2 -> join j -> in st 1;
+   start s3 -> j;
+}
+
+map OrJoinTestReferencedStubInpath2 {
+   start s -> stub st () -> end e.
+   start s2 -> join j -> in st 2;
+   start s3 -> j;
+}
+
+// full specification of OrJoin
+
+map OrJoinTestFull {
+   start s -> join j#"OrJoin One" -> end e.
+   start s2 -> j;
+}

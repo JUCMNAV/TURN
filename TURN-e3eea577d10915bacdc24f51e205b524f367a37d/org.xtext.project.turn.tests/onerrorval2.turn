@@ -1,0 +1,64 @@
+urnModel UniqueNamesTest
+
+map m1#"UniqueMapName" {}
+map m2#"UniqueMapName" {}
+
+concern co1#"UniqueConcernName":  m1
+concern co2#"UniqueConcernName":  m2
+
+actor a1#"UniqueActorName" {
+   goal g#"UniqueIntentionalElementName" {
+      cont1#"UniqueContributionName" contributesTo sg1 with make
+      cont2#"UniqueContributionName" contributesTo g1 with 100
+      deco1#"UniqueDecompositionName" and decomposes sg2
+      deco2#"UniqueDecompositionName" or decomposes g2
+      depe1#"UniqueDependencyName" dependsOn Other.sg3
+      depe2#"UniqueDependencyName" dependsOn Other.g3
+   }
+   softgoal sg#"UniqueIntentionalElementName" {}
+   softgoal sg1 {}
+   goal g1 {}
+   softgoal sg2 {}
+   goal g2 {}
+}
+actor a2#"UniqueActorName" {}
+actor Other {
+   softgoal sg3 {}
+   goal g3 {}
+}
+
+strategiesGroup stg1#"UniqueStrategyGroupName": s1
+strategiesGroup stg2#"UniqueStrategyGroupName": s2
+strategy st1#"UniqueStrategyName" {}
+strategy st2#"UniqueStrategyName" {}
+strategy s1 {}
+strategy s2 {}
+
+linearConversion lc1#"UniqueLinearConversionName" {
+	unit "failures/week/10000 connections"
+	target 0
+	threshold 500
+	worst 10000
+}
+linearConversion lc2#"UniqueLinearConversionName" {
+	unit "failures/week/20000 connections"
+	target 0
+	threshold 500
+	worst 10000
+}
+
+mappingConversion mc1#"UniqueMappingConversionName" {
+	unit "equipment class 1"
+	real "Class 1" --> 100
+}
+mappingConversion mc2#"UniqueMappingConversionName" {
+	unit "equipment class 2"
+	real "Class 2" --> 100
+}
+
+contributionContextGroup ccg1#"UniqueCCGroupName": c1
+contributionContextGroup ccg2#"UniqueCCGroupName": c2
+contributionContext cc1#"UniqueCCName" {}
+contributionContext cc2#"UniqueCCName" {}
+contributionContext c1 {}
+contributionContext c2 {}

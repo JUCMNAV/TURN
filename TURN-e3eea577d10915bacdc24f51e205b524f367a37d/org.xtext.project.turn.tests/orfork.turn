@@ -1,0 +1,221 @@
+urnModel OrForkTest
+
+// OrFork followed by a PathBodyNode (Responsibility, OrJoin, AndJoin, WaitingPlace, Timer, FailurePoint, Connect)
+// or RegularEnd (EndpointWithConnect, OrFork, AndFork, Stub)
+
+map OrForkTestEndPoint {
+   start s -> or {
+      [condition] -> ;
+   } -> end e.
+}
+
+map OrForkTestEndPointAgain {
+   start s -> or {
+      [condition] -> ;
+   }  -> end e.
+   start s2 -> or {
+      [condition] -> ;
+   } -> end e.
+}
+
+map OrForkTestResponsibility {
+   start s -> or {
+      [condition] -> ;
+   } -> X r1 -> end e.
+}
+
+map OrForkTestResponsibilityAgain {
+   start s -> or {
+      [condition] -> ;
+   } -> X r1 -> end e.
+   start s2 -> or {
+      [condition] -> ;
+   } -> X r1 -> end e2.
+}
+
+map OrForkTestOrFork {
+   start s -> or {
+      [condition] -> ;
+   } -> or {
+      [condition] -> ;
+   } -> end e.
+}
+
+map OrForkTestOrJoin {
+   start s -> or {
+      [condition] -> ;
+   } -> join j -> end e.
+   start s2 -> j;
+}
+
+map OrForkTestAndFork {
+   start s -> or {
+      [condition] -> ;
+   } -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+}
+
+map OrForkTestAndJoin {
+   start s -> or {
+      [condition] -> ;
+   } -> sync sy -> end e.
+   start s2 -> sy;
+}
+
+map OrForkTestWaitingPlace {
+   start s -> or {
+      [condition] -> ;
+   } -> wait -> end e.
+}
+
+map OrForkTestWaitingPlaceWithWaitKind {
+   start s -> or {
+      [condition] -> ;
+   } -> transient wait -> end e.
+}
+
+map OrForkTestTimer {
+   start s -> or {
+      [condition] -> ;
+   } -> timer {} -> end e.
+}
+
+map OrForkTestTimerWithWaitKind {
+   start s -> or {
+      [condition] -> ;
+   } -> persistent timer {} -> end e.
+}
+
+map OrForkTestFailurePoint {
+   start s -> or {
+      [condition] -> ;
+   } -> fail -> end e.
+}
+
+map OrForkTestStub {
+   start s -> or {
+      [condition] -> ;
+   } -> stub () -> end e.
+}
+
+map OrForkTestStubWithStubType {
+   start s -> or {
+      [condition] -> ;
+   } -> blocking stub () -> end e.
+}
+
+map OrForkTestAsynchronousConnectStartPoint {
+   start s -> or {
+      [condition] -> ;
+   } -> trigger s2; -> end e.
+   start s2 -> end e2.
+}
+
+map OrForkTestAsynchronousConnectWaitingPlace {
+   start s -> or {
+      [condition] -> ;
+   } -> trigger wp; -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map OrForkTestAsynchronousConnectTimer {
+   start s -> or {
+      [condition] -> ;
+   } -> trigger t; -> end e.
+   start s2 -> timer t -> end e2.
+}
+
+// OrFork followed by a ReferencedEnd 
+// (Responsibility, OrJoin, AndJoin, FailurePoint, Stub)
+
+map OrForkTestReferencedResponsibility {
+   start s -> X r1 -> end e.
+   start s2 -> or {
+      [condition] -> ;
+   } -> r1;
+}
+
+map OrForkTestReferencedOrJoin {
+   start s -> join j -> end e.
+   start s2 -> or {
+      [condition] -> ;
+   } -> j;
+}
+
+map OrForkTestReferencedAndJoin {
+   start s -> sync sy -> end e.
+   start s2 -> or {
+      [condition] -> ;
+   } -> sy;
+}
+
+map OrForkTestReferencedFailurePoint {
+   start s -> fail f -> end e.
+   start s2 -> or {
+      [condition] -> ;
+   } -> f;
+}
+
+map OrForkTestReferencedStub {
+   start s -> stub st () -> end e.
+   start s2 -> or {
+      [condition] -> ;
+   } -> in st 1;
+}
+
+map OrForkTestReferencedStubInpath2 {
+   start s -> stub st () -> end e.
+   start s2 -> or {
+      [condition] -> ;
+   } -> in st 2;
+}
+
+// full specification of OrFork
+
+map OrForkTestFull {
+   start s -> or o#"OrFork One" {
+      [condition] -> ;
+   } -> end e.
+}
+
+map OrForkTestTwoBranches {
+   start s -> or o#"OrFork One" {
+      [condition1] -> ;
+      [condition2] -> ;
+   } -> end e.
+}
+
+map OrForkTestElseBranch {
+   start s -> or o#"OrFork One" {
+      [condition] -> ;
+      [else] -> ;
+   } -> end e.
+}
+
+map OrForkTestNoConnectingBody {
+   start s -> or o#"OrFork One" {
+      [condition1] -> end e1.
+      [condition2] -> end e2.
+   }
+}
+
+map OrForkTestRegularBranchAndConnectingBranch {
+   start s -> or o#"OrFork One" {
+      [condition1] -> end e1.
+      [condition2] -> ;
+   } -> end e2.
+}
+
+map OrForkTestRegularBranchAndTwoConnectingBranches {
+   start s -> or o#"OrFork One" {
+      [condition1] -> end e1.
+      [condition2] -> ;
+      [condition3] -> ;
+   } -> end e2.
+}
+
+map OrForkTestJustCondition {
+   start s -> or [condition] -> end e.
+}

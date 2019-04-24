@@ -1,0 +1,41 @@
+urnModel EndPointTest
+
+// EndPoint followed by a PathBodyNode (not possible: Responsibility, OrJoin, AndJoin, WaitingPlace, Timer, FailurePoint, Connect)
+// or RegularEnd (not possible: EndpointWithConnect, OrFork, AndFork, Stub)
+
+// EndPoint followed by a ReferencedEnd 
+// (not possible: Responsibility, OrJoin, AndJoin, FailurePoint, Stub)
+
+// full specification of EndPoint
+
+map EndPointTestFull {
+   start s -> end e#"EndPoint One".
+}
+
+map EndPointTestNoName {
+   start s -> end.
+}
+
+map EndPointTestCondition {
+   start s -> end e#"EndPoint One" [condition].
+}
+
+map EndPointTestOnlyCondition {
+   start s -> end e [condition].
+}
+
+map EndPointTestSynchronousConnectStartPoint {
+   start s -> end e. -> trigger s2; 
+   start s2 -> end e2.
+}
+
+map EndPointTestSynchronousConnectWaitingPlace {
+   start s -> end e. -> trigger wp;
+   start s2 -> wait wp -> end e2.
+}
+
+map EndPointTestSynchronousConnectTimer {
+   start s -> end e. -> trigger t;
+   start s2 -> timer t -> end e2.
+}
+

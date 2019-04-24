@@ -1,0 +1,242 @@
+urnModel StubTest
+
+// Stub followed by a PathBodyNode (Responsibility, OrJoin, AndJoin, WaitingPlace, Timer, FailurePoint, Connect)
+// or RegularEnd (EndpointWithConnect, OrFork, AndFork, Stub)
+
+map StubTestEndPoint {
+   start s -> stub () -> end e.
+}
+
+map StubTestEndPointAgain {
+   start s -> stub () -> end e.
+   start s2 -> stub () -> end e.
+}
+
+map StubTestResponsibilitddccdc2.
+}
+
+map StubTestOrFork {
+   start s -> stub () -> or {
+      [condition] -> ;
+   } -> end e.
+}
+
+map StubTestOrJoin {
+   start s -> stub () -> join j -> end e.
+   start s2 -> j;
+}
+
+map StubTestAndFork {
+   start s -> stub () -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+}
+
+map StubTestAndJoin {
+   start s -> stub () -> sync sy -> end e.
+   start s2 -> sy;
+}
+
+map StubTestWaitingPlace {
+   start s -> stub () -> wait -> end e.
+}
+
+map StubTestWaitingPlaceWithWaitKind {
+   start s -> stub () -> transient wait -> end e.
+}
+
+map StubTestTimer {
+   start s -> stub () -> timer {} -> end e.
+}
+
+map StubTestTimerWithWaitKind {
+   start s -> stub () -> persistent timer {} -> end e.
+}
+
+map StubTestFailurePoint {
+   start s -> stub ()  -> fail -> end e.
+}
+
+map StubTestStub {
+   start s -> stub () -> stub () -> end e.
+}
+
+map StubTestStubWithStubType {
+   start s -> stub () -> blocking stub () -> end e.
+}
+
+map StubTestAsynchronousConnectStartPoint {
+   start s -> stub () -> trigger s2; -> end e.
+   start s2 -> end e2.
+}
+
+map StubTestAsynchronousConnectWaitingPlace {
+   start s -> stub () -> trigger wp; -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map StubTestAsynchronousConnectTimer {
+   start s -> stub () -> trigger t; -> end e.
+   start s2 -> timer t -> end e2.
+}
+
+// Stub followed by a ReferencedEnd 
+// (Responsibility, OrJoin, AndJoin, FailurePoint, Stub)
+
+map StubTestReferencedResponsibility {
+   start s -> X r1 -> end e.
+   start s2 -> stub () -> r1;
+}
+
+map StubTestReferencedOrJoin {
+   start s -> join j -> end e.
+   start s2 -> stub () -> j;
+}
+
+map StubTestReferencedAndJoin {
+   start s -> sync sy -> end e.
+   start s2 -> stub () -> sy;
+}
+
+map StubTestReferencedFailurePoint {
+   start s -> fail f -> end e.
+   start s2 -> stub () -> f;
+}
+
+map StubTestReferencedStub {
+   start s -> stub st() -> end e.
+   start s2 -> stub () -> in st 1;
+}
+
+map StubTestReferencedStubInpath2 {
+   start s -> stub st () -> end e.
+   start s2 -> stub () -> in st 2;
+}
+
+// full specification of Stub
+
+map StubTestFull {
+   start s -> stub s#"Stub One" () -> end e.
+}
+
+map StubTestSynchronizing {
+   start s -> synchronizing stub st#"Stub One" () -> end e.
+}
+
+map StubTestBlocking {
+   start s -> blocking stub s#"Stub One" () -> end e.
+}
+
+map StubTestOneConnectingOutpath {
+   start s -> stub (
+      PluginOne: sOne1=in 1, eOne1=out 1
+   ) {
+      out 1 -> ;
+   } -> end e.
+}
+
+map StubTestTwoConnectingOutpaths {
+   start s -> stub (
+      PluginOne: sOne1=in 1, eOne1=out 1, eOne2=out 2
+   ) {
+      out 1 -> ;
+      out 2 -> ;
+   } -> end e.
+}
+
+map StubTestNoConnectingOutpaths {
+   start s -> stub (
+      PluginOne: sOne1=in 1, eOne1=out 1, eOne2=out 2
+   ) {
+      out 1 -> end e1.
+      out 2 -> end e2.
+   }
+}
+
+map StubTestRegularOutpathAndConnectingOutpath {
+   start s -> stub (
+      PluginOne: sOne1=in 1, eOne1=out 1, eOne2=out 2
+   ) {
+      out 1 -> end e1.
+      out 2 -> ;
+   } -> end e2.
+}
+
+map StubTestRegularOutpathTwoConnectingOutpaths {
+   start s -> stub (
+      PluginOne: sOne1=in 1, eOne1=out 1, eOne2=out 2, eOne3=out 3
+   ) {
+      out 1 -> end e1.
+      out 2 -> ;
+      out 3 -> ;
+   } -> end e2.
+}
+
+map StubTestTwoPlugins {
+   start s -> stub (
+      PluginOne: sOne1=in 1, eOne1=out 1
+      PluginTwo: sTwo=in 1, eTwo=out 1
+   ) {
+      out 1 -> ;
+   } -> end e.
+}
+
+map StubTestMultipleInAndOutPaths {
+   start s -> stub st (
+      PluginThree: sThree1=in 1, sThree2=in 2, eThree1=out 1, eThree2=out 2, eThree3=out 3
+   ) {
+      out 1 -> end e1.
+      out 2 -> end e2.
+      out 3 -> end e3.
+   }
+   start s2 -> in st 2;
+}
+
+map StubTestOutpathWithThreshold {
+   start s -> synchronizing stub (
+      PluginOne: sOne1=in 1, eOne1=out 1
+   ) {
+      out 1 threshold [2]  -> ;
+   } -> end e.
+}
+
+map StubTestPluginWithConditionAndReplication {
+   start s -> stub (
+      [condition] replication 2 PluginOne: sOne1=in 1, eOne1=out 1
+   ) {
+      out 1 -> ;
+   } -> end e.
+}
+
+map StubTestStubDeclaration {
+   st = ( 
+      PluginOne: sOne1=in 1, eOne1=out 1
+   )
+   start s -> stub st {
+      out 1 -> ;
+   } -> end e.
+}
+
+map PluginOne {
+   start sOne1 -> or {
+      [condition1] -> end eOne1.
+      [condition2] -> end eOne2.
+      [condition3] -> end eOne3.
+   }
+}
+
+map PluginTwo {
+   start sTwo -> end eTwo.
+}
+
+map PluginThree {
+   start sThree1 -> or {
+      [condition1] -> end eThree1.
+      [condition2] -> join j -> end eThree2.
+   }
+   start sThree2 -> and {
+      * -> j;
+      * -> end eThree3.
+   }
+}

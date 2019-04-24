@@ -1,0 +1,45 @@
+urnModel AdditionalOrForkTest
+
+map OrForkTestMergedBranches {
+   start s -> or {
+      [c] -> ;
+      [c1] -> X r1 -> ;
+      [c2] -> X r1 -> ;
+      [c3] -> or {
+         [condition] -> ;
+         [!condition] -> ;
+      }  -> ;
+      [c4] -> join j -> ;
+      [c5] -> and {
+         * -> ;
+         * -> ;
+      }  -> ;
+      [c6] -> sync sy -> ;
+      [c7] -> wait -> ;
+      [c8] -> transient wait -> ;
+      [c9] -> timer {} -> ;
+      [c10] -> persistent timer {} -> ;
+      [c11] -> fail -> ;
+      [c12] -> stub ()  -> ;
+      [c13] -> blocking stub ()  -> ;
+      [c14] -> trigger s4; -> ;
+      [c15] -> trigger wp; -> ;
+      [c16] -> trigger t; -> ;
+      [c17] -> r2; 
+      [c18] -> j2;
+      [c19] -> sy2;
+      [c20] -> f;
+      [c21] -> in st2 1;
+      [c22] -> in st2 2;
+   }  -> end e.
+   start s2 -> j;
+   start s3 -> sy;
+   start s4 -> end e44.
+   start s5 -> wait wp -> end e55.
+   start s6 -> timer t -> end e66.
+   start s7 -> X r2 -> end e77.
+   start s8 -> join j2 -> end e88.
+   start s9 -> sync sy2 -> end e99.
+   start s10 -> fail f -> end e1010.
+   start s11 -> stub st2 ()  -> end e1111.
+}

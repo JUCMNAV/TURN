@@ -1,0 +1,23 @@
+urnModel BeliefTest
+
+// Belief followed by an ElementLink (only Contribution) to  
+// another IntentionalElement (Softgoal, Goal, Task)
+
+actor B#"Belief Test for ElementLinks" {
+   belief bSource {
+      contributesTo sg1 with make
+      contributesTo g1 with 100
+      contributesTo t1 correlated with break
+   }
+   softgoal sg1 {}
+   goal g1 {}
+   task t1{}
+}
+
+// full specification of Belief
+
+actor B2#"Belief Test for Optional Elements" {
+   belief bSource2#"Belief" {
+      importance 100
+   }
+}

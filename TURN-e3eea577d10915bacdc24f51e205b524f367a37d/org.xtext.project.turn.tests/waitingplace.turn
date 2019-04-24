@@ -1,0 +1,143 @@
+urnModel WaitingPlaceTest
+
+// WaitingPlace followed by a PathBodyNode (Responsibility, OrJoin, AndJoin, WaitingPlace, Timer, FailurePoint, Connect)
+// or RegularEnd (EndpointWithConnect, OrFork, AndFork, Stub)
+
+map WaitingPlaceTestEndPoint {
+   start s -> wait -> end e.
+}
+
+map WaitingPlaceTestEndPointAgain {
+   start s -> wait -> end e.
+   start s2 -> wait -> end e.
+}
+
+map WaitingPlaceTestResponsibility {
+   start s -> wait -> X r1 -> end e.
+}
+
+map WaitingPlaceTestResponsibilityAgain {
+   start s -> wait -> X r1 -> end e.
+   start s2 -> wait -> X r1 -> end e2.
+}
+
+map WaitingPlaceTestOrFork {
+   start s -> wait -> or {
+      [condition] -> ;
+   } -> end e.
+}
+
+map WaitingPlaceTestOrJoin {
+   start s -> wait -> join j -> end e.
+   start s2 -> j;
+}
+
+map WaitingPlaceTestAndFork {
+   start s -> wait -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+}
+
+map WaitingPlaceTestAndJoin {
+   start s -> wait -> sync sy -> end e.
+   start s2 -> sy;
+}
+
+map WaitingPlaceTestWaitingPlace {
+   start s -> wait -> wait -> end e.
+}
+
+map WaitingPlaceTestWaitingPlaceWithWaitKind {
+   start s -> wait -> transient wait -> end e.
+}
+
+map WaitingPlaceTestTimer {
+   start s -> wait -> timer {} -> end e.
+}
+
+map WaitingPlaceTestTimerWithWaitKind {
+   start s -> wait -> persistent timer {} -> end e.
+}
+
+map WaitingPlaceTestFailurePoint {
+   start s -> wait -> fail -> end e.
+}
+
+map WaitingPlaceTestStub {
+   start s -> wait -> stub () -> end e.
+}
+
+map WaitingPlaceTestStubWithStubType {
+   start s -> wait -> blocking stub () -> end e.
+}
+
+map WaitingPlaceTestAsynchronousConnectStartPoint {
+   start s -> wait -> trigger s2; -> end e.
+   start s2 -> end e2.
+}
+
+map WaitingPlaceTestAsynchronousConnectWaitingPlace {
+   start s -> wait -> trigger wp; -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map WaitingPlaceTestAsynchronousConnectTimer {
+   start s -> wait -> trigger t; -> end e.
+   start s2 -> timer t -> end e2.
+}
+
+// WaitingPlace followed by a ReferencedEnd 
+// (Responsibility, OrJoin, AndJoin, FailurePoint, Stub)
+
+map WaitingPlaceTestReferencedResponsibility {
+   start s -> X r1 -> end e.
+   start s2 -> wait -> r1;
+}
+
+map WaitingPlaceTestReferencedOrJoin {
+   start s -> join j -> end e.
+   start s2 -> wait -> j;
+}
+
+map WaitingPlaceTestReferencedAndJoin {
+   start s -> sync sy -> end e.
+   start s2 -> wait -> sy;
+}
+
+map WaitingPlaceTestReferencedFailurePoint {
+   start s -> fail f -> end e.
+   start s2 -> wait -> f;
+}
+
+map WaitingPlaceTestReferencedStub {
+   start s -> stub st() -> end e.
+   start s2 -> wait -> in st 1;
+}
+
+map WaitingPlaceTestReferencedStubInpath2 {
+   start s -> stub st () -> end e.
+   start s2 -> wait -> in st 2;
+}
+
+// full specification of WaitingPlace
+
+map WaitingPlaceTestFull {
+   start s -> wait wp#"WaitingPlace One" -> end e.
+}
+
+map WaitingPlaceTestPersistent {
+   start s -> persistent wait wp#"WaitingPlace One" -> end e.
+}
+
+map WaitingPlaceTestTransient {
+   start s -> transient wait wp#"WaitingPlace One" -> end e.
+}
+
+map WaitingPlaceTestCondition {
+   start s -> wait wp#"WaitingPlace One" [condition] -> end e.
+}
+
+map WaitingPlaceTestJustCondition {
+   start s -> wait [condition] -> end e.
+}

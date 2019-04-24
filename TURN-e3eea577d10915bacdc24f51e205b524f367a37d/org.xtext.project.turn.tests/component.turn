@@ -1,0 +1,75 @@
+urnModel ComponentTest
+
+map ComponentTestSingleComponent {
+   start s -> X r1 -> end e.
+   team C: s, r1, e
+}
+
+map ComponentTestTwoComponents {
+   start s -> X r1 -> end e.
+   team C1: s, e
+   team C2: r1
+}
+
+map ComponentTestNestedComponents {
+   start s -> X r1 -> end e.
+   team C1: s, e, C2
+   team C2: r1
+}
+
+map ComponentTestFromToSingleComponent {
+   start s -> X r1 -> or {
+      [condition] -> X r2 -> end e.
+      [!condition] -> X r3 -> end e2.
+   }
+   team C: s..e
+}
+
+map ComponentTestFromToTwoComponents {
+   start s -> X r1 -> or {
+      [condition] -> X r2 -> end e.
+      [!condition] -> X r3 -> end e2.
+   }
+   team C1: s..e
+   team C2: r3..e2
+}
+
+map ComponentTestFromToSecondComponentInMiddle {
+   start s -> X r1 -> or {
+      [condition] -> X r2 -> end e.
+      [!condition] -> X r3 -> end e2.
+   }
+   team C1: s..e
+   team C2: r2
+}
+
+map ComponentTestProtectedComponent {
+   start s -> X r1 -> end e.
+   protected team Cp: s, r1, e
+}
+
+map ComponentTestActor {
+   start s -> X r1 -> end e.
+   actor A: s..e
+}
+
+map ComponentTestParentComponent {
+   start s -> X r1 -> end e.
+   parent C: s..e
+}
+
+map ParentMap {
+	start s -> stub st (
+		ComponentTestParentComponent: s=in 1, e=out 1, C=CParent
+	) {
+		out 1 -> end e.
+	}
+	team CParent: s..e
+}
+
+map ComponentTestLongNames {
+	start s -> X rA -> X rB_1#"Beta" -> end e.
+	start s2 -> X rA -> X rB_2#"Beta" -> end e2.
+	team C1: rA, rB_1
+	team C2: rB_2
+}

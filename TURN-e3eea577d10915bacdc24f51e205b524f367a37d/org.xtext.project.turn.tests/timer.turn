@@ -1,0 +1,157 @@
+urnModel TimerTest
+
+// Timer followed by a PathBodyNode (Responsibility, OrJoin, AndJoin, WaitingPlace, Timer, FailurePoint, Connect)
+// or RegularEnd (EndpointWithConnect, OrFork, AndFork, Stub)
+
+map TimerTestEndPoint {
+   start s -> timer {} -> end e.
+}
+
+map TimerTestEndPointAgain {
+   start s -> timer {} -> end e.
+   start s2 -> timer {} -> end e.
+}
+
+map TimerTestResponsibility {
+   start s -> timer {} -> X r1 -> end e.
+}
+
+map TimerTestResponsibilityAgain {
+   start s -> timer {} -> X r1 -> end e.
+   start s2 -> timer {} -> X r1 -> end e2.
+}
+
+map TimerTestOrFork {
+   start s -> timer {} -> or {
+      [condition] -> ;
+   } -> end e.
+}
+
+map TimerTestOrJoin {
+   start s -> timer {} -> join j -> end e.
+   start s2 -> j;
+}
+
+map TimerTestAndFork {
+   start s -> timer {} -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+}
+
+map TimerTestAndJoin {
+   start s -> timer {} -> sync sy -> end e.
+   start s2 -> sy;
+}
+
+map TimerTestWaitingPlace {
+   start s -> timer {} -> wait -> end e.
+}
+
+map TimerTestWaitingPlaceWithWaitKind {
+   start s -> timer {} -> transient wait -> end e.
+}
+
+map TimerTestTimer {
+   start s -> timer {} -> timer {} -> end e.
+}
+
+map TimerTestTimerWithWaitKind {
+   start s -> timer {} -> persistent timer {} -> end e.
+}
+
+map TimerTestFailurePoint {
+   start s -> timer {} -> fail -> end e.
+}
+
+map TimerTestStub {
+   start s -> timer {} -> stub () -> end e.
+}
+
+map TimerTestStubWithStubType {
+   start s -> timer {} -> blocking stub () -> end e.
+}
+
+map TimerTestAsynchronousConnectStartPoint {
+   start s -> timer {} -> trigger s2; -> end e.
+   start s2 -> end e2.
+}
+
+map TimerTestAsynchronousConnectWaitingPlace {
+   start s -> timer {} -> trigger wp; -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map TimerTestAsynchronousConnectTimer {
+   start s -> timer {} -> trigger t; -> end e.
+   start s2 -> timer t -> end e2.
+}
+
+// Timer followed by a ReferencedEnd 
+// (Responsibility, OrJoin, AndJoin, FailurePoint, Stub)
+
+map TimerTestReferencedResponsibility {
+   start s -> X r1 -> end e.
+   start s2 -> timer {} -> r1;
+}
+
+map TimerTestReferencedOrJoin {
+   start s -> join j -> end e.
+   start s2 -> timer {} -> j;
+}
+
+map TimerTestReferencedAndJoin {
+   start s -> sync sy -> end e.
+   start s2 -> timer {} -> sy;
+}
+
+map TimerTestReferencedFailurePoint {
+   start s -> fail f -> end e.
+   start s2 -> timer {} -> f;
+}
+
+map TimerTestReferencedStub {
+   start s -> stub st() -> end e.
+   start s2 -> timer {} -> in st 1;
+}
+
+map TimerTestReferencedStubInpath2 {
+   start s -> stub st () -> end e.
+   start s2 -> timer {} -> in st 2;
+}
+
+// full specification of Timer
+
+map TimerTestFull {
+   start s -> timer t#"Timer One" {} -> end e.
+}
+
+map TimerTestPersistent {
+   start s -> persistent timer t#"Timer One" {} -> end e.
+}
+
+map TimerTestTransient {
+   start s -> transient timer t#"Timer One" {} -> end e.
+}
+
+map TimerTestCondition {
+   start s -> timer t#"Timer One" {} [condition] -> end e.
+}
+
+map TimerTestJustCondition {
+   start s -> timer {} [condition] -> end e.
+}
+
+map TimerTestTimeout {
+   start s -> timer t#"Timer One" { timeout -> end e2. } -> end e.
+}
+
+map TimerTestTimeoutWithCondition {
+   start s -> timer t#"Timer One" { timeout [condition] -> end e2. } -> end e.
+}
+
+map TimerTestWithoutTimeouCurlyBrackets {
+   start s -> timer -> end e.
+}
+
+

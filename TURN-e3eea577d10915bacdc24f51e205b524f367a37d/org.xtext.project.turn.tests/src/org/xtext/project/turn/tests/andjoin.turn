@@ -1,0 +1,154 @@
+urnModel AndJoinTest
+
+// AndJoin followed by a PathBodyNode (Responsibility, OrJoin, AndJoin, WaitingPlace, Timer, FailurePoint, Connect)
+// or RegularEnd (EndpointWithConnect, OrFork, AndFork, Stub)
+
+map AndJoinTestEndPoint {
+   start s -> sync sy -> end e.
+   start s2 -> sy;
+}
+
+map AndJoinTestEndPointAgain {
+   start s -> sync sy -> end e.
+   start s2 -> sy;
+   start s3 -> sync sy2 -> end e.
+   start s4 -> sy2;
+}
+
+map AndJoinTestResponsibility {
+   start s -> sync sy -> X r1 -> end e.
+   start s2 -> sy;
+}
+
+map AndJoinTestResponsibilityAgain {
+   start s -> sync sy -> X r1 -> end e.
+   start s2 -> sy;
+   start s3 -> sync sy2 -> X r1 -> end e2.
+   start s4 -> sy2;
+}
+
+map AndJoinTestOrFork {
+   start s -> sync sy -> or {
+      [condition] -> ;
+   } -> end e.
+   start s2 -> sy;
+}
+
+map AndJoinTestOrJoin {
+   start s -> sync sy -> join j -> end e.
+   start s2 -> sy;
+   start s3 -> j;
+}
+
+map AndJoinTestAndFork {
+   start s -> sync sy -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+   start s2 -> sy;
+}
+
+map AndJoinTestAndJoin {
+   start s -> sync sy -> sync sy2 -> end e.
+   start s2 -> sy;
+   start s3 -> sy2;
+}
+
+map AndJoinTestWaitingPlace {
+   start s -> sync sy -> wait -> end e.
+   start s2 -> sy;
+}
+
+map AndJoinTestWaitingPlaceWithWaitKind {
+   start s -> sync sy -> transient wait -> end e.
+   start s2 -> sy;
+}
+
+map AndJoinTestTimer {
+   start s -> sync sy -> timer {} -> end e.
+   start s2 -> sy;
+}
+
+map AndJoinTestTimerWithWaitKind {
+   start s -> sync sy -> persistent timer {} -> end e.
+   start s2 -> sy;
+}
+
+map AndJoinTestFailurePoint {
+   start s -> sync sy -> fail -> end e.
+   start s2 -> sy;
+}
+
+map AndJoinTestStub {
+   start s -> sync sy -> stub () -> end e.
+   start s2 -> sy;
+}
+
+map AndJoinTestStubWithStubType {
+   start s -> sync sy -> blocking stub () -> end e.
+   start s2 -> sy;
+}
+
+map AndJoinTestAsynchronousConnectStartPoint {
+   start s -> sync sy -> trigger s3; -> end e.
+   start s2 -> sy;
+   start s3 -> end e2.
+}
+
+map AndJoinTestAsynchronousConnectWaitingPlace {
+   start s -> sync sy -> trigger wp; -> end e.
+   start s2 -> sy;
+   start s3-> wait wp -> end e2.
+}
+
+map AndJoinTestAsynchronousConnectTimer {
+   start s -> sync sy -> trigger t; -> end e.
+   start s2 -> sy;
+   start s3 -> timer t -> end e2.
+}
+
+// AndJoin followed by a ReferencedEnd 
+// (Responsibility, OrJoin, AndJoin, FailurePoint, Stub)
+
+map AndJoinTestReferencedResponsibility {
+   start s -> X r1 -> end e.
+   start s2 -> sync sy -> r1;
+   start s3 -> sy;
+}
+
+map AndJoinTestReferencedOrJoin {
+   start s -> join j -> end e.
+   start s2 -> sync sy -> j;
+   start s3 -> sy;
+}
+
+map AndJoinTestReferencedAndJoin {
+   start s -> sync sy2 -> end e.
+   start s2 -> sync sy -> sy2;
+   start s3 -> sy;
+}
+
+map AndJoinTestReferencedFailurePoint {
+   start s -> fail f -> end e.
+   start s2 -> sync sy -> f;
+   start s3 -> sy;
+}
+
+map AndJoinTestReferencedStub {
+   start s -> stub st() -> end e.
+   start s2 -> sync sy -> in st 1;
+   start s3 -> sy;
+}
+
+map AndJoinTestReferencedStubInpath2 {
+   start s -> stub st () -> end e.
+   start s2 -> sync sy -> in st 2;
+   start s3 -> sy;
+}
+
+// full specification of AndJoin
+
+map AndJoinTestFull {
+   start s -> sync sy#"AndJoin One" -> end e.
+   start s2 -> sy;
+}

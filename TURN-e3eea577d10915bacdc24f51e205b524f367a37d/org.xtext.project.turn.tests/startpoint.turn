@@ -1,0 +1,148 @@
+urnModel StartPointTest
+
+// StartPoint followed by a PathBodyNode (Responsibility, OrJoin, AndJoin, WaitingPlace,
+// Timer, FailurePoint, Connect)
+// or RegularEnd (EndpointWithConnect, OrFork, AndFork, Stub)
+
+map StartPointTestEndPoint {
+   start s -> end e.
+}
+
+map StartPointTestEndPointAgain {
+   start s -> end e.
+   start s2 -> end e.
+}
+
+map StartPointTestResponsibility {
+   start s -> X r1 -> end e.
+}
+
+map StartPointTestResponsibilityAgain {
+   start s -> X r1 -> end e.
+   start s2 -> X r1 -> end e2.
+}
+
+map StartPointTestOrFork {
+   start s -> or {
+      [condition] -> ;
+   } -> end e.
+}
+
+map StartPointTestOrJoin {
+   start s -> join j -> end e.
+   start s2 -> j;
+}
+
+map StartPointTestAndFork {
+   start s -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+}
+
+map StartPointTestAndJoin {
+   start s -> sync sy -> end e.
+   start s2 -> sy;
+}
+
+map StartPointTestWaitingPlace {
+   start s -> wait -> end e.
+}
+
+map StartPointTestWaitingPlaceWithWaitKind {
+   start s -> transient wait -> end e.
+}
+
+map StartPointTestTimer {
+   start s -> timer {} -> end e.
+}
+
+map StartPointTestTimerWithWaitKind {
+   start s -> persistent timer {} -> end e.
+}
+
+map StartPointTestFailurePoint {
+   start s -> fail -> end e.
+}
+
+map StartPointTestStub {
+   start s -> stub () -> end e.
+}
+
+map StartPointTestStubWithStubType {
+   start s -> blocking stub () -> end e.
+}
+
+map StartPointTestAsynchronousConnectStartPoint {
+   start s -> trigger s2; -> end e.
+   start s2 -> end e2.
+}
+
+map StartPointTestAsynchronousConnectWaitingPlace {
+   start s -> trigger wp; -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map StartPointTestAsynchronousConnectTimer {
+   start s -> trigger t; -> end e.
+   start s2 -> timer t -> end e2.
+}
+
+// StartPoint followed by a ReferencedEnd 
+// (Responsibility, OrJoin, AndJoin, FailurePoint, Stub)
+
+map StartPointTestReferencedResponsibility {
+   start s -> X r1 -> end e.
+   start s2 -> r1;
+}
+
+map StartPointTestReferencedOrJoin {
+   start s -> join j -> end e.
+   start s2 -> j;
+}
+
+map StartPointTestReferencedAndJoin {
+   start s -> sync sy -> end e.
+   start s2 -> sy;
+}
+
+map StartPointTestReferencedFailurePoint {
+   start s -> fail f -> end e.
+   start s2 -> f;
+}
+
+map StartPointTestReferencedStub {
+   start s -> stub st () -> end e.
+   start s2 -> in st 1;
+}
+
+map StartPointTestReferencedStubInpath2 {
+   start s -> stub st () -> end e.
+   start s2 -> in st 2;
+}
+
+// full specification of StartPoint
+
+map StartPointTestFull {
+   start s#"StartPoint One" -> end e.
+}
+
+map StartPointTestNoName {
+   start -> end e.
+}
+
+map StartPointTestAbort {
+   abort s#"StartPoint One" catches [["ExceptionOne"]] -> end e.
+}
+
+map StartPointTestFailure {
+   failure s#"StartPoint One" catches [["ExceptionOne"]] -> end e.
+}
+
+map StartPointTestCondition {
+   start s#"StartPoint One" [condition] -> end e.
+}
+
+map StartPointTestOnlyCondition {
+   start s [condition] -> end e.
+}

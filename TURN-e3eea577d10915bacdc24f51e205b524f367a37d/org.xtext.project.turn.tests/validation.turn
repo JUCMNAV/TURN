@@ -1,0 +1,66 @@
+urnModel UniqueNamesTest
+
+map UniqueMapName {}
+map UniqueMapName {}
+
+concern UniqueConcernName:  UniqueMapName
+concern UniqueConcernName: UniqueMapName
+
+actor UniqueActorName {
+   goal UniqueIntentionalElementName {
+      UniqueContributionName contributesTo sg1 with make
+      UniqueContributionName contributesTo g1 with 100
+      UniqueDecompositionName and decomposes sg2
+      UniqueDecompositionName or decomposes g2
+      UniqueDependencyName dependsOn Other.sg3
+      UniqueDependencyName dependsOn Other.g3
+   }
+   softgoal UniqueIntentionalElementName {}
+   softgoal sg1 {}
+   goal g1 {}
+   softgoal sg2 {}
+   goal g2 {}
+}
+actor UniqueActorName {}
+actor Other {
+   softgoal sg3 {}
+   goal g3 {}
+}
+
+strategiesGroup UniqueStrategyGroupName: s1
+strategiesGroup UniqueStrategyGroupName: s2
+strategy UniqueStrategyName {}
+strategy UniqueStrategyName {}
+strategy s1 {}
+strategy s2 {}
+
+linearConversion UniqueLinearConversionName {
+	unit "failures/week/10000 connections"
+	target 0
+	threshold 500
+	worst 10000
+	
+}
+
+linearConversion UniqueLinearConversionName {
+	unit "failures/week/20000 connections"
+	target 0
+	threshold 500
+	worst 10000
+}
+
+mappingConversion UniqueMappingConversionName {
+	unit "equipment class 1"
+	real "Class 1" --> 100
+}
+mappingConversion UniqueMappingConversionName {
+	unit "equipment class 2"
+	real "Class 2" --> 100
+}
+
+contributionContextGroup UniqueCCGroupName: c1
+contributionContextGroup UniqueCCGroupName: c2
+contributionContext UniqueCCName {}
+contributionContext UniqueCCName {}
+contributionContext c1 {}
+contributionContext c2 {}

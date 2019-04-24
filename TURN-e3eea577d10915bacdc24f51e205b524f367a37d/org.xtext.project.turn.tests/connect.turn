@@ -1,0 +1,151 @@
+urnModel ConnectTest
+
+// Connect followed by a PathBodyNode (Responsibility, OrJoin, AndJoin, WaitingPlace, Timer, FailurePoint, Connect)
+// or RegularEnd (EndpointWithConnect, OrFork, AndFork, Stub)
+// (only WaitingPlace is triggered by Connect; not tested: StartPoint and Timer)
+
+map ConnectTestEndPoint {
+   start s -> trigger wp; -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map ConnectTestEndPointAgain {
+   start s -> trigger wp; -> end e.
+   start s2 -> wait wp -> end e2.
+   start s3 -> trigger wp2; -> end e.
+   start s4 -> wait wp2 -> end e4.
+}
+
+map ConnectTestResponsibility {
+   start s -> trigger wp; -> X r1 -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map ConnectTestResponsibilityAgain {
+   start s -> trigger wp; -> X r1 -> end e.
+   start s2 -> wait wp -> end e2.
+   start s3 -> trigger wp2; -> X r1 -> end e3.
+   start s4 -> wait wp2 -> end e4.
+}
+
+map ConnectTestOrFork {
+   start s -> trigger wp; -> or {
+      [condition] -> ;
+   }  -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map ConnectTestOrJoin {
+   start s -> trigger wp; -> join j -> end e.
+   start s2 -> wait wp -> end e2.
+   start s3 -> j;
+}
+
+map ConnectTestAndFork {
+   start s -> trigger wp; -> and {
+      * -> ;
+      * -> ;
+   } -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map ConnectTestAndJoin {
+   start s -> trigger wp; -> sync sy -> end e.
+   start s2 -> wait wp -> end e2.
+   start s3 -> sy;
+}
+
+map ConnectTestWaitingPlace {
+   start s -> trigger wp; -> wait -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map ConnectTestWaitingPlaceWithWaitKind {
+   start s -> trigger wp; -> transient wait -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map ConnectTestTimer {
+   start s -> trigger wp; -> timer {} -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map ConnectTestTimerWithWaitKind {
+   start s -> trigger wp; -> persistent timer {} -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map ConnectTestFailurePoint {
+   start s -> trigger wp; -> fail -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map ConnectTestStub {
+   start s -> trigger wp; -> stub () -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map ConnectTestStubWithStubType {
+   start s -> trigger wp; -> blocking stub () -> end e.
+   start s2 -> wait wp -> end e2.
+}
+
+map ConnectTestAsynchronousConnectStartPoint {
+   start s -> trigger wp; -> trigger s3; -> end e.
+   start s2 -> wait wp -> end e2.
+   start s3 -> end e3.
+}
+
+map ConnectTestAsynchronousConnectWaitingPlace {
+   start s -> trigger wp; -> trigger wp2; -> end e.
+   start s2 -> wait wp -> end e2.
+   start s3 -> wait wp2 -> end e3.
+}
+
+map ConnectTestAsynchronousConnectTimer {
+   start s -> trigger wp; -> trigger t; -> end e.
+   start s2 -> wait wp -> end e2.
+   start s3 -> timer t -> end e3.
+}
+
+// Connect followed by a ReferencedEnd 
+// (Responsibility, OrJoin, AndJoin, FailurePoint, Stub)
+
+map ConnectTestReferencedResponsibility {
+   start s -> X r1 -> end e.
+   start s2 -> trigger wp; -> r1;
+   start s3 -> wait wp -> end e3.
+}
+
+map ConnectTestReferencedOrJoin {
+   start s -> join j -> end e.
+   start s2 -> trigger wp; -> j;
+   start s3 -> wait wp -> end e3.
+}
+
+map ConnectTestReferencedAndJoin {
+   start s -> sync sy -> end e.
+   start s2 -> trigger wp; -> sy;
+   start s3 -> wait wp -> end e3.
+}
+
+map ConnectTestReferencedFailurePoint {
+   start s -> fail f -> end e.
+   start s2 -> trigger wp; -> f;
+   start s3 -> wait wp -> end e3.
+}
+
+map ConnectTestReferencedStub {
+   start s -> stub st() -> end e.
+   start s2 -> trigger wp; -> in st 1;
+   start s3 -> wait wp -> end e3.
+}
+
+map ConnectTestReferencedStubInpath2 {
+   start s -> stub st () -> end e.
+   start s2 -> trigger wp; -> in st 2;
+   start s3 -> wait wp -> end e3.
+}
+
+// full specification of Connect
+// (nothing to test)

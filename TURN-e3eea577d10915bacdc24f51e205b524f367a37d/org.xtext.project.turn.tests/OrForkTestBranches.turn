@@ -1,0 +1,47 @@
+urnModel AdditionalOrForkTest
+
+map OrForkTestBranches {
+   start s -> or {
+      [c] -> end e.
+      [c1] -> end e1.
+      [c2] -> end e1.
+      [c3] -> X r1 -> end e2.
+      [c4] -> X r1 -> end e3.
+      [c5] -> or {
+         [condition] -> end e4.
+         [!condition] -> end e5.
+      }
+      [c6] -> join j -> end e6.
+      [c7] -> and {
+         * -> end e7.
+         * -> end e8.
+      }
+      [c8] -> sync sy -> end e9.
+      [c9] -> wait -> end e10.
+      [c10] -> transient wait -> end e11.
+      [c11] -> timer {} -> end e12.
+      [c12] -> persistent timer {} -> end e13.
+      [c13] -> fail -> end e14.
+      [c14] -> stub ()  -> end e15.
+      [c15] -> blocking stub ()  -> end e16.
+      [c16] -> trigger s4; -> end e17.
+      [c17] -> trigger wp; -> end e18.
+      [c18] -> trigger t; -> end e19.
+      [c19] -> r2; 
+      [c20] -> j2;
+      [c21] -> sy2;
+      [c22] -> f;
+      [c23] -> in st2 1;
+      [c24] -> in st2 2;
+   }
+   start s2 -> j;
+   start s3 -> sy;
+   start s4 -> end e44.
+   start s5 -> wait wp -> end e55.
+   start s6 -> timer t -> end e66.
+   start s7 -> X r2 -> end e77.
+   start s8 -> join j2 -> end e88.
+   start s9 -> sync sy2 -> end e99.
+   start s10 -> fail f -> end e1010.
+   start s11 -> stub st2 ()  -> end e1111.
+}
