@@ -1,5 +1,4 @@
-grammar org.xtext.project.turn.Turn with org.eclipse.xtext.common.Terminals
-//grammar org.xtext.project.turn.Turn with org.eclipse.xtext.xbase.Xbase 
+grammar org.xtext.project.turn.Turn with org.eclipse.xtext.xbase.Xbase 
 
 generate turn "http://www.xtext.org/project/turn/Turn"
 
@@ -303,8 +302,6 @@ Text: content+=TextContent+ ;
 TextContent : ID | ('@') | ('#') | '!' | '%' | '&' | '*' | INT ;
 
 
-QualifiedName:
-	ID ('.' ID)*;
 
 
 
