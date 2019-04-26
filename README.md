@@ -1,4 +1,4 @@
-This Branch contains a version of Turn with a different tests folder.
+*This is a version of Turn with validation and parsing tests for input files.*
 
 This Tests folder contains a java file 'ParametrizedTestsFromcsv.java'.
 The file retrieves a csv file in the tests directory called 'expectedresults.csv'.
