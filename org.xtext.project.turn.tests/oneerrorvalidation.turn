@@ -1,6 +1,0 @@
-urnModel UniqueNamesTest
-
-map UniqueMapName {}
-map UniqueMapName {}
-
-concern UniqueConcernName:  UniqueMapName

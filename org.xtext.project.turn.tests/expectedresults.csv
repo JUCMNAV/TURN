@@ -1,3 +1,3 @@
 filename,error message
-oneerrorvalidation.turn,Map name must be unique
-onerrorval2.turn,Map name must be unique
+ValidationMapNameUnique.turn,Map name must be unique
+ValidationActorLnUnique.turn,Actor longname must be unique

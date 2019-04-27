@@ -73,7 +73,7 @@ public class parametrizedTestsFromcsv {
 
 	  
 	  //if a file in the directory was a turn file but not in the csv, add its entry with an empty message
-	  File dir = new File(".");
+	  File dir = new File("..\\TURNTestInput\\src");
 	  File[] files = dir.listFiles((d, name) -> name.endsWith(".turn"));
 	 // ArrayList<String> list= new ArrayList<String>();
 	  for (File i : files) {
@@ -103,6 +103,7 @@ public class parametrizedTestsFromcsv {
   
   
 
+	
  public parametrizedTestsFromcsv(List<String> parameter){
 	  this.i=  parameter;
 	
@@ -117,8 +118,11 @@ public class parametrizedTestsFromcsv {
   @Test
   public void loadModel() throws Exception {
 	  System.out.println(i.get(0));
+	  
+	  File f = new File("..\\TURNTestInput\\src\\"+i.get(0));
+	  Assert.assertEquals("file in csv doesn't exist in directory"+i.get(0),true,f.exists());
 	  URNspec result
-	     = this.parseHelper.parse(readFileAsString(i.get(0).toString()));
+	     = this.parseHelper.parse(readFileAsString(("..\\TURNTestInput\\src\\"+i.get(0)).toString()));
 	
 	  if(i.get(1)!="") {//if there is an error message
 		
