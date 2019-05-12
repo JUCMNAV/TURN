@@ -17,6 +17,7 @@ URNspec:
 	ucmMaps+=UCMmap*  &
 	concerns+=Concern* &
 	urnlinks+=URNlink* &
+	featureModels+=FeatureModelMain* &
 	metadata+=Metadata* ;
 	
 ConcreteURNspec: '{'
@@ -300,6 +301,88 @@ PositiveInteger returns ecore::EInt: INT;
 Text: content+=TextContent+ ;
 
 TextContent : ID | ('@') | ('#') | '!' | '%' | '&' | '*' | INT ;
+
+
+//FM
+
+ FeatureElement:InclusionFeature|NoneFeature|DecomposedFeature;
+ DecomposedFeature:XORDecomposedFeature|ORDecomposedFeature;
+ 
+ FeatureModelMain:
+	'FM' name=QualifiedName
+	longName=LongName '{'
+	
+	root=FeatureElement
+	
+	'}';
+
+
+
+NoneFeature:                         //feature that is a "leaf" in the feature tree
+	
+	name=QualifiedName  ;
+
+
+XORDecomposedFeature:               //feature that is XOR decomposed
+	
+	name=QualifiedName 
+	'{'
+	
+	linksSrc+=FeatureXORDecomposition*
+
+'}';
+
+
+ORDecomposedFeature: 
+	
+	name=QualifiedName 
+	 '{'
+	
+	linksSrc+=FeatureORDecomposition*
+
+'}';
+
+
+
+
+InclusionFeature:                                   //feature that has mandatory/optional child features
+	
+	 name=QualifiedName 
+	 '{'
+
+	linksSrc+=Inclusion*
+	
+'}';
+
+
+/*---------------------------------------------------------------------------------- */
+//links definition
+
+
+enum InclusionType: mandatory | optional;
+
+Inclusion: 
+	
+	inclusionType=InclusionType  dest=FeatureElement;
+
+
+
+FeatureXORDecomposition: 
+
+	'xor' dest=FeatureElement
+;
+
+
+
+
+FeatureORDecomposition: 
+	
+	'or' dest=FeatureElement
+;
+
+
+
+
 
 
 

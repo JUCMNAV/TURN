@@ -24,6 +24,8 @@
         eType="#//Concern" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="urnlinks" upperBound="-1"
         eType="#//URNlink" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureModels" upperBound="-1"
+        eType="#//FeatureModelMain" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" upperBound="-1"
         eType="#//Metadata" containment="true"/>
   </eClassifiers>
@@ -467,6 +469,47 @@
   <eClassifiers xsi:type="ecore:EClass" name="Text">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecomposedFeature" eSuperTypes="#//FeatureElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureModelMain">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="longName" eType="#//LongName"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" eType="#//FeatureElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoneFeature" eSuperTypes="#//FeatureElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="XORDecomposedFeature" eSuperTypes="#//DecomposedFeature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linksSrc" upperBound="-1"
+        eType="#//FeatureXORDecomposition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ORDecomposedFeature" eSuperTypes="#//DecomposedFeature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linksSrc" upperBound="-1"
+        eType="#//FeatureORDecomposition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InclusionFeature" eSuperTypes="#//FeatureElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linksSrc" upperBound="-1"
+        eType="#//Inclusion" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InclusionType">
+    <eLiterals name="mandatory" literal="mandatory"/>
+    <eLiterals name="optional" value="1" literal="optional"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inclusion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inclusionType" eType="#//InclusionType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dest" eType="#//FeatureElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureXORDecomposition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dest" eType="#//FeatureElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureORDecomposition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dest" eType="#//FeatureElement"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PathBodyNodes" eSuperTypes="#//PathBody">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pathNodes" upperBound="-1"
